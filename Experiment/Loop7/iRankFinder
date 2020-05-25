@@ -1,0 +1,20 @@
+-*-Code-*-
+# these are the variables
+#
+!vars
+x0  x1  
+
+# these are the primed variables 
+!pvars 
+x0'  x1' 
+
+# PATH 1
+#
+!path
+x0>=x1
+x0' = x0-4*x1*x1+4*x1+3
+x1' = x1-2
+-*-EndCode-*-
+-*-Result-*-
+error,cannot_parse_loop
+-*-EndResult-*-

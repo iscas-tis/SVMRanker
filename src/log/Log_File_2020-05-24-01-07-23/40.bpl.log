@@ -1,0 +1,19 @@
+------Using Template 0 -----------
+6 [6]
+*****************************************************
+
+xi_0  =  0
+xi_1  =  0
+xi_2  =  0
+xi_3  =  0
+xi_4  =  0
+it is not terminating, an infinate loop with initial condition:
+
+['xi_0=0', 'xi_1=0', 'xi_2=0', 'xi_3=0', 'xi_4=0']
+
+INFINATE
+Time For Template 0 Is--->-13.661000 ms
+
+Time For ../Program_non/40.bpl Is ---> 205.443000 ms
+
+Program is non-terminating

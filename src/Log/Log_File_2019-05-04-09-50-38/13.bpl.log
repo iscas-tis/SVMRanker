@@ -1,0 +1,14 @@
+------Using Template 0 -----------
+2 [2]
+*****************************************************
+
+xi_0  =  None
+it is not terminated, an infinate loop with initial condition:
+
+['xi_0=None']
+
+INFINATE
+Time For Template 0 Is--->-21.899000 ms
+
+Time For ../Program_non/13.bpl Is ---> 177.185000 ms
+

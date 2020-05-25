@@ -1,0 +1,14 @@
+------Using Template 0 -----------
+2 [2]
+*****************************************************
+
+xr_0  =  0
+it is not terminated, an infinate loop with initial condition:
+
+['xr_0=0']
+
+INFINATE
+Time For Template 0 Is--->-16.904000 ms
+
+Time For ../Program_non/120.bpl Is ---> 174.230000 ms
+

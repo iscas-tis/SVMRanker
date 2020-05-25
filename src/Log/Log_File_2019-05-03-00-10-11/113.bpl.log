@@ -1,0 +1,13 @@
+------Using Template 0 -----------
+3 [3]
+*****************************************************
+
+xi_0  =  0
+xi_1  =  None
+it is not terminated, an infinate loop with initial condition:
+
+['xi_0=0', 'xi_1=None']
+
+INFINATE
+Time For ../Program_non/113.bpl Is ---> 1896.324000 ms
+

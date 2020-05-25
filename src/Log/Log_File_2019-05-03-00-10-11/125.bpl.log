@@ -1,0 +1,14 @@
+------Using Template 0 -----------
+4 [4]
+*****************************************************
+
+xr_0  =  0
+xr_1  =  1
+xr_2  =  1
+it is not terminated, an infinate loop with initial condition:
+
+['xr_0=0', 'xr_1=1', 'xr_2=1']
+
+INFINATE
+Time For ../Program_non/125.bpl Is ---> 169.838000 ms
+

@@ -1,0 +1,16 @@
+------Using Template 0 -----------
+3 [3]
+*****************************************************
+
+xr_0  =  1/2
+xr_1  =  1/2
+it is not terminating, an infinate loop with initial condition:
+
+['xr_0=1/2', 'xr_1=1/2']
+
+INFINATE
+Time For Template 0 Is--->-11.556000 ms
+
+Time For ../Program_non/0.bpl Is ---> 213.876000 ms
+
+Program is non-terminating
