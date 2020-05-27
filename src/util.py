@@ -16,6 +16,7 @@ from polynomial.Polynomial import Polynomial
 from polynomial.Monomial import Monomial
 from polynomial.Exponential import Exponential
 from NestedRankingFunction import NestedRankingFunction
+from NestedNoBoundTemplate import NestedNoBoundTemplate
 from NestedTemplate import NestedTemplate
 
 
@@ -85,7 +86,28 @@ def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
 		start += d
 	return polynomial_result
 
-
+# add crafted parse template 
+def parse_template_handcraft(list, numOfVar, ListOfDimension):
+	print(len(list),numOfVar,ListOfDimension)
+	print(list)
+	arrays=np.array(list)
+	arrays=arrays.reshape(-1,numOfVar+1)
+	print(arrays)
+	if(len(arrays) != np.sum(ListOfDimension)):
+		raise Exception('Wrong template format')
+	start = 0
+	# print(arrays)
+	polynomial_result = []
+	for d in ListOfDimension:
+		polys,order = make_dict_order(numOfVar, d,  arrays[start:start+d])
+		# print(polys,order)
+		polynomial_result.append(
+			Polynomial(
+				polys, order
+				)
+			)
+		start += d
+	return polynomial_result
 
 
 
