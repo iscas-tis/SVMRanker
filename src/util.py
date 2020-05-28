@@ -168,7 +168,7 @@ def sample_points_bisection(L,n,rf):
 				model = [eval(s.model()[v].__str__()) for v in x]
 				u_p = np.array([(x if x is not None else 0) for x in model])
 				for i in range(20):
-					# print(s_p,u_p)
+					print(s_p,u_p)
 					if np.all(s_p == u_p):
 						s_p_ = get_statement(L,s_p)
 						if s_p_ is None:
@@ -288,6 +288,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 		print(  str(get_time(ct))+ "   >>>>   " + "Start train ranking function\n")
 		try:
 			SVM=LinearSVC (fit_intercept=False)
+			#print(x,y)
 			SVM.fit(x, y)
 			# print(SVM.coef_[0])
 			coef = [round (j, acc) for j in SVM.coef_[0]]
@@ -358,15 +359,15 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 		# print ('sampling = %.3fs, train_ranking_functioning = %.3fs, verifying = %.3fs' % (
 		# s_t - st, et - ct, h_t - ht))
 		if ret[0]:
-			print(  "Found Ranking Fcuntion: "+str(rf)+"\n")
+			print(  "Found Ranking Function: "+str(rf)+"\n")
 			return "FINATE",None,None
 		elif ret[1] is None:
 			return 'UNKNOWN',x,y
 		elif ret[1] is not None:
 			# add more points
-			print( "Not Found Ranking Fcuntion\n")
+			print( "Not Found Ranking Function\n")
 			p = [(x if x is not None else 0) for x in ret[1] ]#ret[1]
-			print(  "Conterexample is \n")
+			print(  "Counterexample is \n")
 			print(  str(p)+"\n")
 			# print('model = ', p)
 			p_ = get_statement(L, p)
@@ -384,7 +385,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 			s_t = datetime.datetime.now()
 			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
 		count += 1
-		if count >= 200:
+		if count >= 300:
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y

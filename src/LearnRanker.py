@@ -99,7 +99,7 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
         # list of U(x)
         listOfUx
         # list of C
-        , [0.01] *len(listOfUx)
+        , [0.001] *len(listOfUx)
         )
     # number of variables   
 

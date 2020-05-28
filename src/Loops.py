@@ -30,14 +30,16 @@ from Templates import *
 # add disjuntive example loop here
 
 L_test = [lambda x : x[0] > 0 or x[1] > 0, 
-         lambda x : [x[0], x[1] - 1],
+         lambda x :  [x[0] + x[1], x[1] - 1],
          2,
-         1,
-         [[[0, 0, 0],
+         2,
+         [[[1, 0, 1],
           [0, 0, 0],
-          [0, 1, 1]]
-        ],
-         lambda x : [x[0], x[1] - 1],
+          [0, 0, 0]],
+         [[0, 0, 0],
+          [0, 1, 1],
+          [0, 0, 0]]],
+         lambda x :  [x[0] + x[1], x[1] - 1],
          lambda x : Or(x[0] > 0, x[1] > 0)
          ]
 
