@@ -131,7 +131,7 @@ def is_type_real(L):
     return len(L) <= 6 + L[3]
 
 def sample_points(L, m, h, n, rf,base_point):
-	# for result, x, y in sample_points_same_interval(L, m, h, n, rf,base_point):
+	#for result, x, y in sample_points_same_interval(L, m, h, n, rf,base_point):
 	# 	yield(result, x, y)
 
 	for result, x, y in sample_points_bisection(L,n,rf):
@@ -144,7 +144,7 @@ def sample_points_bisection(L,n,rf):
 		cond = L[-1]
 	else:
 		cond = L[-2]
-	for i in range(1):
+	for i in range(20):
 		x = [z3.Real('xr_%s' % i) if rt else z3.Int('xi_%s' % i) for i in range(n)]
 		s = z3.Solver()
 		s.push()
@@ -167,8 +167,8 @@ def sample_points_bisection(L,n,rf):
 			if result == z3.sat:
 				model = [eval(s.model()[v].__str__()) for v in x]
 				u_p = np.array([(x if x is not None else 0) for x in model])
-				for i in range(20):
-					print(s_p,u_p)
+				for i in range(50):
+					#print(s_p,u_p)
 					if np.all(s_p == u_p):
 						s_p_ = get_statement(L,s_p)
 						if s_p_ is None:
@@ -243,6 +243,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 		h = 1
 		m = int(max((100 ** (1/n))/2,0))
         
+	print("m:",m,"h:",h)
 	print("*****************************************************\n")
 	if rt:
 		Is_inf,inf_model = rf.check_infinite_loop (n, L[-1], L[-2])
@@ -385,7 +386,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 			s_t = datetime.datetime.now()
 			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
 		count += 1
-		if count >= 300:
+		if count >= 100:
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y

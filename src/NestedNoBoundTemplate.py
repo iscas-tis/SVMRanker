@@ -132,15 +132,23 @@ class NestedNoBoundTemplate:
 #					self.num_of_pos_data += 1
 #					yield (g_x, 1)
 #			else:
-			if index %2 == 0:
-				# print('positive')
-				self.num_of_pos_data += 1
-				yield (g_x, 1)
-			else:
-				# print('negtive')
-				self.num_of_neg_data += 1
-				yield(-g_x,-1)
+		
 
+			if num_of_Gx > 1:
+				if index %2 == 0:
+					# print('positive')
+					self.num_of_pos_data += 1
+					yield (g_x, 1)
+				else:
+					# print('negtive')
+					self.num_of_neg_data += 1
+					yield(-g_x,-1)
+			else:
+				self.num_of_neg_data += 1
+				self.num_of_pos_data += 1
+				yield(g_x, 1)
+				yield(-g_x, -1)
+			
 	def get_num_of_pos(self):
 		return self.num_of_pos_data
 

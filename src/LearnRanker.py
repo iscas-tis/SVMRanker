@@ -66,22 +66,22 @@ def LearnRanker(templateFilePath, indexOfTemplate, x, y ):
 #if __name__ == '__main__':
   #  main()
 
-def LearnRankerNoBoundTest(L_test, x, y):
+def LearnRankerNoBoundLoopBody(L_test, x, y):
     ret = 'UNKNOWN'
+    print("L:",L_test[2])
+    print(L_test[3])
     print(L_test[4])
     listOfUxDimension = []
     for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2] + 1)
-    print(listOfUxDimension)
+    print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
         listOfUx,
         [0.001] *len(listOfUx)
     )
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
-    if ret=='FINATE':
-        print(rf)
-    return ret, new_x, new_y
+    return rf
 
 
 def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
