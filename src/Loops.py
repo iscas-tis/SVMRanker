@@ -32,12 +32,13 @@ from Templates import *
 L_test = [lambda x : x[0] > 0 or x[1] > 0, 
          lambda x : [x[0], x[1] - 1],
          2,
-         2,
-         [[0, 0, 1],
-          [0, 1, 1],
-          [1, 0, 1]],
+         1,
+         [[[0, 0, 0],
+          [0, 0, 0],
+          [0, 1, 1]]
+        ],
          lambda x : [x[0], x[1] - 1],
-         lambda x : x[0] > 0 or x[1] > 0
+         lambda x : Or(x[0] > 0, x[1] > 0)
          ]
 
 L_old = {1: [lambda x: x[0] ** 2 + x[1] ** 2 <= 1,

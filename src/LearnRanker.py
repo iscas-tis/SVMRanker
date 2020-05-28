@@ -70,7 +70,7 @@ def LearnRankerNoBoundTest(L_test, x, y):
     ret = 'UNKNOWN'
     print(L_test[4])
     listOfUxDimension = []
-    for i in range(L_test[2] + 1):
+    for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2] + 1)
     print(listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
@@ -99,7 +99,7 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
         # list of U(x)
         listOfUx
         # list of C
-        , [0.001] *len(listOfUx)
+        , [0.01] *len(listOfUx)
         )
     # number of variables   
 

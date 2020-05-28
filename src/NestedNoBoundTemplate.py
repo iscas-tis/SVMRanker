@@ -154,8 +154,11 @@ class NestedNoBoundTemplate:
 		#print("check infinite loop")
 		#x = [z3.Real('xr_%s' % i) for i in range(n)]
 		x = [z3.Real('xr_%s' % i) if tr else z3.Int('xi_%s' % i) for i in range(n)]
+		print(x)
 		# xp = [z3.Real('xrp_%s' % i) for i in range(n)]
 		x_ = prime(x)
+		print(x_)
+		a = cond(x)
 		s = z3.Solver()
 		s.add(cond(x))  # condition
 		s.push()
