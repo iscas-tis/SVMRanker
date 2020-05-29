@@ -12,10 +12,8 @@ def ConjunctRankConstraintL(L_old, rf):
     old_loopGuard = L_old[0]
     NumOfVars = L_old[2]
     coef = rf.coefficients
-    addedExp = [lambda x: 0]
-    for i in range(NumOfVars + 1):
-        addedExp.append(lambda x: addedExp[0](x) + coef[i-1]*x[i-1])
-    appendConstraint = lambda x : addedExp[NumOfVars+1](x) <= 0
+    addedExp = lambda x: coefDotExpr(x, coef, NumOfVars)
+    appendConstraint = lambda x : addedExp(x) <= 0
     newLoopGuard = lambda x: old_loopGuard(x) and appendConstraint(x)
     #L_new[0]
     L_new.append(newLoopGuard)
@@ -45,4 +43,9 @@ def ConjunctRankConstraintL(L_old, rf):
     return L_new
 
     
-
+def coefDotExpr(x, coef, NumOfVars):
+    result = 0
+    for i in range(NumOfVars):
+        result += coef[i]*x[i]
+    result += coef[-1]
+    return result
