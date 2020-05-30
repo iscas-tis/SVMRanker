@@ -7,14 +7,14 @@ from FindMultiphaseUtil import *
 from LearnMultiRanker import *
 import os
 from z3 import *
-'''
-ret, rf = LearnRankerNoBoundLoopBody(L_test, (), ())
-print(rf.coefficients)
-L_new = ConjunctRankConstraintL(L_test, rf)
-ret, rf = LearnRankerNoBoundLoopBody(L_new, (), ())
-print(rf.coefficients)
-L_new = ConjunctRankConstraintL(L_new, rf) '''
-ret, rf = LearnRankerBoundedLoopBody(L_hand2, (), ())
+
+#ret, rf = LearnRankerNoBoundLoopBody(L_test, (), ())
+#print(rf.coefficients)
+#L_new = ConjunctRankConstraintL(L_test, rf)
+#ret, rf = LearnRankerNoBoundLoopBody(L_test, (), ())
+#print(rf.coefficients)
+#L_new = ConjunctRankConstraintL(L_test, rf) 
+#ret, rf = LearnRankerBoundedLoopBody(L_new, (), ())
 
 
-#LearnMultiRanker(L_test, (), ())
+LearnMultiRanker(L_test, (), ())

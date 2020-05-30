@@ -22,7 +22,7 @@ def coefDotExprZ3Constraint(x, coef, NumOfVars, isReal):
         result = Sum(result, RealVal(coef[-1]))
         #print(result)
         #print(type(result))
-        return result < 0
+        return result < -0.1
 
 def coefDotExprZ3Arithmetic(x, coef, NumOfVars, isReal):
     if(isReal):
@@ -53,7 +53,7 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     NumOfVars = L_old[2]
     coef = rf.coefficients
     addedExp = lambda x: coefDotExpr(x, coef, NumOfVars)
-    appendConstraint = lambda x : addedExp(x) < 0
+    appendConstraint = lambda x : addedExp(x) < -0.1
     newLoopGuard = lambda x: old_loopGuard(x) and appendConstraint(x)
     #L_new[0]
     L_new.append(newLoopGuard)

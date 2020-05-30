@@ -85,7 +85,27 @@ def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
 			)
 		start += d
 	return polynomial_result
-
+'''
+def parseTemplateMulti(templatePath, numOfvar, ListOfDimension, indexOfTemplate):
+	arrays = np.loadtxt(os.path.join(templatePath,"template"+str(indexOfTemplate)),delimiter=',')
+	arrays = arrays.reshape(-1,numOfVar+1)
+	print(len(arrays),ListOfDimension)
+	if(len(arrays) != np.sum(ListOfDimension)):
+		raise Exception('Wrong template format')
+	start = 0
+	# print(arrays)
+	polynomial_result = []
+	for d in ListOfDimension:
+		polys,order = make_dict_order(numOfVar, d,  arrays[start:start+d])
+		# print(polys,order)
+		polynomial_result.append(
+			Polynomial(
+				polys, order
+				)
+			)
+		start += d
+	return polynomial_result
+'''
 # add crafted parse template 
 def parse_template_handcraft(list, numOfVar, ListOfDimension):
 	#print(len(list),numOfVar,ListOfDimension)
@@ -132,12 +152,12 @@ def is_type_real(L):
     return len(L) <= 6 + L[3]
 
 def sample_points(L, m, h, n, rf,base_point):
-	#for result, x, y in sample_points_same_interval(L, m, h, n, rf,base_point):
-	# 	yield(result, x, y)
-
-	for result, x, y in sample_points_bisection(L,n,rf):
-		print(x,y)
+	for result, x, y in sample_points_same_interval(L, m, h, n, rf,base_point):
 		yield(result, x, y)
+
+	#for result, x, y in sample_points_bisection(L,n,rf):
+	#	print(x,y)
+	#	yield(result, x, y)
 
 def sample_points_bisection(L,n,rf):
 	rt = is_type_real(L)
@@ -145,7 +165,8 @@ def sample_points_bisection(L,n,rf):
 		cond = L[-1]
 	else:
 		cond = L[-2]
-	for i in range(20):
+	for i in range(1):
+		print("NumOfVar:", n)
 		x = [z3.Real('xr_%s' % i) if rt else z3.Int('xi_%s' % i) for i in range(n)]
 		s = z3.Solver()
 		s.push()
@@ -170,7 +191,7 @@ def sample_points_bisection(L,n,rf):
 				model = [eval(s.model()[v].__str__()) for v in x]
 				u_p = np.array([(x if x is not None else 0) for x in model])
 				for i in range(50):
-					#print(s_p,u_p)
+					print(s_p,u_p)
 					if np.all(s_p == u_p):
 						s_p_ = get_statement(L,s_p)
 						if s_p_ is None:
@@ -196,11 +217,12 @@ def sample_points_bisection(L,n,rf):
 			yield('UNKNOWN', x,y)
 
 def sample_points_same_interval(L, m, h, n, rf,base_point):
-   # print('sample_points ',  m, h, n,base_point)
+        print('sample_points ',  m, h, n,base_point)
         for p in get_xpoints( m, h, n,base_point):  # Generate all candidate n-D points
             #print(p)
             condition = get_condition(L,p)
             if condition:  # must satisfy the guard condition
+                print(p)
                 p_ = get_statement(L,p)
                 if p_ is None:
                     continue
@@ -284,6 +306,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 	last_coef =[]
 	same_coef_count = 0
 	list_of_accu = [0,1,4]
+	# acc: accuracy 
 	acc = 4 if rt else 1
 	while True:
 		print( "       ########################################         \n")
@@ -309,6 +332,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 					same_coef_count = 0
 			else:
 				same_coef_count=0
+			# train done
 			last_coef = coef
 			print('training done')
 		except Exception as e:
@@ -389,7 +413,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 			s_t = datetime.datetime.now()
 			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
 		count += 1
-		if count >= 100:
+		if count >= 200:
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y

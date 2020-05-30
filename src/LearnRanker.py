@@ -11,7 +11,7 @@ import sys
 import os
 from util import *
 
-def LearnRanker(templateFilePath, indexOfTemplate, x, y ):
+def LearnRanker(templateFilePath, indexOfTemplate, x, y):
     #templateFilePath = sys.argv[1]
     # listOfUxDimension = [int(x) for x in sys.argv[2].split(',')]
     #logPath = sys.argv[2]

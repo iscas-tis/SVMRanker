@@ -204,6 +204,7 @@ class NestedTemplate:
 	
 	@set_timeout(4, z3_verify_fail)
 	def z3_verify(self, n, coef, cond, prime, tr=True):  # Check if every condition satisfied.
+		print("coefficient:", coef)
 		x = [z3.Real('xr_%s' % i) if tr else z3.Int('xi_%s' % i) for i in range(n)]
 		x_ = prime(x)
 		s = z3.Solver()
