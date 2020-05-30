@@ -16,5 +16,4 @@ from z3 import *
 #L_new = ConjunctRankConstraintL(L_test, rf) 
 #ret, rf = LearnRankerBoundedLoopBody(L_new, (), ())
 
-
-LearnMultiRanker(L_test, (), ())
+train_multi_ranking_function(L_test, (), ())
