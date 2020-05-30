@@ -85,7 +85,7 @@ coefficient are
  [-4.81e-05, -0.3316082, 0.3316022, 0.6632104, 0.0, 0.0, 0.1659684, 0.0, -4.6e-06, -0.4158575, 0.2499782, 0.5818259]
 
 2019-03-11-21-54-55   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1', 'xr_1=-1', 'xr_2=0']
 *****************************************************
 2:
@@ -100,7 +100,7 @@ coefficient are
  [-0.0, 0.0060604, -0.0, -0.0, 0.0, 0.9939022, 0.0, -9e-07, -1e-07, 1.2e-06, 7e-07, 0.0, 7e-07, 0.0013176, -8e-07, -4e-07, -4e-07, 0.9978017]
 
 2019-03-11-21-54-56   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0', 'xr_2=0', 'xr_3=0', 'xr_4=0']
 *****************************************************
 3:
@@ -115,7 +115,7 @@ coefficient are
  [0.0154526, -6.9e-06, 0.984306, -0.082233, 0.0420456, 0.0, -0.0641265, 0.0504583, 1.4956473]
 
 2019-03-11-21-54-56   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=11/2', 'xr_1=-11/6']
 *****************************************************
 5:
@@ -495,7 +495,7 @@ coefficient are
  [0.9090909, 0.0, 0.0, -1.11e-05, 0.9523873, -1.05e-05]
 
 2019-03-11-21-55-23   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0']
 *****************************************************
 7:
@@ -1110,7 +1110,7 @@ coefficient are
  [0.9958779, -2.93e-05, 0.0, 0.0, 0.9979347, 4.4e-06]
 
 2019-03-11-21-56-37   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=None']
 *****************************************************
 15:
@@ -2950,7 +2950,7 @@ coefficient are
  [1.2e-06, 0.0154838, 0.9842853, 0.0, 4.76e-05, 0.0, -4.76e-05, 8.29e-05, 0.998651]
 
 2019-03-11-22-01-01   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 25:
@@ -3330,7 +3330,7 @@ coefficient are
  [6.13e-05, 0.092091, 0.9765138, 0.0, 3.7e-06, 0.0, 3.7e-06, 0.0041715, 0.9950065]
 
 2019-03-11-22-02-48   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 28:
@@ -3360,7 +3360,7 @@ coefficient are
  [0.9958305, -1.62e-05, 0.0, -0.0035439, 1.0024952, 0.0035202]
 
 2019-03-11-22-02-49   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=2']
 *****************************************************
 30:
@@ -4105,7 +4105,7 @@ coefficient are
  [-7.8e-06, 0.0154647, 0.9842639, 0.0, -0.1692519, 0.0, 0.3424222, -0.0022094, 0.8540963]
 
 2019-03-11-22-03-53   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1/2', 'xr_1=0']
 *****************************************************
 34:
@@ -5290,7 +5290,7 @@ coefficient are
  [0.2666667, 0.4, 0.0, 0.0, 0.2857109, 0.4285663]
 
 2019-03-11-22-06-58   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=2']
 *****************************************************
 47:
@@ -6805,7 +6805,7 @@ coefficient are
  [0.0060604, -0.0, -0.0, 0.9939022, 1.55e-05, 1.55e-05, 0.1306233, 0.0, 0.1306807, 0.1306652, -0.1306797, 0.9969244]
 
 2019-03-11-22-10-07   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0', 'xr_2=0']
 *****************************************************
 59:
@@ -7945,7 +7945,7 @@ coefficient are
  [0.0154721, -5.18e-05, 0.9842792, -1.02e-05, 0.0, 0.0, 8.78e-05, -1.02e-05, 0.9988461]
 
 2019-03-11-22-13-02   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 66:
@@ -8325,7 +8325,7 @@ coefficient are
  [0.015472, -5.2e-06, 0.9842993, -0.9683064, -0.0055699, 0.0, -0.9638978, -0.0158763, 0.9966141]
 
 2019-03-11-22-13-37   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 70:
@@ -8340,7 +8340,7 @@ coefficient are
  [0.3730747, 0.2096546, 0.4902604, 0.0, 0.2690134, 0.0, 0.2752646, 0.7926565, 0.2815159]
 
 2019-03-11-22-13-37   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1/2', 'xr_1=1/2']
 *****************************************************
 72:
@@ -8355,7 +8355,7 @@ coefficient are
  [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.6666667, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.8000119]
 
 2019-03-11-22-13-37   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=None', 'xr_2=0', 'xr_3=None', 'xr_4=None', 'xr_5=None', 'xr_6=None', 'xr_7=None', 'xr_8=None', 'xr_9=None', 'xr_10=0']
 *****************************************************
 73:
@@ -8750,7 +8750,7 @@ coefficient are
  [0.9958602, -9.2e-06, 0.0, 0.0, 0.9979288, -9e-06]
 
 2019-03-11-22-14-54   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=None']
 *****************************************************
 76:
@@ -8765,7 +8765,7 @@ coefficient are
  [0.4, 0.4, 0.0, -0.0211108, 0.7557643, 0.0701402]
 
 2019-03-11-22-14-55   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=3']
 *****************************************************
 77:
@@ -10383,7 +10383,7 @@ coefficient are
  [1.03e-05, 1.4e-05, 0.9994685, 0.0041336, -0.0103109, 0.0, -0.0051664, 0.0165437, 1.0149643]
 
 2019-03-11-22-17-47   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 89:
@@ -11143,7 +11143,7 @@ coefficient are
  [0.8587199, 0.0112277, 0.4952261, 0.9216136, 0.8426536, 0.7181935, 0.8218752, 0.3713342, 0.6831646, 0.0683346, 0.5433023, 0.2037619]
 
 2019-03-11-22-19-18   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=None', 'xr_1=23', 'xr_2=0']
 *****************************************************
 94:
@@ -11158,7 +11158,7 @@ coefficient are
  [-9e-07, 3e-07, 0.9994562, 0.0673617, 0.066625, 0.0, -0.0665198, -0.0660375, 1.9883758]
 
 2019-03-11-22-19-19   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1', 'xr_1=0']
 *****************************************************
 95:
@@ -11173,7 +11173,7 @@ coefficient are
  [0.0, -0.0, -0.0, 0.0, 0.0, 0.002045, 0.9979508, 0.0, 0.0, 0.0, 0.0001606, 8.07e-05, -0.0001625, 0.0, 0.0001612, -0.0001605, 8.07e-05, -0.0001618, -0.0001608, 0.0001612, 0.9994028]
 
 2019-03-11-22-19-20   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0', 'xr_2=0', 'xr_3=0', 'xr_4=0', 'xr_5=0']
 *****************************************************
 96:
@@ -11553,7 +11553,7 @@ coefficient are
  [1.22e-05, 0.0154721, 0.9843012, 0.0, 0.0001847, 0.0, -0.0001847, -0.0069483, 0.9992502]
 
 2019-03-11-22-20-11   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 100:
@@ -11568,7 +11568,7 @@ coefficient are
  [0.0154617, -3.2e-06, 0.9842859, -8.54e-05, 0.0, 0.0, -0.0039304, -8.54e-05, 0.9980828]
 
 2019-03-11-22-20-11   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 102:
@@ -11583,7 +11583,7 @@ coefficient are
  [0.0154582, -8.7e-06, 0.9842989, -0.007222, 0.007222, 0.0, 0.0137799, 0.0138211, 0.9919333]
 
 2019-03-11-22-20-12   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0']
 *****************************************************
 104:
@@ -13255,7 +13255,7 @@ coefficient are
  [-0.0, 0.019547, 0.0097645, 0.9895479, 0.0, -1e-07, 1e-07, 0.0, -1e-07, 0.000969, 0.0007223, 0.9978859]
 
 2019-03-11-22-40-17   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0', 'xr_2=0']
 *****************************************************
 111:
@@ -13270,7 +13270,7 @@ coefficient are
  [0.0060604, 0.0, -0.0, 0.9939022, -5.6e-05, -3.02e-05, -6.03e-05, 0.0, 0.0003213, 2e-06, 8.59e-05, 0.9987148]
 
 2019-03-11-22-40-17   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0', 'xr_2=0']
 *****************************************************
 112:
@@ -13300,7 +13300,7 @@ coefficient are
  [-7e-07, -1e-07, 0.9994571, 0.0658375, 0.0673079, 0.0, -0.0664573, -0.0664199, 1.9878965]
 
 2019-03-11-22-40-19   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1', 'xr_1=0']
 *****************************************************
 114:
@@ -13330,7 +13330,7 @@ coefficient are
  [-0.0, -0.0, 0.0060604, 0.9939022, 0.0, 0.0, 0.2494805, 0.0, 0.2493649, -0.2493649, 0.0697579, 0.7482103]
 
 2019-03-11-22-40-20   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=-1', 'xr_2=0']
 *****************************************************
 117:
@@ -14440,7 +14440,7 @@ coefficient are
  [0.7272727, 0.1818182, 0.0, -0.0137195, 0.8278078, 0.0443481]
 
 2019-03-11-22-42-54   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=10/3']
 *****************************************************
 124:
@@ -15550,7 +15550,7 @@ coefficient are
  [-0.0, -0.0, 0.0, 0.9995869, 0.0, 0.0, 2e-07, 0.0, 4e-07, -7e-07, 1e-07, 0.9997918]
 
 2019-03-11-22-47-56   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=1', 'xr_2=1']
 *****************************************************
 129:
@@ -15930,7 +15930,7 @@ coefficient are
  [0.3272727, 0.3272727, -0.0, 0.3272727, 3e-07, -3e-07, 0.0, 0.0, 0.3302748, 0.3302756, 3e-07, 0.3302752]
 
 2019-03-11-22-48-23   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1', 'xr_1=1', 'xr_2=0']
 *****************************************************
 132:
@@ -15945,7 +15945,7 @@ coefficient are
  [0.9190601, 0.0313316, 0.0, -0.0896503, 0.9564973, 0.1979688]
 
 2019-03-11-22-48-23   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0']
 *****************************************************
 133:
@@ -16522,7 +16522,7 @@ coefficient are
  [0.0, 0.0, 0.0474934, 0.9498681, 0.0, 0.0, -4e-07, 0.0, -4e-07, 0.0, 0.002061, 0.9903768]
 
 2019-03-11-22-51-52   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=0', 'xr_2=0']
 *****************************************************
 138:
@@ -16902,7 +16902,7 @@ coefficient are
  [0.7272727, 0.1818182, 0.0, 0.036289, 0.8526015, 0.0816305]
 
 2019-03-11-22-53-02   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=1/2']
 *****************************************************
 140:
@@ -16917,7 +16917,7 @@ coefficient are
  [0.0, -0.0, 0.0, 0.999229, 0.0, 0.0, -0.0827067, 0.0, 0.0001247, -3.07e-05, 0.0520014, 1.1220592]
 
 2019-03-11-22-53-02   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=2', 'xr_1=-1', 'xr_2=0']
 *****************************************************
 141:
@@ -16932,7 +16932,7 @@ coefficient are
  [-0.0154599, -6.1e-06, 0.9842885, 0.0, 0.3428723, 0.0, -0.3428723, 0.3453616, 5.4092033]
 
 2019-03-11-22-53-03   >>>>   Start verify ranking function
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 ['xr_0=0', 'xr_1=None']
 *****************************************************
 143:

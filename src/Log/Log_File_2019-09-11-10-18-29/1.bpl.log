@@ -132,7 +132,7 @@ verifying time = 7.300 ms
 Found Ranking Fcuntion: 0.6 *  x[0]^1.0 + 0.5 *  x[1]^1.0 + 0.1 * 1
 
 0.6 *  x[0]^1.0 + 0.5 *  x[1]^1.0 + 0.1 * 1
-FINATE
+FINITE
 Time For Template 0 Is--->-57.088000 ms
 
 Time For ../experiment/1.bpl Is ---> 215.642000 ms

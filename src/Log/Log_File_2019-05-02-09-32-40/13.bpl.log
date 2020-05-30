@@ -3,10 +3,10 @@
 *****************************************************
 
 xi_0  =  None
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 
 ['xi_0=None']
 
-INFINATE
+INFINITE
 Time For ../Program_non/13.bpl Is ---> 463.189000 ms
 

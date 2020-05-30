@@ -31,6 +31,6 @@ verifying time = 6.525 ms
 Found Ranking Fcuntion: 0.9091 *  x[0]^1.0 + 0.6667 * 1
 
 0.9091 *  x[0]^1.0 + 0.6667 * 1
-FINATE
+FINITE
 Time For ../Program_non/165.bpl Is ---> 244.672000 ms
 

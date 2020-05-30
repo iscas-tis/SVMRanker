@@ -54370,6 +54370,6 @@ verifying time = 22.417 ms
 Found Ranking Fcuntion: 0.4 *  x[0]^2.0 + 0.4 *  x[0]^2.0
 
 0.4 *  x[0]^2.0 + 0.4 *  x[0]^2.0
-FINATE
+FINITE
 Time For ../Program_non/169.bpl Is ---> 249029.886000 ms
 

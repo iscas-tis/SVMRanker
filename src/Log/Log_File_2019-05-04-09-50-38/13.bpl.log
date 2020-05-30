@@ -3,11 +3,11 @@
 *****************************************************
 
 xi_0  =  None
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 
 ['xi_0=None']
 
-INFINATE
+INFINITE
 Time For Template 0 Is--->-21.899000 ms
 
 Time For ../Program_non/13.bpl Is ---> 177.185000 ms

@@ -3,11 +3,11 @@
 *****************************************************
 
 xr_0  =  0
-it is not terminated, an infinate loop with initial condition:
+it is not terminated, an inFINITE loop with initial condition:
 
 ['xr_0=0']
 
-INFINATE
+INFINITE
 Time For Template 0 Is--->-16.829000 ms
 
 Time For ../Program_non/119.bpl Is ---> 168.414000 ms

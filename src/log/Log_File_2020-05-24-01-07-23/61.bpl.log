@@ -101,7 +101,7 @@ verifying time = 10.960 ms
 Found Ranking Fcuntion: 0.4 *  x[0]^1.0 + 0.9 * 1
 
 0.4 *  x[0]^1.0 + 0.9 * 1
-FINATE
+FINITE
 Time For Template 0 Is--->-64.249000 ms
 
 Time For ../Program_non/61.bpl Is ---> 265.293000 ms

@@ -17834,6 +17834,6 @@ verifying time = 20.941 ms
 Found Ranking Fcuntion:  - 0.3 *  x[0]^2.0 + 0.3 *  x[0]^-0.5
 
  - 0.3 *  x[0]^2.0 + 0.3 *  x[0]^-0.5
-FINATE
+FINITE
 Time For ../Program_non/50.bpl Is ---> 9572.401000 ms
 

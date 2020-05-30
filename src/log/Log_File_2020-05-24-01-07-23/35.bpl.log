@@ -4,11 +4,11 @@
 
 xi_0  =  None
 xi_1  =  0
-it is not terminating, an infinate loop with initial condition:
+it is not terminating, an inFINITE loop with initial condition:
 
 ['xi_0=None', 'xi_1=0']
 
-INFINATE
+INFINITE
 Time For Template 0 Is--->-11.151000 ms
 
 Time For ../Program_non/35.bpl Is ---> 212.967000 ms

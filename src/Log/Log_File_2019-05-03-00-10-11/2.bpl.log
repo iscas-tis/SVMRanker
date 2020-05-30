@@ -1532,6 +1532,6 @@ verifying time = 12.879 ms
 Found Ranking Fcuntion: 1.0 *  x[1]^1.0 + 0.7 * 1; 1.0 *  x[0]^1.0 + 0.3 *  x[1]^1.0 + 1.0 * 1; 0.3 *  x[0]^1.0 + 1.0 * 1
 
 1.0 *  x[1]^1.0 + 0.7 * 1; 1.0 *  x[0]^1.0 + 0.3 *  x[1]^1.0 + 1.0 * 1; 0.3 *  x[0]^1.0 + 1.0 * 1
-FINATE
+FINITE
 Time For ../Program_non/2.bpl Is ---> 1156.435000 ms
 

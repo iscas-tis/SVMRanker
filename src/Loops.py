@@ -29,15 +29,15 @@ from Templates import *
 
 # add disjuntive example loop here
 
-L_test = [lambda x : x[0] > 0 or x[1] > -0.1, 
-         lambda x :  [x[0] + x[1], x[1] - 1],
+L_test = [lambda x : x[0] > 0 or x[1] > 0, 
+         lambda x :  [x[0] + x[1] -1, x[1] - 1],
          2,
          1,
          [[1, 0, 1],
           [0, 1, 1],
           [0, 0, 1]],
          lambda x :  [x[0] + x[1], x[1] - 1],
-         lambda x : Or(x[0] > 0, x[1] > -0.1)
+         lambda x : Or(x[0] > 0, x[1] > 0)
          ]
 
 L_hand = [lambda x : (x[0] > 0 or x[1] > 0) and x[1] <= -1, 

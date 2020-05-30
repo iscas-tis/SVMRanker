@@ -3286,7 +3286,7 @@ verifying time = 20.172 ms
 Found Ranking Fcuntion: 1.0 *  x[0]^1.0 - 1.0 *  x[1]^1.0 + 1.0 * 1; 1.0 *  x[0]^1.0 + 1.0 * 1; 1.0 * 1; 1.0 * 1; 1.0 * 1
 
 1.0 *  x[0]^1.0 - 1.0 *  x[1]^1.0 + 1.0 * 1; 1.0 *  x[0]^1.0 + 1.0 * 1; 1.0 * 1; 1.0 * 1; 1.0 * 1
-FINATE
+FINITE
 Time For Template 4 Is--->-396.844000 ms
 
 Time For ../Program_non/51.bpl Is ---> 2617.730000 ms

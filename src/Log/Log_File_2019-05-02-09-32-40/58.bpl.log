@@ -32,6 +32,6 @@ verifying time = 6.031 ms
 Found Ranking Fcuntion: 0.5 *  x[0]^1.0 + 0.5 * 1
 
 0.5 *  x[0]^1.0 + 0.5 * 1
-FINATE
+FINITE
 Time For ../Program_non/58.bpl Is ---> 179.542000 ms
 

@@ -60,6 +60,6 @@ verifying time = 6.676 ms
 Found Ranking Fcuntion: 0.4954 *  x[0]^1.0 + 0.518 *  x[1]^1.0 + 0.6832 * 1
 
 0.4954 *  x[0]^1.0 + 0.518 *  x[1]^1.0 + 0.6832 * 1
-FINATE
+FINITE
 Time For ../Program_non/150.bpl Is ---> 363.737000 ms
 

@@ -76,7 +76,7 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
     #f.write('Time For %s Is ---> %f ms\n' %(templateFilePath,float((newtime-oldtime).total_seconds())*1000 ))
 
     #f.close()
-    if ret== 'FINATE':
+    if ret== 'FINITE':
         print(rf)
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
     return ret,new_x,new_y
@@ -86,7 +86,9 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     print("----------------START MAIN LOOP-------------------")
     
     for phaseNum in range(upperLoopBound):
+        rankingFunctionRecordingList = []
         L_current = L
+        # used for implication 
         old_coef_array = []
         print("----------------START LEARNING MULTI-------------------")
         for i in range(phaseNum+1):
@@ -96,6 +98,7 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
                 print("---------LoopBound ", phaseNum)
                 # if the phase does not reach the bound, should find ranking no bound
                 ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y)
+                rankingFunctionRecordingList.append(rf)
                 L_current = ConjunctRankConstraintL(L_current, rf)
                 old_coef_array.append(rf.coefficients)
             else:
@@ -104,14 +107,17 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
                 print("---------LoopNum ", i)
                 print("---------LoopBound ", phaseNum)
                 ret, rf = LearnRankerBoundedLoopBody(L_current, x, y)
-                if ret == 'FINATE':
-                    return 'FINATE'
-                elif ret == 'INFINATE':
+                if ret == 'FINITE':
+                    rankingFunctionRecordingList.append(rf)
+                    printSummary(phaseNum + 1, ret, rankingFunctionRecordingList)
+                    return 'FINITE'
+                elif ret == 'INFINITE':
+                    printSummary(phaseNum + 1, ret, rankingFunctionRecordingList)
                     return 'INFANITE'
             i += 1
         print("---------------- LEARNING OVER-------------------")
         print("---------RESULT:", ret, rf)
-    print(rf)
+    printSummary(phaseNum + 1, 'UNKNOWN', rankingFunctionRecordingList)
     return 'UNKNOWN'
 
 
@@ -142,7 +148,7 @@ def LearnMultiRanker(templateFilePath, indexOfTemplate, x, y):
     #f.write('Time For %s Is ---> %f ms\n' %(templateFilePath,float((newtime-oldtime).total_seconds())*1000 ))
 
     #f.close()
-    if ret== 'FINATE':
+    if ret== 'FINITE':
         #print(rf)
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
         return ret
