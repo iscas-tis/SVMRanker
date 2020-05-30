@@ -39,7 +39,7 @@ def heuristicImplicationConstraint(list_of_old_expr, new_expr, isReal):
     if(isReal):
         result = True
         for old_expr in list_of_old_expr:
-            result = And(True, Implies(fpGEQ(old_expr, 0), fpGEQ(new_expr, 0)))
+            result = And(True, Implies(old_expr > 0, new_expr > 0))
         return result
 
 

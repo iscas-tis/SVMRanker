@@ -7,7 +7,7 @@ from util import *
 from FindMultiphaseUtil import *
 from LearnRanker import *
 
-def LearnRankerNoBoundLoopBody(L_test, x, y):
+def LearnRankerNoBoundLoopBody(L_test, x, y, old_coef_array):
     ret = 'UNKNOWN'
     print("L:",L_test[2])
     print(L_test[3])
@@ -15,20 +15,21 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     listOfUxDimension = []
     for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2] + 1)
-    print("listOfDimension",listOfUxDimension)
+    #print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
         listOfUx,
         [0.001] *len(listOfUx)
     )
-    ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
+    #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
+    ret, new_x, new_y = train_ranking_function_heuristic_implication(L_test, rf, x, y, old_coef_array)
     return ret, rf
 
 def LearnRankerBoundedLoopBody(L_test, x, y):
     ret = 'UNKNOWN'
-    print("L:",L_test[2])
-    print(L_test[3])
-    print(L_test[4])
+    print("L[2]:",L_test[2])
+    print("L[3]:",L_test[3])
+    print("L[4]:",L_test[4])
     listOfUxDimension = []
     for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2] + 1)
@@ -80,24 +81,35 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
     return ret,new_x,new_y
 
-def LearnMultiRanker(L, x, y, upperLoopBound=5):
+def LearnMultiRanker(L, x, y, upperLoopBound=3):
     ret = 'UNKNOWN'
-    print("----------------START LEARNING MULTI-------------------")
+    print("----------------START MAIN LOOP-------------------")
     
     for phaseNum in range(upperLoopBound):
         L_current = L
+        old_coef_array = []
+        print("----------------START LEARNING MULTI-------------------")
         for i in range(phaseNum+1):
             if(i < phaseNum):
+                print("---------------------LEARN RANKING PART----------------------")
+                print("---------LoopNum ", i)
+                print("---------LoopBound ", phaseNum)
                 # if the phase does not reach the bound, should find ranking no bound
-                ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y)
+                ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y, old_coef_array)
                 L_current = ConjunctRankConstraintL(L_current, rf)
+                old_coef_array.append(rf.coefficients)
             else:
                 # the phase reach the bound, should find ranking function here
+                print("---------------------LEARN RANKING FUNCTION----------------------")
+                print("---------LoopNum ", i)
+                print("---------LoopBound ", phaseNum)
                 ret, rf = LearnRankerBoundedLoopBody(L_current, x, y)
                 if ret == 'FINATE':
                     return 'FINATE'
                 elif ret == 'INFINATE':
                     return 'INFANITE'
-        i += 1
+            i += 1
+        print("---------------- LEARNING OVER-------------------")
+        print("---------RESULT:", ret, rf)
     print(rf)
     return 'UNKNOWN'

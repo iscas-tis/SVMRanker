@@ -88,10 +88,11 @@ def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
 
 # add crafted parse template 
 def parse_template_handcraft(list, numOfVar, ListOfDimension):
-	print(len(list),numOfVar,ListOfDimension)
-	print(list)
+	#print(len(list),numOfVar,ListOfDimension)
+	#print(list)
 	arrays=np.array(list)
 	arrays=arrays.reshape(-1,numOfVar+1)
+	print("Template we used x[0], x[1], ..., b: ")
 	print(arrays)
 	if(len(arrays) != np.sum(ListOfDimension)):
 		raise Exception('Wrong template format')
@@ -144,7 +145,7 @@ def sample_points_bisection(L,n,rf):
 		cond = L[-1]
 	else:
 		cond = L[-2]
-	for i in range(10):
+	for i in range(20):
 		x = [z3.Real('xr_%s' % i) if rt else z3.Int('xi_%s' % i) for i in range(n)]
 		s = z3.Solver()
 		s.push()
@@ -175,6 +176,7 @@ def sample_points_bisection(L,n,rf):
 						if s_p_ is None:
 							break
 						for x,y in rf.get_example(s_p,s_p_):
+							#print("sample: ", x, y)
 							yield('UNKNOWN',x,y)
 					m = (s_p+u_p)/2
 					# print(m)

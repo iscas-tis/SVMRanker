@@ -1,0 +1,540 @@
+L[2]: 2
+L[3]: 2
+L[4]: [[[1, 0, 1], [0, 1, 1], [0, 0, 1]], [[1, 0, 1], [0, 1, 1], [0, 0, 1]]]
+listOfDimension [3, 3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]
+ [1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+And(Or(xr_0 > 0, xr_1 > 0), xr_1 < 0)
+[0.0000000e+00 0.0000000e+00 0.0000000e+00 8.8817842e-16 1.0000000e+00
+ 0.0000000e+00] 1
+[-8.8817842e-16 -1.0000000e+00 -0.0000000e+00 -8.8817842e-16
+  8.8817842e-16 -1.0000000e+00] -1
+[ 8.8817842e-16 -8.8817842e-16  1.0000000e+00  0.0000000e+00
+  0.0000000e+00  0.0000000e+00] 1
+2020-05-30-11-07-57   >>>>   End sampling point
+
+sampling time = 413.357 ms,
+
+
+       ########################################         
+
+iteration 0 with 60 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.101 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+[xr_1 = -9811/4878, xr_0 = 1]
+close alarm signal.
+ranking function : 0.9756 *  x[1]^1 + 0.4938 * 1; 0.4938 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 15.685 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.0112751127511275]
+
+sampling time = 1.726 ms
+
+
+       ########################################         
+
+iteration 1 with 63 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.819 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+[xr_1 = -23002/2265, xr_0 = 1]
+close alarm signal.
+ranking function : 0.3087 *  x[0]^1 + 0.9605 *  x[1]^1 + 0.6101 * 1; 0.734 *  x[0]^1 + 0.3824 *  x[1]^1 + 0.9784 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 23.422 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -10.155408388520971]
+
+sampling time = 2.308 ms
+
+
+       ########################################         
+
+iteration 2 with 66 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.809 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+[xr_1 = -20643/106, xr_0 = 1]
+close alarm signal.
+ranking function : 0.0853 *  x[0]^1 + 0.9545 *  x[1]^1 + 0.8854 * 1; 0.9439 *  x[0]^1 + 0.0946 *  x[1]^1 + 0.9775 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 21.485 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -194.74528301886792]
+
+sampling time = 1.343 ms
+
+
+       ########################################         
+
+iteration 3 with 69 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 4.052 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.0177 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9714 * 1; 0.9525 *  x[0]^1 + 0.0048 *  x[1]^1 + 0.9757 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 26.490 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -610.0416666666666]
+
+sampling time = 0.959 ms
+
+
+       ########################################         
+
+iteration 4 with 72 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 5.371 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.02 *  x[0]^1 + 0.9524 *  x[1]^1 + 0.9746 * 1; 0.9524 *  x[0]^1 + 0.0015 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 22.173 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -1952]
+
+sampling time = 2.075 ms
+
+
+       ########################################         
+
+iteration 5 with 75 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.558 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.0222 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9754 * 1; 0.9525 *  x[0]^1 + 0.0005 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 21.320 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -5856.2]
+
+sampling time = 0.973 ms
+
+
+       ########################################         
+
+iteration 6 with 78 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.587 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.0222 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9755 * 1; 0.9525 *  x[0]^1 + 0.0004 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 23.446 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -7320.25]
+
+sampling time = 0.949 ms
+
+
+       ########################################         
+
+iteration 7 with 81 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.768 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.0221 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9755 * 1; 0.9525 *  x[0]^1 + 0.0003 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 19.056 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -9760.333333333334]
+
+sampling time = 1.643 ms
+
+
+       ########################################         
+
+iteration 8 with 84 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 4.249 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.022 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9756 * 1; 0.9525 *  x[0]^1 + 0.0002 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 22.690 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -14640.5]
+
+sampling time = 0.959 ms
+
+
+       ########################################         
+
+iteration 9 with 87 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.723 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.0222 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9757 * 1; 0.9525 *  x[0]^1 + 0.0001 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-57   >>>>   End verify ranking function
+
+verifying time = 20.536 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -29281]
+
+sampling time = 1.541 ms
+
+
+       ########################################         
+
+iteration 10 with 90 examples
+
+2020-05-30-11-07-57   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-57   >>>>   End train ranking function
+
+train_ranking_functioning time = 4.833 ms
+
+
+2020-05-30-11-07-57   >>>>   Start verify ranking function
+
+start alarm signal.
+close alarm signal.
+ranking function : 0.022 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9758 * 1; 0.9525 *  x[0]^1 + 0.0001 *  x[1]^1 + 0.9756 * 1
+
+2020-05-30-11-07-58   >>>>   End verify ranking function
+
+verifying time = 19.842 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -29281]
+
+sampling time = 2.560 ms
+
+
+       ########################################         
+
+iteration 11 with 93 examples
+
+2020-05-30-11-07-58   >>>>   Start train ranking function
+
+training done
+2020-05-30-11-07-58   >>>>   End train ranking function
+
+train_ranking_functioning time = 5.149 ms
+
+
+2020-05-30-11-07-58   >>>>   Start verify ranking function
+
+start alarm signal.
+valid ranking function
+close alarm signal.
+ranking function : 0.022 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9757 * 1; 0.9525 *  x[0]^1 + 0.9756 * 1
+
+2020-05-30-11-07-58   >>>>   End verify ranking function
+
+verifying time = 17.661 ms
+
+
+Found Ranking Function: 0.022 *  x[0]^1 + 0.9525 *  x[1]^1 + 0.9757 * 1; 0.9525 *  x[0]^1 + 0.9756 * 1
+
