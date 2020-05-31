@@ -81,7 +81,7 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
     return ret,new_x,new_y
 
-def train_multi_ranking_function(L, x, y, upperLoopBound=3):
+def train_multi_ranking_function(L, x, y, upperLoopBound=5):
     ret = 'UNKNOWN'
     print("----------------START MAIN LOOP-------------------")
     
