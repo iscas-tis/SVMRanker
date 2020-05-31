@@ -413,7 +413,7 @@ def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
 			s_t = datetime.datetime.now()
 			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
 		count += 1
-		if count >= 200:
+		if count >= 150:
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y

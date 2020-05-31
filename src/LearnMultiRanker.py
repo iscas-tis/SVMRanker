@@ -121,7 +121,7 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     return 'UNKNOWN'
 '''
 
-def train_multi_ranking_function_incremental(L, x, y, depthBound=10):
+def train_multi_ranking_function_incremental(L, x, y, depthBound=5):
     
     print("-------------------START INCREMENTAL LEARNING--------------------")
     i = 0
