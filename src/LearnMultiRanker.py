@@ -83,7 +83,7 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
 
 def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     ret = 'UNKNOWN'
-    print("----------------START MAIN LOOP-------------------")
+    print("----------------START LOOP LEARNING-------------------")
     
     for phaseNum in range(upperLoopBound):
         rankingFunctionRecordingList = []
@@ -119,6 +119,27 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
         print("---------RESULT:", ret, rf)
     printSummary(phaseNum + 1, 'UNKNOWN', rankingFunctionRecordingList)
     return 'UNKNOWN'
+
+def train_multi_ranking_function_incremental(L, x, y, depthBound=4):
+    
+    print("-------------------START INCREMENTAL LEARNING--------------------")
+    i = 0
+    ret = 'UNKNOWN'
+    L_current = L
+    rf_list = []
+    while i < depthBound and ret == 'UNKNOWN':
+        print("-------------INCREASE TIMES:", i)
+        ret, rf = LearnRankerBoundedLoopBody(L_current, x, y)
+        rf_list.append(rf)
+        if(ret == 'FINITE' or ret == 'INFINITE'):
+            printSummary(i+1, ret, rf_list)
+            return rf_list
+        L_current = ConjunctRankConstraintL(L_current, rf)
+        i += 1
+    printSummary(i+1, ret, rf_list)
+    return rf_list
+
+
 
 
 def LearnMultiRanker(templateFilePath, indexOfTemplate, x, y):

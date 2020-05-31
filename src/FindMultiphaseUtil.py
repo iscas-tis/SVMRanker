@@ -88,6 +88,10 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, NumOfVars, isReal), L_old[6](x)))
     return L_new
 
+def changeTemplate(L, template):
+    L[4] = template;
+
+
 def printSummary(multidepth, ret, listOfRFs):
     print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
     print("MULTIPHASE DEPTH: ", multidepth)
