@@ -23,7 +23,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
-    return ret, rf
+    return 'UNKNOWN', rf
 
 def LearnRankerBoundedLoopBody(L_test, x, y):
     ret = 'UNKNOWN'
@@ -79,8 +79,8 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
     if ret== 'FINITE':
         print(rf)
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
-    return ret,new_x,new_y
-
+    return 'UNKNOWN',new_x,new_y
+'''
 def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     ret = 'UNKNOWN'
     print("----------------START LOOP LEARNING-------------------")
@@ -119,8 +119,9 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
         print("---------RESULT:", ret, rf)
     printSummary(phaseNum + 1, 'UNKNOWN', rankingFunctionRecordingList)
     return 'UNKNOWN'
+'''
 
-def train_multi_ranking_function_incremental(L, x, y, depthBound=4):
+def train_multi_ranking_function_incremental(L, x, y, depthBound=10):
     
     print("-------------------START INCREMENTAL LEARNING--------------------")
     i = 0
@@ -130,10 +131,13 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=4):
     while i < depthBound and ret == 'UNKNOWN':
         print("-------------INCREASE TIMES:", i)
         ret, rf = LearnRankerBoundedLoopBody(L_current, x, y)
-        rf_list.append(rf)
         if(ret == 'FINITE' or ret == 'INFINITE'):
+            rf_list.append(rf)
             printSummary(i+1, ret, rf_list)
             return rf_list
+        else:
+            ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y)
+            rf_list.append(rf)
         L_current = ConjunctRankConstraintL(L_current, rf)
         i += 1
     printSummary(i+1, ret, rf_list)
