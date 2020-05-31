@@ -14,7 +14,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     print(L_test[4])
     listOfUxDimension = []
     for i in range(L_test[3]):
-        listOfUxDimension.append(L_test[2] + 1)
+        listOfUxDimension.append(len(L_test[4+i]))
     #print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
@@ -32,7 +32,7 @@ def LearnRankerBoundedLoopBody(L_test, x, y):
     print("L[4]:",L_test[4])
     listOfUxDimension = []
     for i in range(L_test[3]):
-        listOfUxDimension.append(L_test[2] + 1)
+        listOfUxDimension.append(len(L_test[4+i]))
     print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedTemplate(
@@ -130,15 +130,23 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=5):
     rf_list = []
     while i < depthBound and ret == 'UNKNOWN':
         print("-------------INCREASE TIMES:", i)
+        print("--------LEARN BOUNDED")
         ret, rf = LearnRankerBoundedLoopBody(L_current, x, y)
         if(ret == 'FINITE' or ret == 'INFINITE'):
             rf_list.append(rf)
             printSummary(i+1, ret, rf_list)
             return rf_list
         else:
+            print("--------LEARN UNBOUNDED")
             ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y)
-            rf_list.append(rf)
+            if(isUselessRankingFunction(rf)):
+                ret = 'UNKNOWN'
+                printSummary(i+1, ret, rf_list)
+                return rf_list
+            else:
+                rf_list.append(rf)
         L_current = ConjunctRankConstraintL(L_current, rf)
+        #changeTemplate(L_current, [[1,0,1],[0,1,1],[0,0,1]])
         i += 1
     printSummary(i+1, ret, rf_list)
     return rf_list

@@ -17,3 +17,4 @@ from z3 import *
 #ret, rf = LearnRankerBoundedLoopBody(L_new, (), ())
 
 train_multi_ranking_function_incremental(L_branch, (), ())
+#generateTemplateLib(3)

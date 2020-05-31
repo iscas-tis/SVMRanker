@@ -245,7 +245,7 @@ class NestedNoBoundTemplate:
 		else:
 			return False, model
 
-	@set_timeout(4, z3_verify_fail)
+	'''@set_timeout(4, z3_verify_fail)
 	def z3_verify_heuristic_implication(self, n, coef, cond, prime, old_coef_array, tr=True):
 		x = [z3.Real('xr_%s' % i) if tr else z3.Int('xi_%s' % i) for i in range(n)]
 		x_ = prime(x)
@@ -294,7 +294,7 @@ class NestedNoBoundTemplate:
 			print('valid no bound ranking function')
 			return True, model
 		else:
-			return False, model
+			return False, model'''
 	
 	def __str__(self):
 		result = ''

@@ -89,8 +89,39 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     return L_new
 
 def changeTemplate(L, template):
-    L[4] = template;
+    L[4] = template
 
+def generateTemplateLib(numOfVar, maxPower=1):
+    # numOfvar represents the maximum diemension of a function
+    # maxPower represents the maximum power of a variable, default 1 meaning linear functions
+    # for linear template the function will finally generate a list of templates of num 2^varnum
+    listOfUxVectors = []
+    for i in range(numOfVar):
+        UxTemplate = []
+        for j in range(numOfVar):
+            UxTemplate.append(0)
+        UxTemplate.append(1)
+        UxTemplate[i] = 1
+        listOfUxVectors.append(UxTemplate)
+    UxTemplate = []
+    for j in range(numOfVar):
+        UxTemplate.append(0)
+    UxTemplate.append(1)
+    listOfUxVectors.append(UxTemplate)
+    UxTemplate = []
+    for k in range(numOfVar+1):
+        UxTemplate.append(0)
+    listOfUxVectors.append(UxTemplate)
+    print(listOfUxVectors)
+
+
+def isUselessRankingFunction(rf):
+    for c in rf.coefficients:
+        if(c != 0):
+            return False
+    return True
+
+    
 
 def printSummary(multidepth, ret, listOfRFs):
     print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
