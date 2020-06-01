@@ -24,12 +24,12 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     if ret == 'FINITE':
-        no_bound_return = 'UNKNOWN'
+        no_bound_return = 'CORRECT'
     elif ret == 'INFINITE':
         no_bound_return = 'INFINITE'
     else:
         no_bound_return = 'FALSE'
-    return 'UNKNOWN', rf
+    return no_bound_return, rf
 
 def LearnRankerBoundedLoopBody(L_test, x, y):
     ret = 'UNKNOWN'
@@ -152,11 +152,57 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
                 return rf_list
             else:
                 rf_list.append(rf)
+            ret = 'UNKNOWN'
         L_current = ConjunctRankConstraintL(L_current, rf)
-        #changeTemplate(L_current, [[1,0,1],[0,1,1],[0,0,1]])
+        changeTemplate(L_current, [[1,0,1],[0,1,1],[0,0,1]])
         i += 1
     printSummary(i+1, ret, rf_list)
     return rf_list
+
+
+def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound=3):
+
+    print("-------------------START BACKTRACK LEARNING--------------------")
+    result = 'UNKNOWN'
+    if currentDepth < depthBound:
+        while templateNum < len(templates):
+            print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn unbound ---------------------" )
+            changeTemplate(L, templates[templateNum])
+            ret, rf = LearnRankerNoBoundLoopBody(L, (), ())
+            if ret == 'CORRECT':
+                rf_list.append(rf)
+                L_new = ConjunctRankConstraintL(L, rf)
+                result, rf_list = train_multi_ranking_function_backtracking(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound)
+                if result == 'UNKNOWN':
+                    rf_list.pop()
+                    templateNum += 1
+                else:
+                    return result, rf_list
+            elif ret == 'INFINITE':
+                rf_list.append(rf)
+                return 'INFINITE', rf_list
+            elif ret == 'FALSE':
+                templateNum += 1
+        return 'UNKNOWN', rf_list
+    elif currentDepth == depthBound:
+        while templateNum < len(templates) and result == 'UNKNOWN':
+            print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn bounded ---------------------" )
+            changeTemplate(L, templates[templateNum])
+            result, rf = LearnRankerBoundedLoopBody(L, (), ())
+            if result != 'UNKNOWN':
+                rf_list.append(rf)
+                return result, rf_list
+            templateNum += 1
+        rf_list.append(rf)
+        return 'UNKNOWN', rf_list
+        # backtracking 
+    else:
+        # not reachable 
+        return 'UNKNOWN', rf_list
+
+
+
+
 
 
 

@@ -34,14 +34,14 @@ def coefDotExprZ3Arithmetic(x, coef, NumOfVars, isReal):
         #print(result)
         #print(type(result))
         return result
-
+'''
 def heuristicImplicationConstraint(list_of_old_expr, new_expr, isReal):
     if(isReal):
         result = True
         for old_expr in list_of_old_expr:
             result = And(True, Implies(old_expr > 0, new_expr > 0))
         return result
-
+'''
 
 def ConjunctRankConstraintL(L_old, rf, isReal=True):
     # conjunct the ranking function constrain f <= 0 with the loop guard in L_old
@@ -87,7 +87,7 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     # z3 loop guard
     L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, NumOfVars, isReal), L_old[6](x)))
     return L_new
-
+'''-------------------------functions for generating templates lib---------------------------'''
 def changeTemplate(L, template):
     L[4] = template
 
@@ -122,7 +122,22 @@ def isUselessRankingFunction(rf):
     return True
 
     
+'''--------------------Attributes for testing-------------------'''
 
+TemplatesListTest = [
+    [[1,0,1],
+     [0,1,1],
+     [0,0,1]],
+    [[1,0,1],
+     [0,0,0],
+     [0,0,1]],
+    [[0,0,0],
+     [0,1,1],
+     [0,0,1]]
+]
+
+
+'''--------------------Print methods-------------------------'''
 def printSummary(multidepth, ret, listOfRFs):
     print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
     print("MULTIPHASE DEPTH: ", multidepth)
