@@ -14,7 +14,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     print(L_test[4])
     listOfUxDimension = []
     for i in range(L_test[3]):
-        listOfUxDimension.append(len(L_test[4+i]))
+        listOfUxDimension.append(L_test[2]+1)
     #print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
@@ -23,6 +23,12 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
+    if ret == 'FINITE':
+        no_bound_return = 'UNKNOWN'
+    elif ret == 'INFINITE':
+        no_bound_return = 'INFINITE'
+    else:
+        no_bound_return = 'FALSE'
     return 'UNKNOWN', rf
 
 def LearnRankerBoundedLoopBody(L_test, x, y):
@@ -32,7 +38,7 @@ def LearnRankerBoundedLoopBody(L_test, x, y):
     print("L[4]:",L_test[4])
     listOfUxDimension = []
     for i in range(L_test[3]):
-        listOfUxDimension.append(len(L_test[4+i]))
+        listOfUxDimension.append(L_test[2]+1)
     print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedTemplate(
@@ -121,7 +127,7 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     return 'UNKNOWN'
 '''
 
-def train_multi_ranking_function_incremental(L, x, y, depthBound=5):
+def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
     
     print("-------------------START INCREMENTAL LEARNING--------------------")
     i = 0
@@ -138,6 +144,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=5):
             return rf_list
         else:
             print("--------LEARN UNBOUNDED")
+            # TODO: add loop here for the change of unbound template
             ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y)
             if(isUselessRankingFunction(rf)):
                 ret = 'UNKNOWN'

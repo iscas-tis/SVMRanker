@@ -2,7 +2,7 @@
 @author Xie Li
 '''
 from LearnRanker import *
-from Loops import L_test, L_hand, L_hand2, L_incremental, L_branch
+from Loops import L_test, L_hand, L_hand2, L_incremental, L_branch, L_nondet
 from FindMultiphaseUtil import *
 from LearnMultiRanker import *
 import os

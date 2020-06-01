@@ -223,10 +223,10 @@ class NestedNoBoundTemplate:
 				sum_dot = sum(i[0] * i[1] for i in zip(ceilings, self.list_of_Gx[index](x, x_)))
 				right_up_bound = int(multiplied * self.list_of_C[index])
 			s.add(sum_dot < right_up_bound)
-			#print('constraint system: ', s)
+			print('constraint system: ', s)
 			result = s.check()
 			valid = result == z3.unsat
-			#print(valid,result)
+			print(valid,result)
 			if result == z3.sat:
 				model = s.model()
 				model = [eval(model[v].__str__()) for v in x]
