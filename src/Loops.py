@@ -32,7 +32,7 @@ from Templates import *
 
 #TODO: change the update and verificationOfUpdate into list of lambda expression
 
-L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 4*x[1] >= x[0], 
+L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 2*x[1] >= x[0], 
          lambda x :  [2*x[0], 3*x[1]],
          2,
          1,
@@ -40,7 +40,7 @@ L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 4*x[1] 
           [0, 1, 1],
           [0, 0, 1]],
          lambda x :  [2*x[0], 3*x[1]],
-         lambda x : And(x[0] >= 1, x[1] >= 1, x[0] >= x[1], 4*x[1] >= x[0])
+         lambda x : And(x[0] >= 1, x[1] >= 1, x[0] >= x[1], 2*x[1] >= x[0])
          ]
 
 

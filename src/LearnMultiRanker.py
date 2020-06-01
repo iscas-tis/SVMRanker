@@ -160,7 +160,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
     return rf_list
 
 
-def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound=3):
+def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound=2):
 
     print("-------------------START BACKTRACK LEARNING--------------------")
     result = 'UNKNOWN'
@@ -193,7 +193,6 @@ def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templ
                 rf_list.append(rf)
                 return result, rf_list
             templateNum += 1
-        rf_list.append(rf)
         return 'UNKNOWN', rf_list
         # backtracking 
     else:
