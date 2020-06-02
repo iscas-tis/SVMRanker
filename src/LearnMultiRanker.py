@@ -134,6 +134,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
     ret = 'UNKNOWN'
     L_current = L
     rf_list = []
+    
     while i < depthBound and ret == 'UNKNOWN':
         print("-------------INCREASE TIMES:", i)
         print("--------LEARN BOUNDED")
@@ -160,11 +161,17 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
     return rf_list
 
 
-def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound=2):
+def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound=3):
 
     print("-------------------START BACKTRACK LEARNING--------------------")
     result = 'UNKNOWN'
     if currentDepth < depthBound:
+        for num in range(len(templates)):
+            changeTemplate(L, templates[num])
+            result, rf = LearnRankerBoundedLoopBody(L, (), ())
+            if(result != 'UNKNOWN'):
+                rf_list.append(rf)
+                return result, rf
         while templateNum < len(templates):
             print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn unbound ---------------------" )
             changeTemplate(L, templates[templateNum])
