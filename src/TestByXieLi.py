@@ -19,5 +19,6 @@ from z3 import *
 #train_multi_ranking_function_incremental(L_branch, (), ())
 #generateTemplateLib(3)
 
-result, rf_list = train_multi_ranking_function_backtracking(L_branch, (), (), [], TemplatesListTest, 0, 1, 4)
+#result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_branch, (), (), [], TemplatesListTest, 0, 1, 4)
+result, rf_list = train_multi_ranking_function_backtracking(L_branch, (), (), TemplatesListTest, 3)
 printSummary(len(rf_list), result, rf_list)

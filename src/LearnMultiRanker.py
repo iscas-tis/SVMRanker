@@ -161,7 +161,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
     return rf_list
 
 
-def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound=3):
+def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound):
 
     print("-------------------START BACKTRACK LEARNING--------------------")
     result = 'UNKNOWN'
@@ -181,7 +181,7 @@ def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templ
             if ret == 'CORRECT':
                 rf_list.append(rf)
                 L_new = ConjunctRankConstraintL(L, rf)
-                result, rf_list = train_multi_ranking_function_backtracking(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound)
+                result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound)
                 print("-----RESULT:", result, "-------")
                 if result == 'UNKNOWN':
                     rf_list.pop()
@@ -213,8 +213,15 @@ def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templ
 
 
 
-
-
+def train_multi_ranking_function_backtracking(L, x, y, templates, depthBound):
+    i = 1
+    result = 'UNKNOWN'
+    
+    while i <= depthBound and result == 'UNKNOWN':
+        rf_list = []
+        ret, rf_list = train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templates, 0, 1, i)
+        i+=1
+    return ret, rf_list
 
 
 
