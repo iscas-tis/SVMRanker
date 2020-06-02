@@ -1,6 +1,1463 @@
--------------------START INCREMENTAL LEARNING--------------------
--------------INCREASE TIMES: 0
---------LEARN BOUNDED
+-------------------START BACKTRACK LEARNING--------------------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.5, 2.5]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-2.0, 2.0]
+[-2.0, 2.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.5, 1.5]
+[-1.5, 2.0]
+[-1.5, 2.5]
+[-1.0, 0.5]
+[-1.0, 1.0]
+[-1.0, 1.5]
+[-1.0, 2.0]
+[-1.0, 2.5]
+[-0.5, 0.5]
+[-0.5, 1.0]
+[-0.5, 1.5]
+[-0.5, 2.0]
+[-0.5, 2.5]
+[0.0, 0.5]
+[0.0, 1.0]
+[0.0, 1.5]
+[0.0, 2.0]
+[0.0, 2.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[0.5, -0.5]
+[0.5, 0.0]
+[0.5, 0.5]
+[0.5, 1.0]
+[0.5, 1.5]
+[0.5, 2.0]
+[0.5, 2.5]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.0, -1.0]
+[1.0, -0.5]
+[1.0, 0.0]
+[1.0, 0.5]
+[1.0, 1.0]
+[1.0, 1.5]
+[1.0, 2.0]
+[1.0, 2.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[1.5, -1.5]
+[1.5, -1.0]
+[1.5, -0.5]
+[1.5, 0.0]
+[1.5, 0.5]
+[1.5, 1.0]
+[1.5, 1.5]
+[1.5, 2.0]
+[1.5, 2.5]
+[2.0, -2.5]
+[2.0, -2.0]
+[2.0, -1.5]
+[2.0, -1.0]
+[2.0, -0.5]
+[2.0, 0.0]
+[2.0, 0.5]
+[2.0, 1.0]
+[2.0, 1.5]
+[2.0, 2.0]
+[2.0, 2.5]
+[2.5, -2.5]
+[2.5, -2.0]
+[2.5, -1.5]
+[2.5, -1.0]
+[2.5, -0.5]
+[2.5, 0.0]
+[2.5, 0.5]
+[2.5, 1.0]
+[2.5, 1.5]
+[2.5, 2.0]
+[2.5, 2.5]
+2020-06-02-10-06-28   >>>>   End sampling point
+
+sampling time = 42.504 ms,
+
+
+       ########################################         
+
+iteration 0 with 172 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.250 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9532, 0.9667, 2.4]
+close alarm signal.
+ranking function : 0.9532 *  x[0]^1 + 0.9667 *  x[1]^1 + 2.4 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 11.490 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-4.581095258078053, 1]
+
+sampling time = 0.580 ms
+
+
+       ########################################         
+
+iteration 1 with 174 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.118 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8341, 0.9961, 2.7593]
+close alarm signal.
+ranking function : 0.8341 *  x[0]^1 + 0.9961 *  x[1]^1 + 2.7593 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 10.539 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-5.701234863925189, 1]
+
+sampling time = 0.553 ms
+
+
+       ########################################         
+
+iteration 2 with 176 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.226 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7634, 1.1292, 3.1522]
+close alarm signal.
+ranking function : 0.7634 *  x[0]^1 + 1.1292 *  x[1]^1 + 3.1522 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 10.528 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-6.918260413937648, 1]
+
+sampling time = 0.649 ms
+
+
+       ########################################         
+
+iteration 3 with 178 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.354 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.6921, 1.2359, 3.4302]
+close alarm signal.
+ranking function : 0.6921 *  x[0]^1 + 1.2359 *  x[1]^1 + 3.4302 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 10.314 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-8.18682271348071, 1]
+
+sampling time = 0.535 ms
+
+
+       ########################################         
+
+iteration 4 with 180 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.995 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.6185, 1.303, 3.6276]
+close alarm signal.
+ranking function : 0.6185 *  x[0]^1 + 1.303 *  x[1]^1 + 3.6276 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 13.756 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-9.588682295877122, 1]
+
+sampling time = 0.523 ms
+
+
+       ########################################         
+
+iteration 5 with 182 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.825 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.5431, 1.327, 3.7378]
+close alarm signal.
+ranking function : 0.5431 *  x[0]^1 + 1.327 *  x[1]^1 + 3.7378 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 16.941 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-11.167004234947523, 1]
+
+sampling time = 1.290 ms
+
+
+       ########################################         
+
+iteration 6 with 184 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.256 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.4672, 1.3165, 3.7656]
+close alarm signal.
+ranking function : 0.4672 *  x[0]^1 + 1.3165 *  x[1]^1 + 3.7656 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 15.963 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-13.018193493150685, 1]
+
+sampling time = 0.533 ms
+
+
+       ########################################         
+
+iteration 7 with 186 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.780 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.3918, 1.2716, 3.7109]
+close alarm signal.
+ranking function : 0.3918 *  x[0]^1 + 1.2716 *  x[1]^1 + 3.7109 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 13.084 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-15.269270035732516, 1]
+
+sampling time = 1.196 ms
+
+
+       ########################################         
+
+iteration 8 with 188 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.748 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.3176, 1.1935, 3.5748]
+close alarm signal.
+ranking function : 0.3176 *  x[0]^1 + 1.1935 *  x[1]^1 + 3.5748 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 19.348 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-18.16215365239295, 1]
+
+sampling time = 0.539 ms
+
+
+       ########################################         
+
+iteration 9 with 190 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.044 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.2466, 1.0811, 3.3553]
+close alarm signal.
+ranking function : 0.2466 *  x[0]^1 + 1.0811 *  x[1]^1 + 3.3553 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 19.022 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-22.045417680454175, 1]
+
+sampling time = 0.528 ms
+
+
+       ########################################         
+
+iteration 10 with 192 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.891 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1887, 0.9966, 3.1786]
+close alarm signal.
+ranking function : 0.1887 *  x[0]^1 + 0.9966 *  x[1]^1 + 3.1786 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 16.847 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-27.425543190249073, 1]
+
+sampling time = 0.742 ms
+
+
+       ########################################         
+
+iteration 11 with 194 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.080 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1523, 0.9879, 3.1496]
+close alarm signal.
+ranking function : 0.1523 *  x[0]^1 + 0.9879 *  x[1]^1 + 3.1496 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 16.183 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-33.732764281024295, 1]
+
+sampling time = 0.532 ms
+
+
+       ########################################         
+
+iteration 12 with 196 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.901 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1168, 0.9806, 3.1345]
+close alarm signal.
+ranking function : 0.1168 *  x[0]^1 + 0.9806 *  x[1]^1 + 3.1345 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 14.997 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-43.79366438356164, 1]
+
+sampling time = 0.625 ms
+
+
+       ########################################         
+
+iteration 13 with 198 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.835 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0946, 0.9728, 3.1239]
+close alarm signal.
+ranking function : 0.0946 *  x[0]^1 + 0.9728 *  x[1]^1 + 3.1239 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 14.498 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-53.87632135306554, 1]
+
+sampling time = 1.189 ms
+
+
+       ########################################         
+
+iteration 14 with 200 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 4.722 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0798, 0.9675, 3.1131]
+close alarm signal.
+ranking function : 0.0798 *  x[0]^1 + 0.9675 *  x[1]^1 + 3.1131 * 1
+
+2020-06-02-10-06-28   >>>>   End verify ranking function
+
+verifying time = 12.615 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-63.666666666666664, 1]
+
+sampling time = 0.823 ms
+
+
+       ########################################         
+
+iteration 15 with 202 examples
+
+2020-06-02-10-06-28   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-28   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.397 ms
+
+
+2020-06-02-10-06-28   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0608, 0.9644, 3.1148]
+close alarm signal.
+ranking function : 0.0608 *  x[0]^1 + 0.9644 *  x[1]^1 + 3.1148 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 13.174 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-83.53947368421052, 1]
+
+sampling time = 0.587 ms
+
+
+       ########################################         
+
+iteration 16 with 204 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 4.539 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0474, 0.96, 3.1029]
+close alarm signal.
+ranking function : 0.0474 *  x[0]^1 + 0.96 *  x[1]^1 + 3.1029 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 19.534 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-106.81223628691983, 1]
+
+sampling time = 0.544 ms
+
+
+       ########################################         
+
+iteration 17 with 206 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 4.715 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0423, 0.957, 3.0898]
+close alarm signal.
+ranking function : 0.0423 *  x[0]^1 + 0.957 *  x[1]^1 + 3.0898 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.099 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-119.3096926713948, 1]
+
+sampling time = 0.590 ms
+
+
+       ########################################         
+
+iteration 18 with 208 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.543 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0349, 0.9554, 3.0871]
+close alarm signal.
+ranking function : 0.0349 *  x[0]^1 + 0.9554 *  x[1]^1 + 3.0871 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 13.660 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-144.4842406876791, 1]
+
+sampling time = 0.603 ms
+
+
+       ########################################         
+
+iteration 19 with 210 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.577 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0293, 0.9542, 3.0883]
+close alarm signal.
+ranking function : 0.0293 *  x[0]^1 + 0.9542 *  x[1]^1 + 3.0883 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 18.712 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-172.09897610921502, 1]
+
+sampling time = 0.563 ms
+
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 0, 0], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 0 0]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.5, 2.5]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-2.0, 2.0]
+[-2.0, 2.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.5, 1.5]
+[-1.5, 2.0]
+[-1.5, 2.5]
+[-1.0, 0.5]
+[-1.0, 1.0]
+[-1.0, 1.5]
+[-1.0, 2.0]
+[-1.0, 2.5]
+[-0.5, 0.5]
+[-0.5, 1.0]
+[-0.5, 1.5]
+[-0.5, 2.0]
+[-0.5, 2.5]
+[0.0, 0.5]
+[0.0, 1.0]
+[0.0, 1.5]
+[0.0, 2.0]
+[0.0, 2.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[0.5, -0.5]
+[0.5, 0.0]
+[0.5, 0.5]
+[0.5, 1.0]
+[0.5, 1.5]
+[0.5, 2.0]
+[0.5, 2.5]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.0, -1.0]
+[1.0, -0.5]
+[1.0, 0.0]
+[1.0, 0.5]
+[1.0, 1.0]
+[1.0, 1.5]
+[1.0, 2.0]
+[1.0, 2.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[1.5, -1.5]
+[1.5, -1.0]
+[1.5, -0.5]
+[1.5, 0.0]
+[1.5, 0.5]
+[1.5, 1.0]
+[1.5, 1.5]
+[1.5, 2.0]
+[1.5, 2.5]
+[2.0, -2.5]
+[2.0, -2.0]
+[2.0, -1.5]
+[2.0, -1.0]
+[2.0, -0.5]
+[2.0, 0.0]
+[2.0, 0.5]
+[2.0, 1.0]
+[2.0, 1.5]
+[2.0, 2.0]
+[2.0, 2.5]
+[2.5, -2.5]
+[2.5, -2.0]
+[2.5, -1.5]
+[2.5, -1.0]
+[2.5, -0.5]
+[2.5, 0.0]
+[2.5, 0.5]
+[2.5, 1.0]
+[2.5, 1.5]
+[2.5, 2.0]
+[2.5, 2.5]
+2020-06-02-10-06-29   >>>>   End sampling point
+
+sampling time = 49.376 ms,
+
+
+       ########################################         
+
+iteration 0 with 172 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.847 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9217, 1.5734, 1.5734]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9217 *  x[0]^1 + 1.5734 * 1 + 1.5734 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 10.736 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.964 ms
+
+
+       ########################################         
+
+iteration 1 with 174 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.412 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9217, 1.5734, 1.5734]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9217 *  x[0]^1 + 1.5734 * 1 + 1.5734 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 13.860 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.553 ms
+
+
+       ########################################         
+
+iteration 2 with 176 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.539 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9217, 1.5734, 1.5734]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9217 *  x[0]^1 + 1.5734 * 1 + 1.5734 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 10.274 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.649 ms
+
+
+       ########################################         
+
+iteration 3 with 178 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.860 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9217, 1.5734, 1.5734]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9217 *  x[0]^1 + 1.5734 * 1 + 1.5734 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.219 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.534 ms
+
+
+       ########################################         
+
+iteration 4 with 180 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.878 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9217, 1.5734, 1.5734]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9217 *  x[0]^1 + 1.5734 * 1 + 1.5734 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 11.781 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.689 ms
+
+
+       ########################################         
+
+iteration 5 with 182 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.012 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9217, 1.5734, 1.5734]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9217 *  x[0]^1 + 1.5734 * 1 + 1.5734 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.069 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.526 ms
+
+
+       ########################################         
+
+iteration 6 with 184 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.832 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9, 1.6, 1.6]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9 *  x[0]^1 + 1.6 * 1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.901 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 7 with 186 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.904 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9, 1.6, 1.6]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9 *  x[0]^1 + 1.6 * 1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.889 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.524 ms
+
+
+       ########################################         
+
+iteration 8 with 188 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.812 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9, 1.6, 1.6]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9 *  x[0]^1 + 1.6 * 1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.855 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.529 ms
+
+
+       ########################################         
+
+iteration 9 with 190 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.860 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9, 1.6, 1.6]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9 *  x[0]^1 + 1.6 * 1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.934 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.520 ms
+
+
+       ########################################         
+
+iteration 10 with 192 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.828 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9, 1.6, 1.6]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9 *  x[0]^1 + 1.6 * 1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.902 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.525 ms
+
+
+       ########################################         
+
+iteration 11 with 194 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.824 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.9, 1.6, 1.6]
+[xr_1 = 1/1000, xr_0 = 0]
+close alarm signal.
+ranking function : 0.9 *  x[0]^1 + 1.6 * 1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.956 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 0.001]
+
+sampling time = 0.523 ms
+
+
+       ########################################         
+
+iteration 12 with 196 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.846 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 2.0, 2.0]
+[xr_1 = 1, xr_0 = 0]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 2.0 * 1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 8.910 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 1]
+
+sampling time = 0.571 ms
+
+
+       ########################################         
+
+iteration 13 with 198 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.814 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 2.0, 2.0]
+[xr_1 = 1, xr_0 = 0]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 2.0 * 1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 13.398 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 1]
+
+sampling time = 0.759 ms
+
+
+       ########################################         
+
+iteration 14 with 200 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.719 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 2.0, 2.0]
+[xr_1 = 1, xr_0 = 0]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 2.0 * 1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.505 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 1]
+
+sampling time = 0.843 ms
+
+
+       ########################################         
+
+iteration 15 with 202 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.976 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 2.0, 2.0]
+[xr_1 = 1, xr_0 = 0]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 2.0 * 1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.106 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 1]
+
+sampling time = 0.523 ms
+
+
+       ########################################         
+
+iteration 16 with 204 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.840 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 2.0, 2.0]
+[xr_1 = 1, xr_0 = 0]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 2.0 * 1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.196 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0, 1]
+
+sampling time = 0.790 ms
+
+
+       ########################################         
+
+iteration 17 with 206 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+5
+the coefficient is convergent
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
 L[2]: 2
 L[3]: 1
 L[4]: [[0, 0, 0], [0, 1, 1], [0, 0, 1]]
@@ -98,24 +1555,24 @@ sample_points  2.5 0.5 2 [0, 0]
 [2.5, 1.5]
 [2.5, 2.0]
 [2.5, 2.5]
-2020-06-02-09-05-57   >>>>   End sampling point
+2020-06-02-10-06-29   >>>>   End sampling point
 
-sampling time = 42.949 ms,
+sampling time = 43.760 ms,
 
 
        ########################################         
 
 iteration 0 with 172 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 1.762 ms
+train_ranking_functioning time = 0.894 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6127, 0.9547, 1.6127]
@@ -123,9 +1580,9 @@ coefficient: [1.6127, 0.9547, 1.6127]
 close alarm signal.
 ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 13.872 ms
+verifying time = 10.290 ms
 
 
 Not Found Ranking Function
@@ -134,22 +1591,22 @@ Counterexample is
 
 [0.001, 0]
 
-sampling time = 0.533 ms
+sampling time = 0.526 ms
 
 
        ########################################         
 
 iteration 1 with 174 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.850 ms
+train_ranking_functioning time = 0.877 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6127, 0.9547, 1.6127]
@@ -157,9 +1614,9 @@ coefficient: [1.6127, 0.9547, 1.6127]
 close alarm signal.
 ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 9.022 ms
+verifying time = 8.916 ms
 
 
 Not Found Ranking Function
@@ -168,22 +1625,22 @@ Counterexample is
 
 [0.001, 0]
 
-sampling time = 0.539 ms
+sampling time = 0.551 ms
 
 
        ########################################         
 
 iteration 2 with 176 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.830 ms
+train_ranking_functioning time = 0.850 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6127, 0.9547, 1.6127]
@@ -191,43 +1648,9 @@ coefficient: [1.6127, 0.9547, 1.6127]
 close alarm signal.
 ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.552 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.522 ms
-
-
-       ########################################         
-
-iteration 3 with 178 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.860 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-coefficient: [1.6127, 0.9547, 1.6127]
-[xr_1 = 0, xr_0 = 1/1000]
-close alarm signal.
-ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 8.547 ms
+verifying time = 8.980 ms
 
 
 Not Found Ranking Function
@@ -241,17 +1664,17 @@ sampling time = 0.528 ms
 
        ########################################         
 
-iteration 4 with 180 examples
+iteration 3 with 178 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.826 ms
+train_ranking_functioning time = 0.841 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6127, 0.9547, 1.6127]
@@ -259,9 +1682,9 @@ coefficient: [1.6127, 0.9547, 1.6127]
 close alarm signal.
 ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.627 ms
+verifying time = 8.974 ms
 
 
 Not Found Ranking Function
@@ -270,23 +1693,57 @@ Counterexample is
 
 [0.001, 0]
 
-sampling time = 0.532 ms
+sampling time = 0.518 ms
+
+
+       ########################################         
+
+iteration 4 with 180 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.844 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.6127, 0.9547, 1.6127]
+[xr_1 = 0, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.012 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, 0]
+
+sampling time = 0.542 ms
 
 
        ########################################         
 
 iteration 5 with 182 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 5
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.863 ms
+train_ranking_functioning time = 0.861 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6127, 0.9547, 1.6127]
@@ -294,9 +1751,9 @@ coefficient: [1.6127, 0.9547, 1.6127]
 close alarm signal.
 ranking function : 1.6127 * 1 + 0.9547 *  x[1]^1 + 1.6127 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.622 ms
+verifying time = 8.962 ms
 
 
 Not Found Ranking Function
@@ -305,22 +1762,22 @@ Counterexample is
 
 [0.001, 0]
 
-sampling time = 0.525 ms
+sampling time = 0.519 ms
 
 
        ########################################         
 
 iteration 6 with 184 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.857 ms
+train_ranking_functioning time = 0.875 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6, 1.0, 1.6]
@@ -328,9 +1785,9 @@ coefficient: [1.6, 1.0, 1.6]
 close alarm signal.
 ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.557 ms
+verifying time = 9.649 ms
 
 
 Not Found Ranking Function
@@ -339,22 +1796,22 @@ Counterexample is
 
 [1, 0]
 
-sampling time = 0.524 ms
+sampling time = 1.012 ms
 
 
        ########################################         
 
 iteration 7 with 186 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.847 ms
+train_ranking_functioning time = 1.359 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6, 1.0, 1.6]
@@ -362,43 +1819,9 @@ coefficient: [1.6, 1.0, 1.6]
 close alarm signal.
 ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.454 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.520 ms
-
-
-       ########################################         
-
-iteration 8 with 188 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.838 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-coefficient: [1.6, 1.0, 1.6]
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 8.467 ms
+verifying time = 14.591 ms
 
 
 Not Found Ranking Function
@@ -412,17 +1835,17 @@ sampling time = 0.535 ms
 
        ########################################         
 
-iteration 9 with 190 examples
+iteration 8 with 188 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.845 ms
+train_ranking_functioning time = 0.878 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6, 1.0, 1.6]
@@ -430,9 +1853,9 @@ coefficient: [1.6, 1.0, 1.6]
 close alarm signal.
 ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.476 ms
+verifying time = 9.741 ms
 
 
 Not Found Ranking Function
@@ -441,22 +1864,56 @@ Counterexample is
 
 [1, 0]
 
-sampling time = 0.532 ms
+sampling time = 0.574 ms
+
+
+       ########################################         
+
+iteration 9 with 190 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.884 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.6, 1.0, 1.6]
+[xr_1 = 0, xr_0 = 1]
+close alarm signal.
+ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.246 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, 0]
+
+sampling time = 0.651 ms
 
 
        ########################################         
 
 iteration 10 with 192 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.867 ms
+train_ranking_functioning time = 0.902 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6, 1.0, 1.6]
@@ -464,9 +1921,9 @@ coefficient: [1.6, 1.0, 1.6]
 close alarm signal.
 ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 12.269 ms
+verifying time = 10.276 ms
 
 
 Not Found Ranking Function
@@ -475,23 +1932,23 @@ Counterexample is
 
 [1, 0]
 
-sampling time = 0.560 ms
+sampling time = 0.761 ms
 
 
        ########################################         
 
 iteration 11 with 194 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 5
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 1.055 ms
+train_ranking_functioning time = 1.241 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [1.6, 1.0, 1.6]
@@ -499,9 +1956,9 @@ coefficient: [1.6, 1.0, 1.6]
 close alarm signal.
 ranking function : 1.6 * 1 + 1.0 *  x[1]^1 + 1.6 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 13.356 ms
+verifying time = 9.272 ms
 
 
 Not Found Ranking Function
@@ -510,22 +1967,22 @@ Counterexample is
 
 [1, 0]
 
-sampling time = 0.608 ms
+sampling time = 0.543 ms
 
 
        ########################################         
 
 iteration 12 with 196 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 2.643 ms
+train_ranking_functioning time = 0.925 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [2.0, 1.0, 2.0]
@@ -533,77 +1990,9 @@ coefficient: [2.0, 1.0, 2.0]
 close alarm signal.
 ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 13.405 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.600 ms
-
-
-       ########################################         
-
-iteration 13 with 198 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.915 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-coefficient: [2.0, 1.0, 2.0]
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 16.364 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.531 ms
-
-
-       ########################################         
-
-iteration 14 with 200 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.930 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-coefficient: [2.0, 1.0, 2.0]
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 11.655 ms
+verifying time = 9.317 ms
 
 
 Not Found Ranking Function
@@ -617,17 +2006,17 @@ sampling time = 0.540 ms
 
        ########################################         
 
-iteration 15 with 202 examples
+iteration 13 with 198 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.875 ms
+train_ranking_functioning time = 0.947 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [2.0, 1.0, 2.0]
@@ -635,9 +2024,9 @@ coefficient: [2.0, 1.0, 2.0]
 close alarm signal.
 ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 9.206 ms
+verifying time = 9.359 ms
 
 
 Not Found Ranking Function
@@ -646,22 +2035,90 @@ Counterexample is
 
 [1, 0]
 
-sampling time = 0.541 ms
+sampling time = 0.573 ms
+
+
+       ########################################         
+
+iteration 14 with 200 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.900 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [2.0, 1.0, 2.0]
+[xr_1 = 0, xr_0 = 1]
+close alarm signal.
+ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.215 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, 0]
+
+sampling time = 0.544 ms
+
+
+       ########################################         
+
+iteration 15 with 202 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.967 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [2.0, 1.0, 2.0]
+[xr_1 = 0, xr_0 = 1]
+close alarm signal.
+ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 9.349 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, 0]
+
+sampling time = 0.538 ms
 
 
        ########################################         
 
 iteration 16 with 204 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.857 ms
+train_ranking_functioning time = 0.905 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 coefficient: [2.0, 1.0, 2.0]
@@ -669,9 +2126,9 @@ coefficient: [2.0, 1.0, 2.0]
 close alarm signal.
 ranking function : 2.0 * 1 + 1.0 *  x[1]^1 + 2.0 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 8.871 ms
+verifying time = 9.204 ms
 
 
 Not Found Ranking Function
@@ -680,26 +2137,27 @@ Counterexample is
 
 [1, 0]
 
-sampling time = 0.560 ms
+sampling time = 0.575 ms
 
 
        ########################################         
 
 iteration 17 with 206 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 5
 the coefficient is convergent
 
 Failed to prove it is terminating
 
---------LEARN UNBOUNDED
+-----RESULT: UNKNOWN -------
+--------------------- Depth:  1 templateNum: 0  Learn unbound ---------------------
 L: 2
 1
-[[0, 0, 0], [0, 1, 1], [0, 0, 1]]
+[[1, 0, 1], [0, 1, 1], [0, 0, 1]]
 Template we used x[0], x[1], ..., b: 
-[[0 0 0]
+[[1 0 1]
  [0 1 1]
  [0 0 1]]
 m: 2.5 h: 0.5
@@ -793,630 +2251,44 @@ sample_points  2.5 0.5 2 [0, 0]
 [2.5, 1.5]
 [2.5, 2.0]
 [2.5, 2.5]
-2020-06-02-09-05-57   >>>>   End sampling point
+2020-06-02-10-06-29   >>>>   End sampling point
 
-sampling time = 28.728 ms,
+sampling time = 31.611 ms,
 
 
        ########################################         
 
 iteration 0 with 172 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.725 ms
+train_ranking_functioning time = 1.089 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
 constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 +
+ 124/125*(1*xr_0*1 - 1*If(xr_1 > 0, xr_0, xr_0 - 1)*1) +
  1991/2000*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) +
  0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1/1000]
+ 0]
+True unsat
+valid no bound ranking function
 close alarm signal.
-ranking function : 0.9955 *  x[1]^1
+ranking function : 0.992 *  x[0]^1 + 0.9955 *  x[1]^1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-29   >>>>   End verify ranking function
 
-verifying time = 19.291 ms
+verifying time = 38.263 ms
 
 
-Not Found Ranking Function
+Found Ranking Function: 0.992 *  x[0]^1 + 0.9955 *  x[1]^1
 
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.364 ms
-
-
-       ########################################         
-
-iteration 1 with 174 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.677 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 +
- 1991/2000*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) +
- 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1/1000]
-close alarm signal.
-ranking function : 0.9955 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.866 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.377 ms
-
-
-       ########################################         
-
-iteration 2 with 176 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.681 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 +
- 1991/2000*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) +
- 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1/1000]
-close alarm signal.
-ranking function : 0.9955 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.791 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.358 ms
-
-
-       ########################################         
-
-iteration 3 with 178 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.705 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 +
- 1991/2000*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) +
- 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1/1000]
-close alarm signal.
-ranking function : 0.9955 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 36.813 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.722 ms
-
-
-       ########################################         
-
-iteration 4 with 180 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 3.438 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 +
- 1991/2000*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) +
- 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1/1000]
-close alarm signal.
-ranking function : 0.9955 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 37.486 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.423 ms
-
-
-       ########################################         
-
-iteration 5 with 182 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-5
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.862 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 +
- 1991/2000*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) +
- 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1/1000]
-close alarm signal.
-ranking function : 0.9955 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 22.781 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[0.001, 0]
-
-sampling time = 0.375 ms
-
-
-       ########################################         
-
-iteration 6 with 184 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.753 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 18.855 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.362 ms
-
-
-       ########################################         
-
-iteration 7 with 186 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.711 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.963 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.356 ms
-
-
-       ########################################         
-
-iteration 8 with 188 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.697 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 18.077 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.373 ms
-
-
-       ########################################         
-
-iteration 9 with 190 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.691 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.793 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.373 ms
-
-
-       ########################################         
-
-iteration 10 with 192 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.698 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.847 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.367 ms
-
-
-       ########################################         
-
-iteration 11 with 194 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-5
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.706 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.677 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.369 ms
-
-
-       ########################################         
-
-iteration 12 with 196 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.686 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 17.890 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.360 ms
-
-
-       ########################################         
-
-iteration 13 with 198 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.705 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 18.124 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.364 ms
-
-
-       ########################################         
-
-iteration 14 with 200 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 0.684 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 18.096 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.637 ms
-
-
-       ########################################         
-
-iteration 15 with 202 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-training done
-2020-06-02-09-05-57   >>>>   End train ranking function
-
-train_ranking_functioning time = 1.175 ms
-
-
-2020-06-02-09-05-57   >>>>   Start verify ranking function
-
-start alarm signal.
-constraint system:  [Or(xr_0 > 0, xr_1 > 0),
- 0 + 1*(1*xr_1*1 - 1*If(xr_1 > 0, xr_1 - 1, xr_1)*1) + 0 <
- 1/1000]
-False sat
-[xr_1 = 0, xr_0 = 1]
-close alarm signal.
-ranking function : 1.0 *  x[1]^1
-
-2020-06-02-09-05-57   >>>>   End verify ranking function
-
-verifying time = 24.356 ms
-
-
-Not Found Ranking Function
-
-Counterexample is 
-
-[1, 0]
-
-sampling time = 0.689 ms
-
-
-       ########################################         
-
-iteration 16 with 204 examples
-
-2020-06-02-09-05-57   >>>>   Start train ranking function
-
-5
-the coefficient is convergent
-
-Failed to prove it is terminating
-
--------------INCREASE TIMES: 1
---------LEARN BOUNDED
+-------------------START BACKTRACK LEARNING--------------------
 L[2]: 2
 L[3]: 1
 L[4]: [[1, 0, 1], [0, 1, 1], [0, 0, 1]]
@@ -1429,66 +2301,6306 @@ m: 2.5 h: 0.5
 *****************************************************
 
 sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
 [0.5, -2.5]
 [0.5, -2.0]
 [0.5, -1.5]
 [0.5, -1.0]
-[0.5, -0.5]
 [1.0, -2.5]
 [1.0, -2.0]
 [1.0, -1.5]
-[1.0, -1.0]
-[1.0, -0.5]
 [1.5, -2.5]
 [1.5, -2.0]
-[1.5, -1.5]
-[1.5, -1.0]
-[1.5, -0.5]
 [2.0, -2.5]
-[2.0, -2.0]
-[2.0, -1.5]
-[2.0, -1.0]
-[2.0, -0.5]
-[2.5, -2.5]
-[2.5, -2.0]
-[2.5, -1.5]
-[2.5, -1.0]
-[2.5, -0.5]
-2020-06-02-09-05-57   >>>>   End sampling point
+2020-06-02-10-06-29   >>>>   End sampling point
 
-sampling time = 14.381 ms,
+sampling time = 15.902 ms,
 
 
        ########################################         
 
-iteration 0 with 52 examples
+iteration 0 with 42 examples
 
-2020-06-02-09-05-57   >>>>   Start train ranking function
+2020-06-02-10-06-29   >>>>   Start train ranking function
 
 training done
-2020-06-02-09-05-57   >>>>   End train ranking function
+2020-06-02-10-06-29   >>>>   End train ranking function
 
-train_ranking_functioning time = 0.586 ms
+train_ranking_functioning time = 0.647 ms
 
 
-2020-06-02-09-05-57   >>>>   Start verify ranking function
+2020-06-02-10-06-29   >>>>   Start verify ranking function
 
 start alarm signal.
-coefficient: [0.9804, 0.0, 0.6667]
+coefficient: [0.8503, 0.8503, 2.2313]
+close alarm signal.
+ranking function : 0.8503 *  x[0]^1 + 0.8503 *  x[1]^1 + 2.2313 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 14.251 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-766.5963777490298, 762.7961895801482]
+
+sampling time = 0.535 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.680 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8547, 0.8585, 2.2409]
+close alarm signal.
+ranking function : 0.8547 *  x[0]^1 + 0.8585 *  x[1]^1 + 2.2409 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.909 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-4.796302796302796, 1]
+
+sampling time = 0.527 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.638 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.655, 0.9097, 2.5137]
+close alarm signal.
+ranking function : 0.655 *  x[0]^1 + 0.9097 *  x[1]^1 + 2.5137 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.953 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-6.753282442748092, 1]
+
+sampling time = 0.526 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.712 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.4929, 0.9169, 2.6448]
+close alarm signal.
+ranking function : 0.4929 *  x[0]^1 + 0.9169 *  x[1]^1 + 2.6448 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.932 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-9.25481842158653, 1]
+
+sampling time = 0.556 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.844 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.3595, 0.907, 2.6986]
+close alarm signal.
+ranking function : 0.3595 *  x[0]^1 + 0.907 *  x[1]^1 + 2.6986 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 13.193 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-12.811126564673158, 1]
+
+sampling time = 0.521 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.875 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.2523, 0.8886, 2.7225]
+close alarm signal.
+ranking function : 0.2523 *  x[0]^1 + 0.8886 *  x[1]^1 + 2.7225 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.934 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-18.276258422512882, 1]
+
+sampling time = 0.528 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.958 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1699, 0.8677, 2.739]
+close alarm signal.
+ranking function : 0.1699 *  x[0]^1 + 0.8677 *  x[1]^1 + 2.739 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.836 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-27.114184814596822, 1]
+
+sampling time = 0.626 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.054 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.109, 0.8495, 2.7372]
+close alarm signal.
+ranking function : 0.109 *  x[0]^1 + 0.8495 *  x[1]^1 + 2.7372 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.690 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-42.079816513761465, 1]
+
+sampling time = 0.624 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.187 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0669, 0.8363, 2.7289]
+close alarm signal.
+ranking function : 0.0669 *  x[0]^1 + 0.8363 *  x[1]^1 + 2.7289 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 12.734 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-68.23916292974589, 1]
+
+sampling time = 0.524 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.503 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0398, 0.8289, 2.7225]
+close alarm signal.
+ranking function : 0.0398 *  x[0]^1 + 0.8289 *  x[1]^1 + 2.7225 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 19.164 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-114.35678391959799, 1]
+
+sampling time = 0.544 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.332 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0295, 0.8282, 2.7203]
+close alarm signal.
+ranking function : 0.0295 *  x[0]^1 + 0.8282 *  x[1]^1 + 2.7203 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 23.120 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-154.1864406779661, 1]
+
+sampling time = 0.688 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.465 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0199, 0.8314, 2.7333]
+close alarm signal.
+ranking function : 0.0199 *  x[0]^1 + 0.8314 *  x[1]^1 + 2.7333 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 20.332 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-229.3819095477387, 1]
+
+sampling time = 1.023 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.564 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0147, 0.8348, 2.7411]
+close alarm signal.
+ranking function : 0.0147 *  x[0]^1 + 0.8348 *  x[1]^1 + 2.7411 * 1
+
+2020-06-02-10-06-29   >>>>   End verify ranking function
+
+verifying time = 16.622 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-311.2857142857143, 1]
+
+sampling time = 1.003 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-29   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-29   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.757 ms
+
+
+2020-06-02-10-06-29   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.012, 0.8392, 2.75]
+close alarm signal.
+ranking function : 0.012 *  x[0]^1 + 0.8392 *  x[1]^1 + 2.75 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 19.205 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-382.43333333333334, 1]
+
+sampling time = 0.603 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.891 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0083, 0.8439, 2.7632]
+close alarm signal.
+ranking function : 0.0083 *  x[0]^1 + 0.8439 *  x[1]^1 + 2.7632 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 23.054 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-555.0722891566265, 1]
+
+sampling time = 0.738 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.962 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0084, 0.8488, 2.7734]
+close alarm signal.
+ranking function : 0.0084 *  x[0]^1 + 0.8488 *  x[1]^1 + 2.7734 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 16.081 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-550.2619047619048, 1]
+
+sampling time = 0.694 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.857 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.007, 0.8531, 2.7825]
+close alarm signal.
+ranking function : 0.007 *  x[0]^1 + 0.8531 *  x[1]^1 + 2.7825 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 21.247 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-662.2285714285714, 1]
+
+sampling time = 0.560 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.941 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0057, 0.8579, 2.7945]
+close alarm signal.
+ranking function : 0.0057 *  x[0]^1 + 0.8579 *  x[1]^1 + 2.7945 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 18.268 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-816.2105263157895, 1]
+
+sampling time = 0.567 ms
+
+
+       ########################################         
+
+iteration 18 with 78 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.050 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.007, 0.862, 2.8024]
+close alarm signal.
+ranking function : 0.007 *  x[0]^1 + 0.862 *  x[1]^1 + 2.8024 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 21.969 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-666.3428571428572, 1]
+
+sampling time = 0.549 ms
+
+
+       ########################################         
+
+iteration 19 with 80 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.101 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0048, 0.8661, 2.8122]
+close alarm signal.
+ranking function : 0.0048 *  x[0]^1 + 0.8661 *  x[1]^1 + 2.8122 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 17.893 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-974.6458333333334, 1]
+
+sampling time = 0.700 ms
+
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 0, 0], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 0 0]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-30   >>>>   End sampling point
+
+sampling time = 13.126 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.612 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 13.193 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.528 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.643 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.784 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.967 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.075 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 20.994 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.974 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.010 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 12.406 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.544 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.654 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 12.015 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.742 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.777 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 13.822 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.564 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.696 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.882 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.577 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.679 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 12.003 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.594 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.640 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.741 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.538 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.645 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.573 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.531 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.693 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.791 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.557 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.668 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -203991/1984000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.763 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.10281804435483871, 0.001]
+
+sampling time = 0.544 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.678 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -4191/1984]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.572 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.112399193548387, 1]
+
+sampling time = 0.539 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.691 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -4191/1984]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.710 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.112399193548387, 1]
+
+sampling time = 0.893 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.959 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -4191/1984]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 18.366 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.112399193548387, 1]
+
+sampling time = 0.531 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.673 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -4191/1984]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.981 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.112399193548387, 1]
+
+sampling time = 0.547 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.673 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -4191/1984]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.588 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.112399193548387, 1]
+
+sampling time = 0.548 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+5
+the coefficient is convergent
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+L[2]: 2
+L[3]: 1
+L[4]: [[0, 0, 0], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[0 0 0]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-30   >>>>   End sampling point
+
+sampling time = 20.091 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.921 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 14.957 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.533 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.638 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7863, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7863 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.776 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.645 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.844 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.542 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.641 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7863, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7863 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.589 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.601 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.642 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.767 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.543 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.685 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.790 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.567 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.682 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.620 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.528 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.645 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 12.098 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.786 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.056 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 22.251 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.901 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.047 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 21.043 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.998 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.069 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 20.784 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.938 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.020 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 20.875 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.921 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.002 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 12.451 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.577 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.723 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 16.489 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.910 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.140 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 14.872 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.531 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.694 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -2318/22625, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.856 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.10245303867403315]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.655 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -4184/1991, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.531 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.1014565544952286]
+
+sampling time = 0.559 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.646 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -4184/1991, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.578 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.1014565544952286]
+
+sampling time = 0.529 ms
+
+
+       ########################################         
+
+iteration 18 with 78 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.716 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -4184/1991, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.682 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.1014565544952286]
+
+sampling time = 0.659 ms
+
+
+       ########################################         
+
+iteration 19 with 80 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.713 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -4184/1991, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 11.689 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.1014565544952286]
+
+sampling time = 0.933 ms
+
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+--------------------- Depth:  2 templateNum: 0  Learn unbound ---------------------
+L: 2
+1
+[[1, 0, 1], [0, 1, 1], [0, 0, 1]]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+[xr_0, xr_1]
+[If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+   If(xr_1 > 0, xr_0, xr_0 - 1),
+   xr_0), If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+   If(xr_1 > 0, xr_1 - 1, xr_1),
+   xr_1)]
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-30   >>>>   End sampling point
+
+sampling time = 7.772 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.567 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+constraint system:  [And(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+     Or(xr_0 > 0, xr_1 > 0)),
+ 2439/2500*
+ (1*xr_0*1 -
+  1*
+  If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+     If(xr_1 > 0, xr_0, xr_0 - 1),
+     xr_0)*
+  1) +
+ 2439/2500*
+ (1*xr_1*1 -
+  1*
+  If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+     If(xr_1 > 0, xr_1 - 1, xr_1),
+     xr_1)*
+  1) +
+ 0 <
+ 0]
+True unsat
+valid no bound ranking function
+close alarm signal.
+ranking function : 0.9756 *  x[0]^1 + 0.9756 *  x[1]^1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 71.516 ms
+
+
+Found Ranking Function: 0.9756 *  x[0]^1 + 0.9756 *  x[1]^1
+
+-------------------START BACKTRACK LEARNING--------------------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-30   >>>>   End sampling point
+
+sampling time = 11.377 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.621 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8503, 0.8503, 2.2313]
+close alarm signal.
+ranking function : 0.8503 *  x[0]^1 + 0.8503 *  x[1]^1 + 2.2313 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 18.030 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-4.800188168881571, 1]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.623 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.6524, 0.904, 2.5054]
+close alarm signal.
+ranking function : 0.6524 *  x[0]^1 + 0.904 *  x[1]^1 + 2.5054 * 1
+
+2020-06-02-10-06-30   >>>>   End verify ranking function
+
+verifying time = 17.185 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-6.758736971183323, 1]
+
+sampling time = 0.536 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-30   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-30   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.678 ms
+
+
+2020-06-02-10-06-30   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.4908, 0.9117, 2.6364]
+close alarm signal.
+ranking function : 0.4908 *  x[0]^1 + 0.9117 *  x[1]^1 + 2.6364 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 17.066 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-9.266707416462918, 1]
+
+sampling time = 0.528 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.752 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.3574, 0.9012, 2.6883]
+close alarm signal.
+ranking function : 0.3574 *  x[0]^1 + 0.9012 *  x[1]^1 + 2.6883 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 18.349 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-12.84135422495803, 1]
+
+sampling time = 0.554 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.883 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.2502, 0.8819, 2.71]
+close alarm signal.
+ranking function : 0.2502 *  x[0]^1 + 0.8819 *  x[1]^1 + 2.71 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 17.293 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-18.352917665867306, 1]
+
+sampling time = 0.625 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.070 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1679, 0.8601, 2.7241]
+close alarm signal.
+ranking function : 0.1679 *  x[0]^1 + 0.8601 *  x[1]^1 + 2.7241 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 17.027 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-27.303156640857654, 1]
+
+sampling time = 0.521 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.162 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1072, 0.8412, 2.7203]
+close alarm signal.
+ranking function : 0.1072 *  x[0]^1 + 0.8412 *  x[1]^1 + 2.7203 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.909 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-42.55130597014925, 1]
+
+sampling time = 0.525 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.184 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0655, 0.8277, 2.7108]
+close alarm signal.
+ranking function : 0.0655 *  x[0]^1 + 0.8277 *  x[1]^1 + 2.7108 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.827 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-69.29007633587786, 1]
+
+sampling time = 0.530 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.445 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0388, 0.8204, 2.7043]
+close alarm signal.
+ranking function : 0.0388 *  x[0]^1 + 0.8204 *  x[1]^1 + 2.7043 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 21.880 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-116.6159793814433, 1]
+
+sampling time = 0.536 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.482 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.03, 0.8202, 2.7014]
+close alarm signal.
+ranking function : 0.03 *  x[0]^1 + 0.8202 *  x[1]^1 + 2.7014 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 20.609 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-150.72, 1]
+
+sampling time = 0.871 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.178 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0197, 0.8242, 2.7167]
+close alarm signal.
+ranking function : 0.0197 *  x[0]^1 + 0.8242 *  x[1]^1 + 2.7167 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 31.755 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-230.502538071066, 1]
+
+sampling time = 0.808 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.776 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.017, 0.8283, 2.7255]
+close alarm signal.
+ranking function : 0.017 *  x[0]^1 + 0.8283 *  x[1]^1 + 2.7255 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 22.167 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-267.8705882352941, 1]
+
+sampling time = 0.807 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.850 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0121, 0.8335, 2.739]
+close alarm signal.
+ranking function : 0.0121 *  x[0]^1 + 0.8335 *  x[1]^1 + 2.739 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 25.821 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-377.89256198347107, 1]
+
+sampling time = 0.565 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.838 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.009, 0.8383, 2.7505]
+close alarm signal.
+ranking function : 0.009 *  x[0]^1 + 0.8383 *  x[1]^1 + 2.7505 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 22.558 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-509.8666666666667, 1]
+
+sampling time = 0.552 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.807 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0069, 0.8432, 2.7611]
+close alarm signal.
+ranking function : 0.0069 *  x[0]^1 + 0.8432 *  x[1]^1 + 2.7611 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 26.022 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-667.2898550724638, 1]
+
+sampling time = 0.551 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.920 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0059, 0.8479, 2.771]
+close alarm signal.
+ranking function : 0.0059 *  x[0]^1 + 0.8479 *  x[1]^1 + 2.771 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 26.493 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-782.8644067796611, 1]
+
+sampling time = 0.638 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.015 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.007, 0.8525, 2.7825]
+close alarm signal.
+ranking function : 0.007 *  x[0]^1 + 0.8525 *  x[1]^1 + 2.7825 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 21.934 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-662.1428571428571, 1]
+
+sampling time = 0.754 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.884 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.004, 0.8573, 2.7933]
+close alarm signal.
+ranking function : 0.004 *  x[0]^1 + 0.8573 *  x[1]^1 + 2.7933 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 21.921 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-1162.65, 1]
+
+sampling time = 0.581 ms
+
+
+       ########################################         
+
+iteration 18 with 78 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 3.083 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.004, 0.8615, 2.8023]
+close alarm signal.
+ranking function : 0.004 *  x[0]^1 + 0.8615 *  x[1]^1 + 2.8023 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 28.657 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-1165.95, 1]
+
+sampling time = 0.587 ms
+
+
+       ########################################         
+
+iteration 19 with 80 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.139 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0037, 0.8656, 2.8116]
+close alarm signal.
+ranking function : 0.0037 *  x[0]^1 + 0.8656 *  x[1]^1 + 2.8116 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 19.729 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-1264.1081081081081, 1]
+
+sampling time = 0.617 ms
+
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 0, 0], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 0 0]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-31   >>>>   End sampling point
+
+sampling time = 11.691 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.977 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 23.064 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.605 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.660 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.202 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.613 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.646 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 17.490 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.623 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.639 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.935 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.548 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.630 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.680 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.540 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.641 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.691 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.558 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.625 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.589 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.554 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.630 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.724 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.542 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.630 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.662 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.566 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.632 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.820 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.546 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.625 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.493 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.561 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.653 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.190 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.533 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.064 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 19.636 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.695 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.731 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.141 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.544 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.666 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 17.825 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.599 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.680 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.422 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.539 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.656 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.972 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.546 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+5
+the coefficient is convergent
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+L[2]: 2
+L[3]: 1
+L[4]: [[0, 0, 0], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[0 0 0]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-31   >>>>   End sampling point
+
+sampling time = 11.288 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.602 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.599 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.540 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.656 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.653 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.538 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.625 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.533 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.542 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.654 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.831 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.531 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.638 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.280 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.524 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.782 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 15.411 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.971 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.017 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 27.239 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.800 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.707 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-31   >>>>   End verify ranking function
+
+verifying time = 16.247 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.538 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-31   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-31   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.679 ms
+
+
+2020-06-02-10-06-31   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 20.490 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.534 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.659 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.617 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.614 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.692 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.540 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.597 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.762 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.805 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.541 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.651 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.523 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.532 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.658 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.529 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.553 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.640 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.592 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.543 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.664 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.463 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.545 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.645 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 15.497 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.682 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+5
+the coefficient is convergent
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+--------------------- Depth:  3 templateNum: 0  Learn unbound ---------------------
+L: 2
+1
+[[1, 0, 1], [0, 1, 1], [0, 0, 1]]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+[xr_0, xr_1]
+[If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+   If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+      If(xr_1 > 0, xr_0, xr_0 - 1),
+      xr_0),
+   xr_0), If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+   If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+      If(xr_1 > 0, xr_1 - 1, xr_1),
+      xr_1),
+   xr_1)]
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-32   >>>>   End sampling point
+
+sampling time = 10.275 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.583 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+constraint system:  [And(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+     And(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+         Or(xr_0 > 0, xr_1 > 0))),
+ 2439/2500*
+ (1*xr_0*1 -
+  1*
+  If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+     If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+        If(xr_1 > 0, xr_0, xr_0 - 1),
+        xr_0),
+     xr_0)*
+  1) +
+ 2439/2500*
+ (1*xr_1*1 -
+  1*
+  If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+     If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+        If(xr_1 > 0, xr_1 - 1, xr_1),
+        xr_1),
+     xr_1)*
+  1) +
+ 0 <
+ 0]
+True unsat
+valid no bound ranking function
+close alarm signal.
+ranking function : 0.9756 *  x[0]^1 + 0.9756 *  x[1]^1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 116.592 ms
+
+
+Found Ranking Function: 0.9756 *  x[0]^1 + 0.9756 *  x[1]^1
+
+-------------------START BACKTRACK LEARNING--------------------
+--------------------- Depth:  4 templateNum: 0  Learn bounded ---------------------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-32   >>>>   End sampling point
+
+sampling time = 11.356 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.641 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8503, 0.8503, 2.2313]
+close alarm signal.
+ranking function : 0.8503 *  x[0]^1 + 0.8503 *  x[1]^1 + 2.2313 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 25.185 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-4.800188168881571, 1]
+
+sampling time = 0.532 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.633 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.6524, 0.904, 2.5054]
+close alarm signal.
+ranking function : 0.6524 *  x[0]^1 + 0.904 *  x[1]^1 + 2.5054 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 24.574 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-6.758736971183323, 1]
+
+sampling time = 0.545 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.686 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.4908, 0.9117, 2.6364]
+close alarm signal.
+ranking function : 0.4908 *  x[0]^1 + 0.9117 *  x[1]^1 + 2.6364 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 24.097 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-9.266707416462918, 1]
+
+sampling time = 0.571 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.777 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.3574, 0.9012, 2.6883]
+close alarm signal.
+ranking function : 0.3574 *  x[0]^1 + 0.9012 *  x[1]^1 + 2.6883 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 23.995 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-12.84135422495803, 1]
+
+sampling time = 0.549 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.904 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.2502, 0.8819, 2.71]
+close alarm signal.
+ranking function : 0.2502 *  x[0]^1 + 0.8819 *  x[1]^1 + 2.71 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 24.034 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-18.352917665867306, 1]
+
+sampling time = 0.539 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.926 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1679, 0.8601, 2.7241]
+close alarm signal.
+ranking function : 0.1679 *  x[0]^1 + 0.8601 *  x[1]^1 + 2.7241 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 24.262 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-27.303156640857654, 1]
+
+sampling time = 0.547 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.064 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.1072, 0.8412, 2.7203]
+close alarm signal.
+ranking function : 0.1072 *  x[0]^1 + 0.8412 *  x[1]^1 + 2.7203 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 24.786 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-42.55130597014925, 1]
+
+sampling time = 0.556 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.227 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0655, 0.8277, 2.7108]
+close alarm signal.
+ranking function : 0.0655 *  x[0]^1 + 0.8277 *  x[1]^1 + 2.7108 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 24.429 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-69.29007633587786, 1]
+
+sampling time = 0.538 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.469 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0388, 0.8204, 2.7042]
+close alarm signal.
+ranking function : 0.0388 *  x[0]^1 + 0.8204 *  x[1]^1 + 2.7042 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 29.653 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-116.61340206185567, 1]
+
+sampling time = 0.547 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.287 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0298, 0.82, 2.7005]
+close alarm signal.
+ranking function : 0.0298 *  x[0]^1 + 0.82 *  x[1]^1 + 2.7005 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 31.106 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-151.69463087248323, 1]
+
+sampling time = 0.791 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.747 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0194, 0.824, 2.7168]
+close alarm signal.
+ranking function : 0.0194 *  x[0]^1 + 0.824 *  x[1]^1 + 2.7168 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 35.266 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-234.06185567010309, 1]
+
+sampling time = 0.959 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.429 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0164, 0.8284, 2.7247]
+close alarm signal.
+ranking function : 0.0164 *  x[0]^1 + 0.8284 *  x[1]^1 + 2.7247 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 35.766 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-277.6280487804878, 1]
+
+sampling time = 0.526 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.673 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0126, 0.8334, 2.7373]
+close alarm signal.
+ranking function : 0.0126 *  x[0]^1 + 0.8334 *  x[1]^1 + 2.7373 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 30.608 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-362.75396825396825, 1]
+
+sampling time = 0.605 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.812 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0093, 0.8383, 2.7505]
+close alarm signal.
+ranking function : 0.0093 *  x[0]^1 + 0.8383 *  x[1]^1 + 2.7505 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 27.616 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-493.4193548387097, 1]
+
+sampling time = 0.646 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.885 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0077, 0.8434, 2.7604]
+close alarm signal.
+ranking function : 0.0077 *  x[0]^1 + 0.8434 *  x[1]^1 + 2.7604 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 36.025 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-597.8961038961039, 1]
+
+sampling time = 0.580 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.834 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0076, 0.8482, 2.7709]
+close alarm signal.
+ranking function : 0.0076 *  x[0]^1 + 0.8482 *  x[1]^1 + 2.7709 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 28.029 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-607.7763157894736, 1]
+
+sampling time = 0.556 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.983 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0058, 0.853, 2.7835]
+close alarm signal.
+ranking function : 0.0058 *  x[0]^1 + 0.853 *  x[1]^1 + 2.7835 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 35.198 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-799.3965517241379, 1]
+
+sampling time = 0.604 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.944 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0055, 0.8575, 2.7924]
+close alarm signal.
+ranking function : 0.0055 *  x[0]^1 + 0.8575 *  x[1]^1 + 2.7924 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 28.079 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-845.4363636363636, 1]
+
+sampling time = 0.524 ms
+
+
+       ########################################         
+
+iteration 18 with 78 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.954 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0074, 0.8619, 2.8032]
+close alarm signal.
+ranking function : 0.0074 *  x[0]^1 + 0.8619 *  x[1]^1 + 2.8032 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 32.027 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-630.418918918919, 1]
+
+sampling time = 0.555 ms
+
+
+       ########################################         
+
+iteration 19 with 80 examples
+
+2020-06-02-10-06-32   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-32   >>>>   End train ranking function
+
+train_ranking_functioning time = 2.208 ms
+
+
+2020-06-02-10-06-32   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0044, 0.866, 2.8124]
+close alarm signal.
+ranking function : 0.0044 *  x[0]^1 + 0.866 *  x[1]^1 + 2.8124 * 1
+
+2020-06-02-10-06-32   >>>>   End verify ranking function
+
+verifying time = 33.470 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-1063.2727272727273, 1]
+
+sampling time = 0.571 ms
+
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+--------------------- Depth:  4 templateNum: 1  Learn bounded ---------------------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 0, 0], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 0 0]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-33   >>>>   End sampling point
+
+sampling time = 11.375 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.613 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 31.918 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.545 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.637 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 27.457 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.563 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.635 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.649 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.538 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.625 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.611 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.531 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.606 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.085 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.539 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.661 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.7862, 1.3956, 1.3956]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.7862 *  x[0]^1 + 1.3956 * 1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.808 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.549 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.635 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.483 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.534 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.611 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.018 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.527 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.628 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.676 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.530 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.629 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 24.089 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.696 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.256 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.683 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.8, 1.4, 1.4]
+[xr_1 = 1/1000, xr_0 = -254939/2439000]
+close alarm signal.
+ranking function : 0.8 *  x[0]^1 + 1.4 * 1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.768 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-0.1045260352603526, 0.001]
+
+sampling time = 0.571 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.643 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 31.993 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.558 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.681 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 27.489 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.565 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.672 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.707 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.542 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.659 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.937 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.529 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.664 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = 1, xr_0 = -5189/2439]
+close alarm signal.
+ranking function : 1.0 *  x[0]^1 + 1.0 * 1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.732 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[-2.127511275112751, 1]
+
+sampling time = 0.533 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+5
+the coefficient is convergent
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+--------------------- Depth:  4 templateNum: 2  Learn bounded ---------------------
+L[2]: 2
+L[3]: 1
+L[4]: [[0, 0, 0], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[0 0 0]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-33   >>>>   End sampling point
+
+sampling time = 11.337 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.620 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.982 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.551 ms
+
+
+       ########################################         
+
+iteration 1 with 44 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.628 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.526 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.533 ms
+
+
+       ########################################         
+
+iteration 2 with 46 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.629 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.738 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.556 ms
+
+
+       ########################################         
+
+iteration 3 with 48 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.627 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.730 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.529 ms
+
+
+       ########################################         
+
+iteration 4 with 50 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.616 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.775 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.540 ms
+
+
+       ########################################         
+
+iteration 5 with 52 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.645 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.3956, 0.7862, 1.3956]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.3956 * 1 + 0.7862 *  x[1]^1 + 1.3956 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.617 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.558 ms
+
+
+       ########################################         
+
+iteration 6 with 54 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.992 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 31.347 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.549 ms
+
+
+       ########################################         
+
+iteration 7 with 56 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.661 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 26.722 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.552 ms
+
+
+       ########################################         
+
+iteration 8 with 58 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.699 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.004 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.543 ms
+
+
+       ########################################         
+
+iteration 9 with 60 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.653 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.738 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.543 ms
+
+
+       ########################################         
+
+iteration 10 with 62 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.662 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.847 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.552 ms
+
+
+       ########################################         
+
+iteration 11 with 64 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+5
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.653 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.4, 0.8, 1.4]
+[xr_1 = -254939/2439000, xr_0 = 1/1000]
+close alarm signal.
+ranking function : 1.4 * 1 + 0.8 *  x[1]^1 + 1.4 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.708 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[0.001, -0.1045260352603526]
+
+sampling time = 0.537 ms
+
+
+       ########################################         
+
+iteration 12 with 66 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.686 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.682 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.534 ms
+
+
+       ########################################         
+
+iteration 13 with 68 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.654 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 23.076 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.540 ms
+
+
+       ########################################         
+
+iteration 14 with 70 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.630 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.687 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.530 ms
+
+
+       ########################################         
+
+iteration 15 with 72 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.624 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.477 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.545 ms
+
+
+       ########################################         
+
+iteration 16 with 74 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-33   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.659 ms
+
+
+2020-06-02-10-06-33   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [1.0, 1.0, 1.0]
+[xr_1 = -5189/2439, xr_0 = 1]
+close alarm signal.
+ranking function : 1.0 * 1 + 1.0 *  x[1]^1 + 1.0 * 1
+
+2020-06-02-10-06-33   >>>>   End verify ranking function
+
+verifying time = 22.802 ms
+
+
+Not Found Ranking Function
+
+Counterexample is 
+
+[1, -2.127511275112751]
+
+sampling time = 0.564 ms
+
+
+       ########################################         
+
+iteration 17 with 76 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+5
+the coefficient is convergent
+
+Failed to prove it is terminating
+
+-----RESULT: UNKNOWN -------
+-----RESULT: UNKNOWN -------
+--------------------- Depth:  3 templateNum: 1  Learn unbound ---------------------
+L: 2
+1
+[[1, 0, 1], [0, 0, 0], [0, 0, 1]]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 0 0]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+[xr_0, xr_1]
+[If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+   If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+      If(xr_1 > 0, xr_0, xr_0 - 1),
+      xr_0),
+   xr_0), If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+   If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+      If(xr_1 > 0, xr_1 - 1, xr_1),
+      xr_1),
+   xr_1)]
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+[0.5, -2.5]
+[0.5, -2.0]
+[0.5, -1.5]
+[0.5, -1.0]
+[1.0, -2.5]
+[1.0, -2.0]
+[1.0, -1.5]
+[1.5, -2.5]
+[1.5, -2.0]
+[2.0, -2.5]
+2020-06-02-10-06-33   >>>>   End sampling point
+
+sampling time = 13.255 ms,
+
+
+       ########################################         
+
+iteration 0 with 42 examples
+
+2020-06-02-10-06-33   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-34   >>>>   End train ranking function
+
+train_ranking_functioning time = 1.086 ms
+
+
+2020-06-02-10-06-34   >>>>   Start verify ranking function
+
+start alarm signal.
+constraint system:  [And(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+     And(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+         Or(xr_0 > 0, xr_1 > 0))),
+ 2439/2500*
+ (1*xr_0*1 -
+  1*
+  If(0 + 2439/2500*xr_0 + 2439/2500*xr_1 + 0 < -1/10,
+     If(0 + 124/125*xr_0 + 1991/2000*xr_1 + 0 < -1/10,
+        If(xr_1 > 0, xr_0, xr_0 - 1),
+        xr_0),
+     xr_0)*
+  1) +
+ 0 +
+ 0 <
+ 0]
+True unsat
+valid no bound ranking function
+close alarm signal.
+ranking function : 0.9756 *  x[0]^1
+
+2020-06-02-10-06-34   >>>>   End verify ranking function
+
+verifying time = 75.558 ms
+
+
+Found Ranking Function: 0.9756 *  x[0]^1
+
+-------------------START BACKTRACK LEARNING--------------------
+--------------------- Depth:  4 templateNum: 0  Learn bounded ---------------------
+L[2]: 2
+L[3]: 1
+L[4]: [[1, 0, 1], [0, 1, 1], [0, 0, 1]]
+listOfDimension [3]
+Template we used x[0], x[1], ..., b: 
+[[1 0 1]
+ [0 1 1]
+ [0 0 1]]
+m: 2.5 h: 0.5
+*****************************************************
+
+sample_points  2.5 0.5 2 [0, 0]
+[-2.5, 0.5]
+[-2.5, 1.0]
+[-2.5, 1.5]
+[-2.5, 2.0]
+[-2.0, 0.5]
+[-2.0, 1.0]
+[-2.0, 1.5]
+[-1.5, 0.5]
+[-1.5, 1.0]
+[-1.0, 0.5]
+2020-06-02-10-06-34   >>>>   End sampling point
+
+sampling time = 6.185 ms,
+
+
+       ########################################         
+
+iteration 0 with 22 examples
+
+2020-06-02-10-06-34   >>>>   Start train ranking function
+
+training done
+2020-06-02-10-06-34   >>>>   End train ranking function
+
+train_ranking_functioning time = 0.540 ms
+
+
+2020-06-02-10-06-34   >>>>   Start verify ranking function
+
+start alarm signal.
+coefficient: [0.0, 0.9524, 0.6667]
 valid ranking function
 close alarm signal.
-ranking function : 0.9804 *  x[0]^1 + 0.6667 * 1
+ranking function : 0.9524 *  x[1]^1 + 0.6667 * 1
 
-2020-06-02-09-05-57   >>>>   End verify ranking function
+2020-06-02-10-06-34   >>>>   End verify ranking function
 
-verifying time = 12.505 ms
+verifying time = 23.559 ms
 
 
-Found Ranking Function: 0.9804 *  x[0]^1 + 0.6667 * 1
+Found Ranking Function: 0.9524 *  x[1]^1 + 0.6667 * 1
 
+-----RESULT: FINITE -------
+-----RESULT: FINITE -------
+-----RESULT: FINITE -------
+-----RESULT: FINITE -------
 --------------------LEARNING MULTIPHASE SUMMARY-------------------
-MULTIPHASE DEPTH:  2
+MULTIPHASE DEPTH:  4
 LEARNING RESULT:  FINITE
 -----------RANKING FUNCTIONS----------
-1.0 *  x[1]^1
-0.9804 *  x[0]^1 + 0.6667 * 1
+0.992 *  x[0]^1 + 0.9955 *  x[1]^1
+0.9756 *  x[0]^1 + 0.9756 *  x[1]^1
+0.9756 *  x[0]^1
+0.9524 *  x[1]^1 + 0.6667 * 1

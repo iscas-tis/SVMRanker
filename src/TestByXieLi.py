@@ -8,7 +8,7 @@ from LearnMultiRanker import *
 import os
 from z3 import *
 
-#ret, rf = LearnRankerNoBoundLoopBody(L_test, (), ())
+#ret, rf = LearnRankerNoBoundLoopBody(L_branch ,(), ())
 #print(rf.coefficients)
 #L_new = ConjunctRankConstraintL(L_test, rf)
 #ret, rf = LearnRankerNoBoundLoopBody(L_test, (), ())
@@ -16,8 +16,8 @@ from z3 import *
 #L_new = ConjunctRankConstraintL(L_test, rf) 
 #ret, rf = LearnRankerBoundedLoopBody(L_new, (), ())
 
-train_multi_ranking_function_incremental(L_branch, (), ())
+#train_multi_ranking_function_incremental(L_branch, (), ())
 #generateTemplateLib(3)
 
-#result, rf_list = train_multi_ranking_function_backtracking(L_branch, (), (), [], TemplatesListTest, 0, 1, 3)
-#printSummary(len(rf_list), result, rf_list)
+result, rf_list = train_multi_ranking_function_backtracking(L_branch, (), (), [], TemplatesListTest, 0, 1, 4)
+printSummary(len(rf_list), result, rf_list)

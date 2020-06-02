@@ -19,7 +19,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
         listOfUx,
-        [0.001] *len(listOfUx)
+        [0] *len(listOfUx)
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
@@ -169,9 +169,11 @@ def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templ
         for num in range(len(templates)):
             changeTemplate(L, templates[num])
             result, rf = LearnRankerBoundedLoopBody(L, (), ())
+            print("-----RESULT:", result, "-------")
             if(result != 'UNKNOWN'):
                 rf_list.append(rf)
                 return result, rf
+                
         while templateNum < len(templates):
             print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn unbound ---------------------" )
             changeTemplate(L, templates[templateNum])
@@ -180,6 +182,7 @@ def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templ
                 rf_list.append(rf)
                 L_new = ConjunctRankConstraintL(L, rf)
                 result, rf_list = train_multi_ranking_function_backtracking(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound)
+                print("-----RESULT:", result, "-------")
                 if result == 'UNKNOWN':
                     rf_list.pop()
                     templateNum += 1
@@ -196,6 +199,8 @@ def train_multi_ranking_function_backtracking(L, x, y, rf_list, templates, templ
             print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn bounded ---------------------" )
             changeTemplate(L, templates[templateNum])
             result, rf = LearnRankerBoundedLoopBody(L, (), ())
+
+            print("-----RESULT:", result, "-------")
             if result != 'UNKNOWN':
                 rf_list.append(rf)
                 return result, rf_list
