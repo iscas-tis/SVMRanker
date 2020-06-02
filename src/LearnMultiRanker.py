@@ -1,3 +1,6 @@
+'''
+@author Xie Li
+'''
 import numpy as np
 from OneLoop import L
 import time
@@ -15,7 +18,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     listOfUxDimension = []
     for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2]+1)
-    #print("listOfDimension",listOfUxDimension)
+    print("listOfDimension",listOfUxDimension)
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
         listOfUx,
@@ -127,14 +130,13 @@ def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     return 'UNKNOWN'
 '''
 
-def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
+def train_multi_ranking_function_incremental(L, x, y, depthBound=2):
     
     print("-------------------START INCREMENTAL LEARNING--------------------")
     i = 0
     ret = 'UNKNOWN'
     L_current = L
     rf_list = []
-    
     while i < depthBound and ret == 'UNKNOWN':
         print("-------------INCREASE TIMES:", i)
         print("--------LEARN BOUNDED")
@@ -155,7 +157,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=3):
                 rf_list.append(rf)
             ret = 'UNKNOWN'
         L_current = ConjunctRankConstraintL(L_current, rf)
-        changeTemplate(L_current, [[1,0,1],[0,1,1],[0,0,1]])
+        #changeTemplate(L_current, [[1,0,1],[0,1,1],[0,0,1]])
         i += 1
     printSummary(i+1, ret, rf_list)
     return rf_list

@@ -5,6 +5,8 @@ import numpy as np
 from z3 import *
 import os
 
+
+divideConstant = 0
 '''-----------------functions for conjunct to get new L-----------------'''
 def coefDotExpr(x, coef, NumOfVars):
     result = 0
@@ -22,7 +24,7 @@ def coefDotExprZ3Constraint(x, coef, NumOfVars, isReal):
         result = Sum(result, RealVal(coef[-1]))
         #print(result)
         #print(type(result))
-        return result < -0.1
+        return result < divideConstant
 
 def coefDotExprZ3Arithmetic(x, coef, NumOfVars, isReal):
     if(isReal):
@@ -53,7 +55,7 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     NumOfVars = L_old[2]
     coef = rf.coefficients
     addedExp = lambda x: coefDotExpr(x, coef, NumOfVars)
-    appendConstraint = lambda x : addedExp(x) < -0.1
+    appendConstraint = lambda x : addedExp(x) < divideConstant
     newLoopGuard = lambda x: old_loopGuard(x) and appendConstraint(x)
     #L_new[0]
     L_new.append(newLoopGuard)

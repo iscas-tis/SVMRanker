@@ -32,6 +32,17 @@ from Templates import *
 
 #TODO: change the update and verificationOfUpdate into list of lambda expression
 
+L_jump = [lambda x : x[0] > 0 or x[1] > 0, 
+         lambda x :  [x[0] if x[1] > 0 else x[0] - 1, x[1] - 2 if x[1] > 0 else x[1] + 1],
+         2,
+         1,
+         [[1, 0, 1],
+          [0, 1, 1],
+          [0, 0, 1]],
+         lambda x :  [If(x[1] > 0, x[0], x[0] - 1), If(x[1] > 0, x[1] - 2, x[1] + 1)],
+         lambda x : Or(x[0] > 0, x[1] > 0)
+         ]
+
 L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 2*x[1] >= x[0], 
          lambda x :  [2*x[0], 3*x[1]],
          2,
@@ -58,10 +69,13 @@ L_branch = [lambda x : x[0] > 0 or x[1] > 0,
 L_test = [lambda x : x[0] > 0 or x[1] > 0, 
          lambda x :  [x[0] + x[1], x[1] - 1],
          2,
-         1,
-         [[1, 0, 1],
+         2,
+         [[[1, 0, 1],
           [0, 1, 1],
           [0, 0, 1]],
+          [[1, 0, 1],
+          [0, 1, 1],
+          [0, 0, 1]]],
          lambda x :  [x[0] + x[1], x[1] - 1],
          lambda x : Or(x[0] > 0, x[1] > 0)
          ]
