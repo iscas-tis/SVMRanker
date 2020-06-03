@@ -22,7 +22,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedNoBoundTemplate(
         listOfUx,
-        [0] *len(listOfUx)
+        [0.001] *len(listOfUx)
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
@@ -174,7 +174,7 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
             print("-----RESULT:", result, "-------")
             if(result != 'UNKNOWN'):
                 rf_list.append(rf)
-                return result, rf
+                return result, rf_list
                 
         while templateNum < len(templates):
             print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn unbound ---------------------" )

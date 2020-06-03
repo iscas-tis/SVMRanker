@@ -226,6 +226,7 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
                 p_ = get_statement(L,p)
                 if p_ is None:
                     continue
+                rf.sample_points_list.append(p)
                 for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
                     yield ('UNKNOWN',x, y)
         #print(rf.get_zero_vec())

@@ -57,7 +57,7 @@ class NestedNoBoundTemplate:
 		self.num_of_pos_data = 0
 		self.num_of_neg_data = 1
 		self.coefficients = None
-		
+		self.sample_points_list = []
 
 	def get_zero_vec(self):
 		return np.zeros(np.sum(self.dimension))

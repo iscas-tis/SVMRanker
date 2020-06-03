@@ -5,8 +5,6 @@ import numpy as np
 from z3 import *
 import os
 
-
-divideConstant = 0
 '''-----------------functions for conjunct to get new L-----------------'''
 def coefDotExpr(x, coef, NumOfVars):
     result = 0
@@ -15,7 +13,7 @@ def coefDotExpr(x, coef, NumOfVars):
     result += coef[-1]
     return result
 
-def coefDotExprZ3Constraint(x, coef, NumOfVars, isReal):
+def coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal):
     if(isReal):
         result = RealVal(0)
         for i in range(NumOfVars):
@@ -55,6 +53,13 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     NumOfVars = L_old[2]
     coef = rf.coefficients
     addedExp = lambda x: coefDotExpr(x, coef, NumOfVars)
+    divideConstant = 0
+    minPoint = rf.sample_points_list[0]
+    for point in rf.sample_points_list:
+        if addedExp(point) < divideConstant:
+            divideConstant = addedExp(point)
+            minPoint = point
+    print("---------DIVIDE CONSTANT:", divideConstant)
     appendConstraint = lambda x : addedExp(x) < divideConstant
     newLoopGuard = lambda x: old_loopGuard(x) and appendConstraint(x)
     #L_new[0]
@@ -82,12 +87,12 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     
     #L_new[5]
     # z3 update
-    L_new.append(lambda x: [If(coefDotExprZ3Constraint(x, coef, NumOfVars, isReal), L_old[5](x)[i], x[i]) for i in range(NumOfVars)])
+    L_new.append(lambda x: [If(coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal), L_old[5](x)[i], x[i]) for i in range(NumOfVars)])
    
     #L_new.append(L_old[5])
     #L_new[6]
     # z3 loop guard
-    L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, NumOfVars, isReal), L_old[6](x)))
+    L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal), L_old[6](x)))
     return L_new
 '''-------------------------functions for generating templates lib---------------------------'''
 def changeTemplate(L, template):
@@ -136,6 +141,19 @@ TemplatesListTest = [
     [[0,0,0],
      [0,1,1],
      [0,0,1]]
+]
+
+TemplatesListExp = [
+    [[1,0,1],
+     [0,1,-4],
+     [0,0,1]],
+    [[1,0,1],
+     [0,1,-2],
+     [0,0,1]],
+    [[1,0,1],
+     [0,1,-1],
+     [0,0,1]]
+
 ]
 
 
