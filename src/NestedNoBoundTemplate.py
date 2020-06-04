@@ -46,7 +46,7 @@ def set_timeout(num, callback):
 
 class NestedNoBoundTemplate:
 
-	def __init__(self, list_of_Ux, list_of_C):  # list_of_Ux: k U_x, list_of_C: C_i
+	def __init__(self, list_of_Ux, list_of_C, l):  # list_of_Ux: k U_x, list_of_C: C_i
 		self.K = len(list_of_Ux)
 		self.list_of_Ux = list_of_Ux
 		self.list_of_C = list_of_C
@@ -58,6 +58,8 @@ class NestedNoBoundTemplate:
 		self.num_of_neg_data = 1
 		self.coefficients = None
 		self.sample_points_list = []
+		self.last_coef_array = l
+		self.print_coef = []
 
 	def get_zero_vec(self):
 		return np.zeros(np.sum(self.dimension))
@@ -223,7 +225,7 @@ class NestedNoBoundTemplate:
 				sum_dot = sum(i[0] * i[1] for i in zip(ceilings, self.list_of_Gx[index](x, x_)))
 				right_up_bound = int(multiplied * self.list_of_C[index])
 			s.add(sum_dot < right_up_bound)
-			print('constraint system: ', s)
+			print('-----constraint system CS: ', s)
 			result = s.check()
 			valid = result == z3.unsat
 			print(valid,result)
@@ -303,12 +305,12 @@ class NestedNoBoundTemplate:
 		for index in range(self.K):
 			# remove all coefficients we used
 			num_of_coef_used = sum(self.dimension[index:])
-			coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
-			#print('coeff = ', coef)
+			print_coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used] * self.last_coef_array[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
+			#print('coeff = ', print_coef)
 			# polynomial
 			#print(self.list_of_Ux[index])
 			polys = self.list_of_Ux[index]
-			rkf = polys.set_coefficients(coef)
+			rkf = polys.set_coefficients(print_coef)
 			result += ('' if first else '; ') + rkf.__str__()
 			first = False
 		return result

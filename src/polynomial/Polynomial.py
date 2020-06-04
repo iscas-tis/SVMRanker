@@ -59,8 +59,8 @@ class Polynomial:
 		for index in range(self.get_dimension()):
 			mono = self.monomials[index]
 			result[mono] = vec[index]
-		# print(result)
-		# print(poly_map(result))
+		#print(result)
+		#print(poly_map(result))
 		return Polynomial(result,self.monomials)
 	
 	'''

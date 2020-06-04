@@ -43,7 +43,7 @@ L_jump = [lambda x : x[0] > 0 or x[1] > 0,
          lambda x : Or(x[0] > 0, x[1] > 0)
          ]
 
-L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 2*x[1] >= x[0], 
+L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 1*x[1] >= x[0], 
          lambda x :  [2*x[0], 3*x[1]],
          2,
          1,
@@ -51,9 +51,19 @@ L_incremental = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 2*x[1] 
           [0, 1, 1],
           [0, 0, 1]],
          lambda x :  [2*x[0], 3*x[1]],
-         lambda x : And(x[0] >= 1, x[1] >= 1, x[0] >= x[1], 2*x[1] >= x[0])
+         lambda x : And(x[0] >= 1, x[1] >= 1, x[0] >= x[1], 1*x[1] >= x[0])
          ]
 
+L_incremental_1 = [lambda x : x[0] >= 1 and x[1] >= 1 and x[0] >= x[1] and 32*x[1] >= x[0] and x[0] - 16*x[1] >= 0, 
+         lambda x :  [2*x[0], 3*x[1]],
+         2,
+         1,
+         [[1, 0, 1],
+          [0, 1, 1],
+          [0, 0, 1]],
+         lambda x :  [2*x[0], 3*x[1]],
+         lambda x : And(x[0] >= 1, x[1] >= 1, x[0] >= x[1], 32*x[1] >= x[0], x[0] - 16*x[1] >= 0)
+         ]
 
 L_branch = [lambda x : x[0] > 0 or x[1] > 0, 
          lambda x :  [x[0] if x[1] > 0 else x[0] - 1, x[1] - 1 if x[1] > 0 else x[1] - 1],
@@ -67,7 +77,7 @@ L_branch = [lambda x : x[0] > 0 or x[1] > 0,
          ]
 
 L_test = [lambda x : x[0] > 0 or x[1] > 0, 
-         lambda x :  [x[0] + x[1]-1, x[1] - 1],
+         lambda x :  [x[0] + x[1], x[1] - 1],
          2,
          1,
          [[[1, 0, 1],

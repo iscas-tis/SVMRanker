@@ -19,10 +19,13 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
     for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2]+1)
     print("listOfDimension",listOfUxDimension)
-    listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
+    
+    listOfUx, last_coef_array = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
+    print("Last coef array:", last_coef_array)
     rf = NestedNoBoundTemplate(
         listOfUx,
-        [0.001] *len(listOfUx)
+        [0.001] *len(listOfUx),
+        last_coef_array
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
@@ -43,16 +46,17 @@ def LearnRankerBoundedLoopBody(L_test, x, y):
     for i in range(L_test[3]):
         listOfUxDimension.append(L_test[2]+1)
     print("listOfDimension",listOfUxDimension)
-    listOfUx = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
+    listOfUx, last_coef_array = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     rf = NestedTemplate(
         listOfUx,
         [0.001] *len(listOfUx),
-        0
+        0,
+        last_coef_array
     )
     ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     return ret, rf
 
-
+'''
 def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
     infoFile = open(os.path.join(templateFilePath,'Info'+str(indexOfTemplate)),'r')
     info = []
@@ -89,6 +93,7 @@ def LearnRankerNoBound(templateFilePath, indexOfTemplate, x, y, L_test):
         print(rf)
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
     return 'UNKNOWN',new_x,new_y
+'''
 '''
 def train_multi_ranking_function(L, x, y, upperLoopBound=3):
     ret = 'UNKNOWN'
@@ -181,8 +186,8 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
             changeTemplate(L, templates[templateNum])
             ret, rf = LearnRankerNoBoundLoopBody(L, (), ())
             if ret == 'CORRECT':
-                rf_list.append(rf)
                 L_new = ConjunctRankConstraintL(L, rf)
+                rf_list.append(rf)
                 result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound)
                 print("-----RESULT:", result, "-------")
                 if result == 'UNKNOWN':

@@ -46,7 +46,7 @@ def set_timeout(num, callback):
 
 class NestedTemplate:
 
-	def __init__(self, list_of_Ux, list_of_C, delta):  # list_of_Ux: k U_x, list_of_C: C_i
+	def __init__(self, list_of_Ux, list_of_C, delta, l):  # list_of_Ux: k U_x, list_of_C: C_i
 		self.K = len(list_of_Ux)
 		self.list_of_Ux = list_of_Ux
 		self.list_of_C = list_of_C
@@ -59,6 +59,8 @@ class NestedTemplate:
 		self.num_of_neg_data = 1
 		self.coefficients = None
 		self.sample_points_list = []
+		self.last_coef_array = l
+		self.print_coef = []
 		
 
 	def get_zero_vec(self):
@@ -281,12 +283,12 @@ class NestedTemplate:
 		for index in range(self.K):
 			# remove all coefficients we used
 			num_of_coef_used = sum(self.dimension[index:])
-			coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
+			self.print_coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used] * self.last_coef_array[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
 			#print('coeff = ', coef)
 			# polynomial
 			#print(self.list_of_Ux[index])
 			polys = self.list_of_Ux[index]
-			rkf = polys.set_coefficients(coef)
+			rkf = polys.set_coefficients(self.print_coef)
 			result += ('' if first else '; ') + rkf.__str__()
 			first = False
 		return result

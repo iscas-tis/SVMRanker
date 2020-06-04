@@ -54,13 +54,14 @@ def make_dict_order(num_of_vars, dimension, mat_of_vars):
         # input the i-th monomial
         mon_ = None
         coefs = mat_of_vars[i][:num_of_vars]
+        #print("-----DICT COEF:", coefs)
         # if not has_fraction(coefs):
         #     mon_ = Monomial(coefs)
         # else:
         #     mon_ = Exponential(coefs)
         mon_ = Monomial(coefs)
         order.append(mon_)
-        # print(mon_)
+        print("ORDER", mon_)
         # get the coefficient of the monomial
         polys[mon_] = mat_of_vars[i][-1]
     # print(polys)
@@ -116,6 +117,7 @@ def parse_template_handcraft(list, numOfVar, ListOfDimension):
 	print(arrays)
 	if(len(arrays) != np.sum(ListOfDimension)):
 		raise Exception('Wrong template format')
+	last_coef_array = arrays[:,numOfVar]
 	start = 0
 	# print(arrays)
 	polynomial_result = []
@@ -128,7 +130,7 @@ def parse_template_handcraft(list, numOfVar, ListOfDimension):
 				)
 			)
 		start += d
-	return polynomial_result
+	return polynomial_result, last_coef_array
 
 
 
@@ -222,10 +224,11 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
             #print(p)
             condition = get_condition(L,p)
             if condition:  # must satisfy the guard condition
-                print(p)
+                
                 p_ = get_statement(L,p)
                 if p_ is None:
                     continue
+                print(p)
                 rf.sample_points_list.append(p)
                 for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
                     yield ('UNKNOWN',x, y)
@@ -260,9 +263,10 @@ def get_xpoints( m, h, n,base_point):
 def signal_handler(signum, frame):
 	raise Exception("time out")
 
-def train_ranking_function(L, rf, x, y,  m=4, h=0.5, n=2):
+def train_ranking_function(L, rf, x, y,  m=5, h=1, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
+	#m = 33
 	rt = is_type_real(L)
 	# integer
 	if not rt:

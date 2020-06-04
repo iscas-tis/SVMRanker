@@ -20,7 +20,7 @@ def coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal):
             CoefTemp = RealVal(coef[i])
             result = Sum(result, Product(CoefTemp, x[i]))
         result = Sum(result, RealVal(coef[-1]))
-        #print(result)
+        print("-----DOT RESULT: ", result)
         #print(type(result))
         return result < divideConstant
 
@@ -54,12 +54,13 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     coef = rf.coefficients
     addedExp = lambda x: coefDotExpr(x, coef, NumOfVars)
     divideConstant = 0
-    minPoint = rf.sample_points_list[0]
+    minPoint = [0,0]
     for point in rf.sample_points_list:
         if addedExp(point) < divideConstant:
             divideConstant = addedExp(point)
             minPoint = point
     print("---------DIVIDE CONSTANT:", divideConstant)
+    rf.coefficients[-1] += -divideConstant
     appendConstraint = lambda x : addedExp(x) < divideConstant
     newLoopGuard = lambda x: old_loopGuard(x) and appendConstraint(x)
     #L_new[0]
@@ -134,25 +135,28 @@ def isUselessRankingFunction(rf):
 TemplatesListTest = [
     [[1,0,1],
      [0,1,1],
-     [0,0,1]],
+     [0,0,1]]
+]
+''',
     [[1,0,1],
      [0,0,0],
      [0,0,1]],
     [[0,0,0],
      [0,1,1],
      [0,0,1]]
-]
+'''
 
 TemplatesListExp = [
-    [[1,0,1],
-     [0,1,-4],
-     [0,0,1]],
-    [[1,0,1],
-     [0,1,-2],
-     [0,0,1]],
-    [[1,0,1],
+    
+    [[1,0,-1],
      [0,1,-1],
-     [0,0,1]]
+     [0,0,-1]],
+    [[1,0,-1],
+     [0,0,0],
+     [0,0,-1]],
+    [[0,0,0],
+     [0,1,-1],
+     [0,0,-1]]
 
 ]
 
