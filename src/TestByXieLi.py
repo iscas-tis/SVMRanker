@@ -17,8 +17,8 @@ L_new = ConjunctRankConstraintL(L_test, rf)
 ret, rf = LearnRankerBoundedLoopBody(L_new, (), ())
 '''
 #train_multi_ranking_function_incremental(L_nondet, (), (), 4)
-generateTemplateLib(2)
+#generateTemplateLib(2)
 
-#result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_branch, (), (), [], TemplatesListTest, 0, 1, 4)
-#result, rf_list = train_multi_ranking_function_backtracking(L_nondet, (), (), TemplatesNondet, 3)
-#printSummary(len(rf_list), result, rf_list)
+result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_incremental, (), (), [], TemplatesListExp, 0, 1, 4)
+#result, rf_list = train_multi_ranking_function_backtracking(L_nondet, (), (), generateTemplateLib(L_nondet), 3)
+printSummary(len(rf_list), result, rf_list)

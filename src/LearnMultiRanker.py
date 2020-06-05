@@ -174,6 +174,7 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
     result = 'UNKNOWN'
     if currentDepth < depthBound:
         for num in range(len(templates)):
+            print('--------------------- Depth: ', currentDepth, "templateNum:", num, " Learn bounded ---------------------" )
             changeTemplate(L, templates[num])
             result, rf = LearnRankerBoundedLoopBody(L, (), ())
             print("-----RESULT:", result, "-------")

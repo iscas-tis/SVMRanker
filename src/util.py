@@ -266,8 +266,8 @@ def signal_handler(signum, frame):
 def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
-	m = 5
-	h = 1
+	m = 16
+	h = 0.1
 	rt = is_type_real(L)
 	# integer
 	if not rt:
@@ -290,12 +290,20 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	result=[]
 	try:
 		#result,x, y = zip(*sample_points(L, m, h, n, rf,[0]*n)) 
-		sample_points_list = sample_points(L, m, h, n, rf,[0]*n)
-		while(len(sample_points_list) < 10):
-			m = 1.5*m
-			h = 1.5*h
-			sample_points_list = sample_points(L, m, h, n, rf,[0]*n)
-		for new_result,new_x,new_y in sample_points_list:
+		'''
+		i= 0
+		while(i <= 10):
+			i = 0
+			for test_result, test_x, test_y in sample_points(L, m, h, n, rf,[0]*n):
+				i+=1
+				if i > 10:
+					break	
+			if i <= 10:
+				print("CHANGE MH")
+				m = 1.5*m
+				h = 1.5*h
+		'''
+		for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
 			x = x+(np.array(new_x),)
 			y = y+(new_y,)
 			result.append(new_result)

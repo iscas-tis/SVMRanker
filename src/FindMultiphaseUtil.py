@@ -138,7 +138,9 @@ def generateTemplateLib(numOfVar, maxPower=1):
     for itemId in range(numOfVar + 1):
         item.append(listOfUxVectors[itemId])
     listOfTemplates.append(item)
-    print(listOfTemplates)
+    return listOfTemplates
+
+
 def isUselessRankingFunction(rf):
     for c in rf.coefficients:
         if(c != 0):
