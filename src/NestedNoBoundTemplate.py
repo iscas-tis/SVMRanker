@@ -121,9 +121,10 @@ class NestedNoBoundTemplate:
 	def get_example(self, x, x_):  # Generate training set by Gx
 		num_of_Gx = len(self.list_of_Gx)
 		for index in range(num_of_Gx):
+			print("INDEX: ", index, num_of_Gx)
 			g_x = self.list_of_Gx[index](x, x_)
 			# print('sample = ', g_x)
-			# self.num_of_neg_data += 1
+			# self.num_of_neg_data += 1INDEX
 			# yield (- g_x, -1)
 			# if list of Gx only has two components
 			# it means that K = 1
@@ -307,6 +308,9 @@ class NestedNoBoundTemplate:
 			num_of_coef_used = sum(self.dimension[index:])
 			print_coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used] * self.last_coef_array[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
 			#print('coeff = ', print_coef)
+			print('coeff = ', self.coefficients)
+			print("last coef = ", self.last_coef_array)
+			print("print coef:", print_coef)
 			# polynomial
 			#print(self.list_of_Ux[index])
 			polys = self.list_of_Ux[index]

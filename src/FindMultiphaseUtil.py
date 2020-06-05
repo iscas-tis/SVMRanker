@@ -6,31 +6,33 @@ from z3 import *
 import os
 
 '''-----------------functions for conjunct to get new L-----------------'''
-def coefDotExpr(x, coef, NumOfVars):
+def coefDotExpr(x, coef, last_coef_list, NumOfVars):
     result = 0
     for i in range(NumOfVars):
         result += coef[i]*x[i]
     result += coef[-1]
     return result
 
-def coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal):
+def coefDotExprZ3Constraint(x, coef, last_coef_list, NumOfVars, divideConstant, isReal):
     if(isReal):
         result = RealVal(0)
         for i in range(NumOfVars):
             CoefTemp = RealVal(coef[i])
-            result = Sum(result, Product(CoefTemp, x[i]))
-        result = Sum(result, RealVal(coef[-1]))
+            lastCoefTemp = RealVal(last_coef_list[i])
+            result = Sum(result, Product(CoefTemp, x[i], lastCoefTemp))
+        result = Sum(result, Product(RealVal(coef[-1]), RealVal(last_coef_list[-1])))
         print("-----DOT RESULT: ", result)
         #print(type(result))
         return result < divideConstant
 
-def coefDotExprZ3Arithmetic(x, coef, NumOfVars, isReal):
+def coefDotExprZ3Arithmetic(x, coef, last_coef_list, NumOfVars, isReal):
     if(isReal):
         result = RealVal(0)
         for i in range(NumOfVars):
             CoefTemp = RealVal(coef[i])
-            result = Sum(result, Product(CoefTemp, x[i]))
-        result = Sum(result, RealVal(coef[-1]))
+            lastCoefTemp = RealVal(last_coef_list[i])
+            result = Sum(result, Product(CoefTemp, x[i], lastCoefTemp))
+        result = Sum(result, Product(RealVal(coef[-1]), RealVal(last_coef_list[-1])))
         #print(result)
         #print(type(result))
         return result
@@ -52,15 +54,16 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     old_loopGuard = L_old[0]
     NumOfVars = L_old[2]
     coef = rf.coefficients
-    addedExp = lambda x: coefDotExpr(x, coef, NumOfVars)
+    addedExp = lambda x: coefDotExpr(x, coef, rf.last_coef_array, NumOfVars)
     divideConstant = 0
-    minPoint = [0,0]
+    minPoint = [0 for i in range(NumOfVars)]
     for point in rf.sample_points_list:
         if addedExp(point) < divideConstant:
             divideConstant = addedExp(point)
             minPoint = point
     print("---------DIVIDE CONSTANT:", divideConstant)
-    rf.coefficients[-1] += -divideConstant
+    # ATTENTION NOT ROBUST HERE TODO
+    rf.coefficients[-1] += -divideConstant/rf.last_coef_array[-1]
     appendConstraint = lambda x : addedExp(x) < divideConstant
     newLoopGuard = lambda x: old_loopGuard(x) and appendConstraint(x)
     #L_new[0]
@@ -88,12 +91,12 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     
     #L_new[5]
     # z3 update
-    L_new.append(lambda x: [If(coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal), L_old[5](x)[i], x[i]) for i in range(NumOfVars)])
+    L_new.append(lambda x: [If(coefDotExprZ3Constraint(x, coef, rf.last_coef_array, NumOfVars, divideConstant, isReal), L_old[5](x)[i], x[i]) for i in range(NumOfVars)])
    
     #L_new.append(L_old[5])
     #L_new[6]
     # z3 loop guard
-    L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, NumOfVars, divideConstant, isReal), L_old[6](x)))
+    L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, rf.last_coef_array, NumOfVars, divideConstant, isReal), L_old[6](x)))
     return L_new
 '''-------------------------functions for generating templates lib---------------------------'''
 def changeTemplate(L, template):
@@ -121,8 +124,21 @@ def generateTemplateLib(numOfVar, maxPower=1):
         UxTemplate.append(0)
     listOfUxVectors.append(UxTemplate)
     print(listOfUxVectors)
-
-
+    listOfTemplates = []
+    for varId in range(numOfVar):
+        item = []
+        for itemId in range(numOfVar):
+            if itemId == varId:
+                item.append(listOfUxVectors[itemId])
+            else:
+                item.append(listOfUxVectors[-1])
+        item.append(listOfUxVectors[-2])
+        listOfTemplates.append(item)
+    item = []
+    for itemId in range(numOfVar + 1):
+        item.append(listOfUxVectors[itemId])
+    listOfTemplates.append(item)
+    print(listOfTemplates)
 def isUselessRankingFunction(rf):
     for c in rf.coefficients:
         if(c != 0):
@@ -133,31 +149,50 @@ def isUselessRankingFunction(rf):
 '''--------------------Attributes for testing-------------------'''
 
 TemplatesListTest = [
-    [[1,0,1],
-     [0,1,1],
-     [0,0,1]]
-]
-''',
+    
     [[1,0,1],
      [0,0,0],
      [0,0,1]],
     [[0,0,0],
      [0,1,1],
+     [0,0,1]],
+    [[1,0,1],
+     [0,1,1],
      [0,0,1]]
-'''
 
+]
 TemplatesListExp = [
     
-    [[1,0,-1],
+    [[1,0,1],
+     [0,1,-4],
+     [0,0,1]],
+    [[1,0,1],
+     [0,1,-2],
+     [0,0,1]],
+    [[1,0,1],
      [0,1,-1],
-     [0,0,-1]],
-    [[1,0,-1],
-     [0,0,0],
-     [0,0,-1]],
-    [[0,0,0],
-     [0,1,-1],
-     [0,0,-1]]
+     [0,0,1]]
 
+]
+
+
+TemplatesNondet = [
+    [[1, 0, 0, 1],
+     [0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 0, 1]],
+     [[0, 0, 0, 0],
+     [0, 0, 0, 0],
+     [0, 0, 1, 1],
+     [0, 0, 0, 1]],
+     [[0, 0, 0, 0],
+     [0, 1, 0, 1],
+     [0, 0, 0, 0],
+     [0, 0, 0, 1]],
+    [[1, 0, 0, 1],
+     [0, 1, 0, 1],
+     [0, 0, 1, 1],
+     [0, 0, 0, 1]]
 ]
 
 

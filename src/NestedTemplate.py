@@ -284,7 +284,9 @@ class NestedTemplate:
 			# remove all coefficients we used
 			num_of_coef_used = sum(self.dimension[index:])
 			self.print_coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used] * self.last_coef_array[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
-			#print('coeff = ', coef)
+			print('coeff = ', self.coefficients)
+			print("last coef = ", self.last_coef_array)
+			print("print coef = ", self.print_coef)
 			# polynomial
 			#print(self.list_of_Ux[index])
 			polys = self.list_of_Ux[index]

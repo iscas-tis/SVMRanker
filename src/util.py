@@ -130,6 +130,7 @@ def parse_template_handcraft(list, numOfVar, ListOfDimension):
 				)
 			)
 		start += d
+	last_coef_array[-1] = 1
 	return polynomial_result, last_coef_array
 
 
@@ -228,7 +229,7 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
                 p_ = get_statement(L,p)
                 if p_ is None:
                     continue
-                print(p)
+                print("point:", p)
                 rf.sample_points_list.append(p)
                 for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
                     yield ('UNKNOWN',x, y)
@@ -238,7 +239,6 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
             return 
         for x,y in rf.get_example(base_point,base_point_):
             yield('UNKNOWN',x,y)
-
     # yield (rf.get_zero_vec(), -1)
     # print("sample example down!!")
 
@@ -263,10 +263,11 @@ def get_xpoints( m, h, n,base_point):
 def signal_handler(signum, frame):
 	raise Exception("time out")
 
-def train_ranking_function(L, rf, x, y,  m=5, h=1, n=2):
+def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
-	#m = 33
+	m = 5
+	h = 1
 	rt = is_type_real(L)
 	# integer
 	if not rt:
@@ -289,7 +290,12 @@ def train_ranking_function(L, rf, x, y,  m=5, h=1, n=2):
 	result=[]
 	try:
 		#result,x, y = zip(*sample_points(L, m, h, n, rf,[0]*n)) 
-		for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
+		sample_points_list = sample_points(L, m, h, n, rf,[0]*n)
+		while(len(sample_points_list) < 10):
+			m = 1.5*m
+			h = 1.5*h
+			sample_points_list = sample_points(L, m, h, n, rf,[0]*n)
+		for new_result,new_x,new_y in sample_points_list:
 			x = x+(np.array(new_x),)
 			y = y+(new_y,)
 			result.append(new_result)
@@ -305,7 +311,6 @@ def train_ranking_function(L, rf, x, y,  m=5, h=1, n=2):
 		return result[0],x,y
 	print( str(get_time(s_t))+"   >>>>   " + "End sampling point\n")
 	print( 'sampling time = %.3f ms,\n\n' % ( get_time_interval(st, s_t)))
-	#print(x, y)
 	# print 'start train_ranking_function...'
 	count = 0
 	last_coef =[]
@@ -320,9 +325,8 @@ def train_ranking_function(L, rf, x, y,  m=5, h=1, n=2):
 		print(  str(get_time(ct))+ "   >>>>   " + "Start train ranking function\n")
 		try:
 			SVM=LinearSVC (fit_intercept=False)
-			#print(x,y)
 			SVM.fit(x, y)
-			# print(SVM.coef_[0])
+			print("HERE")
 			coef = [round (j, acc) for j in SVM.coef_[0]]
 			if(np.all(coef == last_coef)):
 				same_coef_count+=1
@@ -431,6 +435,7 @@ def train_ranking_function_heuristic_implication(L, rf, x, y, old_coef_array,m=4
 	# this constraint should be added to z3_verify_heuristic_implication
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
+	m = 10
 	rt = is_type_real(L)
 	# integer
 	if not rt:
