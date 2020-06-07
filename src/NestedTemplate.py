@@ -134,27 +134,17 @@ class NestedTemplate:
 		
 	def get_example(self, x, x_):  # Generate training set by Gx
 		num_of_Gx = len(self.list_of_Gx)
+		print("NUMGX ", num_of_Gx)
 		for index in range(num_of_Gx):
+			print("INDEX: ", index, x, x_)
 			g_x = self.list_of_Gx[index](x, x_)
-			# print('sample = ', g_x)
-			# self.num_of_neg_data += 1
-			# yield (- g_x, -1)
-			# if list of Gx only has two components
-			# it means that K = 1
-#			if num_of_Gx == 2:
-#				if index == 0:
-#					self.num_of_neg_data += 1
-#					yield (- g_x, -1)
-#				else:
-#					self.num_of_pos_data += 1
-#					yield (g_x, 1)
-#			else:
+			print("YIELD SVM POINT")
 			if index %2 == 0:
-				# print('positive')
+				print('positive')
 				self.num_of_pos_data += 1
 				yield (g_x, 1)
 			else:
-				# print('negtive')
+				print('negtive')
 				self.num_of_neg_data += 1
 				yield(-g_x,-1)
 
@@ -284,9 +274,9 @@ class NestedTemplate:
 			# remove all coefficients we used
 			num_of_coef_used = sum(self.dimension[index:])
 			self.print_coef = self.coefficients[(num_of_coef_used - self.dimension[index]): num_of_coef_used] * self.last_coef_array[(num_of_coef_used - self.dimension[index]): num_of_coef_used]
-			print('coeff = ', self.coefficients)
-			print("last coef = ", self.last_coef_array)
-			print("print coef = ", self.print_coef)
+			#print('coeff = ', self.coefficients)
+			#print("last coef = ", self.last_coef_array)
+			#print("print coef = ", self.print_coef)
 			# polynomial
 			#print(self.list_of_Ux[index])
 			polys = self.list_of_Ux[index]

@@ -45,7 +45,7 @@ def heuristicImplicationConstraint(list_of_old_expr, new_expr, isReal):
         return result
 '''
 
-def ConjunctRankConstraintL(L_old, rf, isReal=True):
+def ConjunctRankConstraintL(L_old, rf, strategy="MINUS", isReal=True):
     # conjunct the ranking function constrain f <= 0 with the loop guard in L_old
     # to obtain a new loop L_new
 
@@ -55,12 +55,21 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     NumOfVars = L_old[2]
     coef = rf.coefficients
     addedExp = lambda x: coefDotExpr(x, coef, rf.last_coef_array, NumOfVars)
-    divideConstant = 0
-    minPoint = [0 for i in range(NumOfVars)]
-    for point in rf.sample_points_list:
-        if addedExp(point) < divideConstant:
-            divideConstant = addedExp(point)
-            minPoint = point
+    if strategy == "ZERO":
+        divideConstant = 0
+    elif strategy == "MINUS":
+        divideConstant = -0.1
+    elif strategy == "POS":
+        divideConstant = 0.1
+    elif strategy == "MINI":
+        divideConstant = -0.1
+        minPoint = [0 for i in range(NumOfVars)]
+        for point in rf.sample_points_list:
+            if addedExp(point) < divideConstant:
+                divideConstant = addedExp(point)
+                minPoint = point
+    else:
+        divideConstant = -0.1
     print("---------DIVIDE CONSTANT:", divideConstant)
     # ATTENTION NOT ROBUST HERE TODO
     rf.coefficients[-1] += -divideConstant/rf.last_coef_array[-1]
@@ -73,7 +82,7 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
     # find new update of the variables
     old_update = L_old[1]
     # the latter part will not happen for the loop guard is updated TODO: check
-    new_update = lambda x: old_update(x) if appendConstraint(x) else [x[0], x[1]]
+    new_update = lambda x: old_update(x) if appendConstraint(x) else [x[i] for i in range(len(x))]
     L_new.append(new_update)
     
     #L_new[2]
@@ -102,10 +111,7 @@ def ConjunctRankConstraintL(L_old, rf, isReal=True):
 def changeTemplate(L, template):
     L[4] = template
 
-def generateTemplateLib(numOfVar, maxPower=1):
-    # numOfvar represents the maximum diemension of a function
-    # maxPower represents the maximum power of a variable, default 1 meaning linear functions
-    # for linear template the function will finally generate a list of templates of num 2^varnum
+def genListOfVectors(numOfVar, maxPower=1):
     listOfUxVectors = []
     for i in range(numOfVar):
         UxTemplate = []
@@ -123,7 +129,13 @@ def generateTemplateLib(numOfVar, maxPower=1):
     for k in range(numOfVar+1):
         UxTemplate.append(0)
     listOfUxVectors.append(UxTemplate)
-    print(listOfUxVectors)
+    return listOfUxVectors
+
+def generateTemplateLibSingleFull(numOfVar, maxPower=1):
+    # numOfvar represents the maximum diemension of a function
+    # maxPower represents the maximum power of a variable, default 1 meaning linear functions
+    # for linear template the function will finally generate a list of templates of num 2^varnum
+    listOfUxVectors = genListOfVectors(numOfVar, maxPower)
     listOfTemplates = []
     for varId in range(numOfVar):
         item = []
@@ -140,6 +152,23 @@ def generateTemplateLib(numOfVar, maxPower=1):
     listOfTemplates.append(item)
     return listOfTemplates
 
+def generateTemplateLibFull(numOfVar, maxPower=1):
+    listOfUxVectors = genListOfVectors(numOfVar, maxPower)
+    listOfTemplates = []
+    item = []
+    for itemId in range(numOfVar + 1):
+        item.append(listOfUxVectors[itemId])
+    listOfTemplates.append(item)
+    return listOfTemplates
+
+
+def generateTemplatesStrategy(strategy, numOfVar, maxPower=1):
+    if strategy == "FULL":
+        return generateTemplateLibFull(numOfVar, maxPower)
+    elif strategy == "SINGLEFULL":
+        return generateTemplateLibSingleFull(numOfVar, maxPower)
+    else:
+        return []
 
 def isUselessRankingFunction(rf):
     for c in rf.coefficients:
@@ -147,24 +176,10 @@ def isUselessRankingFunction(rf):
             return False
     return True
 
-    
 '''--------------------Attributes for testing-------------------'''
 
-TemplatesListTest = [
-    
-    [[1,0,1],
-     [0,0,0],
-     [0,0,1]],
-    [[0,0,0],
-     [0,1,1],
-     [0,0,1]],
-    [[1,0,1],
-     [0,1,1],
-     [0,0,1]]
-
-]
+TemplatesListTest = generateTemplateLibSingleFull(3)
 TemplatesListExp = [
-    
     [[1,0,1],
      [0,1,-4],
      [0,0,1]],
@@ -174,29 +189,8 @@ TemplatesListExp = [
     [[1,0,1],
      [0,1,-1],
      [0,0,1]]
-
 ]
-
-
-TemplatesNondet = [
-    [[1, 0, 0, 1],
-     [0, 0, 0, 0],
-     [0, 0, 0, 0],
-     [0, 0, 0, 1]],
-     [[0, 0, 0, 0],
-     [0, 0, 0, 0],
-     [0, 0, 1, 1],
-     [0, 0, 0, 1]],
-     [[0, 0, 0, 0],
-     [0, 1, 0, 1],
-     [0, 0, 0, 0],
-     [0, 0, 0, 1]],
-    [[1, 0, 0, 1],
-     [0, 1, 0, 1],
-     [0, 0, 1, 1],
-     [0, 0, 0, 1]]
-]
-
+TemplatesNondet = generateTemplateLibSingleFull(4)
 
 '''--------------------Print methods-------------------------'''
 def printSummary(multidepth, ret, listOfRFs):

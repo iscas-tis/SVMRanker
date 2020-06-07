@@ -35,14 +35,15 @@ def LearnRanker(templateFilePath, indexOfTemplate, x, y):
         info.append(line)
     listOfUxDimension= [int(x) for x in info]
     
-    listOfUx = parse_template(templateFilePath,L[2],listOfUxDimension, indexOfTemplate)
+    listOfUx, last_coef_array = parse_template(templateFilePath,L[2],listOfUxDimension, indexOfTemplate)
     rf = NestedTemplate( #NestedRankingFunction(
         # list of U(x)
         listOfUx
         # list of C
         , [0.001] *len(listOfUx)
         # Delta
-        , 0)
+        , 0
+        , last_coef_array)
     # number of variables   
 
     ret = 'UNKNOWN'

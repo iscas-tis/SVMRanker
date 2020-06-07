@@ -18,6 +18,7 @@ from polynomial.Exponential import Exponential
 from NestedRankingFunction import NestedRankingFunction
 from NestedNoBoundTemplate import NestedNoBoundTemplate
 from NestedTemplate import NestedTemplate
+from FindMultiphaseUtil import *
 
 
 
@@ -67,7 +68,7 @@ def make_dict_order(num_of_vars, dimension, mat_of_vars):
     # print(polys)
     return polys,order
 
-def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
+def parse_template_multi(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
 	arrays = np.loadtxt(os.path.join(templatePath,"template"+str(indexOfTemplate)),delimiter=',')
 	arrays = arrays.reshape(-1,numOfVar+1)
 	print(len(arrays),ListOfDimension)
@@ -75,38 +76,21 @@ def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
 		raise Exception('Wrong template format')
 	start = 0
 	# print(arrays)
-	polynomial_result = []
-	for d in ListOfDimension:
-		polys,order = make_dict_order(numOfVar, d,  arrays[start:start+d])
-		# print(polys,order)
-		polynomial_result.append(
-			Polynomial(
-				polys, order
-				)
-			)
-		start += d
-	return polynomial_result
-'''
-def parseTemplateMulti(templatePath, numOfvar, ListOfDimension, indexOfTemplate):
-	arrays = np.loadtxt(os.path.join(templatePath,"template"+str(indexOfTemplate)),delimiter=',')
-	arrays = arrays.reshape(-1,numOfVar+1)
-	print(len(arrays),ListOfDimension)
-	if(len(arrays) != np.sum(ListOfDimension)):
-		raise Exception('Wrong template format')
+	# generate template lib arrays
+	if numOfVar > 10:
+		strategy = "FULL"
+	else:
+		strategy = "SINGLEFULL"
+	templatesLib = generateTemplatesStrategy(strategy, numOfVar)
 	start = 0
-	# print(arrays)
-	polynomial_result = []
 	for d in ListOfDimension:
-		polys,order = make_dict_order(numOfVar, d,  arrays[start:start+d])
-		# print(polys,order)
-		polynomial_result.append(
-			Polynomial(
-				polys, order
-				)
-			)
-		start += d
-	return polynomial_result
-'''
+		item = arrays[start:start + numOfVar + 1]
+		start += numOfVar+1
+		templatesLib.append(item)
+	return templatesLib
+
+
+
 # add crafted parse template 
 def parse_template_handcraft(list, numOfVar, ListOfDimension):
 	#print(len(list),numOfVar,ListOfDimension)
@@ -223,9 +207,10 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
         print('sample_points ',  m, h, n,base_point)
         for p in get_xpoints( m, h, n,base_point):  # Generate all candidate n-D points
             #print(p)
+            
             condition = get_condition(L,p)
+            
             if condition:  # must satisfy the guard condition
-                
                 p_ = get_statement(L,p)
                 if p_ is None:
                     continue
@@ -235,7 +220,9 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
                     yield ('UNKNOWN',x, y)
         #print(rf.get_zero_vec())
         base_point_ = get_statement(L,base_point)
+        print("BASE, BASE_", base_point, base_point_)
         if base_point_ is None:
+            
             return 
         for x,y in rf.get_example(base_point,base_point_):
             yield('UNKNOWN',x,y)
@@ -266,8 +253,9 @@ def signal_handler(signum, frame):
 def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
-	m = 16
-	h = 0.1
+	#m = 16
+	#h = 0.1
+	# TODO: find a sampling strategy that is much more robust and effective
 	rt = is_type_real(L)
 	# integer
 	if not rt:
@@ -290,23 +278,178 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	result=[]
 	try:
 		#result,x, y = zip(*sample_points(L, m, h, n, rf,[0]*n)) 
-		'''
-		i= 0
-		while(i <= 10):
-			i = 0
-			for test_result, test_x, test_y in sample_points(L, m, h, n, rf,[0]*n):
-				i+=1
-				if i > 10:
-					break	
-			if i <= 10:
-				print("CHANGE MH")
-				m = 1.5*m
-				h = 1.5*h
-		'''
 		for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
 			x = x+(np.array(new_x),)
 			y = y+(new_y,)
 			result.append(new_result)
+		# result,x, y = zip(*sample_points_bisection(L, n, rf))
+		#print(x,y)
+	except Exception as e:
+		print(e)
+		#x,y = (),()
+		result = ['UNKNOWN']
+	s_t = datetime.datetime.now()
+	#print(result)
+	if result[0] != 'UNKNOWN':
+		return result[0],x,y
+	print( str(get_time(s_t))+"   >>>>   " + "End sampling point\n")
+	print( 'sampling time = %.3f ms,\n\n' % ( get_time_interval(st, s_t)))
+	# print 'start train_ranking_function...'
+	count = 0
+	last_coef =[]
+	same_coef_count = 0
+	list_of_accu = [0,1,4]
+	# acc: accuracy 
+	acc = 4 if rt else 1
+	while True:
+		print( "       ########################################         \n")
+		print(  "iteration "+str(count)+ " with "+str(len(y)) + " examples"+"\n")
+		ct = datetime.datetime.now()
+		print(  str(get_time(ct))+ "   >>>>   " + "Start train ranking function\n")
+		try:
+			SVM=LinearSVC (fit_intercept=False)
+			SVM.fit(x, y)
+			coef = [round (j, acc) for j in SVM.coef_[0]]
+			if(np.all(coef == last_coef)):
+				same_coef_count+=1
+				if same_coef_count == 5 :
+					list_of_accu.remove(acc)
+					print(same_coef_count)
+					length = len(list_of_accu)
+					if length ==0:
+						print( "the coefficient is convergent\n")
+						break
+					acc = random.choice(list_of_accu)
+					same_coef_count = 0
+			else:
+				same_coef_count=0
+			# train done
+			last_coef = coef
+			print('training done')
+		except Exception as e:
+			coef = [round (random.random(), acc) for j in range(np.sum(rf.dimension))]
+			last_coef =coef
+			print(e)
+			raise e
+			print('problem in training, choose random value')
+        	
+		et = datetime.datetime.now()
+		print(  str(get_time(et))+"   >>>>   " + "End train ranking function\n")
+		print( 'train_ranking_functioning time = %.3f ms\n\n' % ( get_time_interval(ct, et)))
+		np.set_printoptions (suppress=True)
+		# print 'train_ranking_function done...'
+		#print(  "\ncoefficient are \n")
+		#print( " "+str(coef) + "\n\n")
+		#print (coef, len (y))
+		ht = datetime.datetime.now()
+		print(  str(get_time(ht))+"   >>>>   " + "Start verify ranking function\n")
+		rf.set_coefficients (coef)
+		# print('ranking function: ', rf)
+		ret = None
+		Is_inf = False
+
+		#signal.signal(signal.SIGALRM, signal_handler)
+		#signal.alarm(1)     
+		#try:
+		if rt:
+			ret = rf.z3_verify (n, coef, L[-1], L[-2])
+			# print('check_result = ', ret)
+			# print(ret)
+			# if not ret[0]:
+			# 	Is_inf,inf_model = rf.check_infinite_loop (n, L[-1], L[-2])
+		else:
+			ret = rf.z3_verify(n, coef, L[-2], L[-3], False)
+		# except Exception as e:
+		# 	print(e)
+		# 	ret = False, None
+		# 	# if not ret[0]:
+		# 	# 	Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
+		# signal.alarm(0)
+		# if Is_inf:
+		# 	print(  "it is not terminated, an inFINITE loop with initial condition:\n")
+		# 	print(  inf_model+'\n')
+		# 	return "INFINITE"
+		# check(n, coef)
+		h_t = datetime.datetime.now()
+		print(  "ranking function : " + str(rf)+"\n")
+		print(  str(get_time(h_t))+"   >>>>   " + "End verify ranking function\n")
+		#print( "\nTotal time used:\n")
+		print( 'verifying time = %.3f ms\n\n' % (get_time_interval(ht, h_t)))
+		# print ('sampling = %.3fs, train_ranking_functioning = %.3fs, verifying = %.3fs' % (
+		# s_t - st, et - ct, h_t - ht))
+		if ret[0]:
+			print(  "Found Ranking Function: "+str(rf)+"\n")
+			return "FINITE",None,None
+		elif ret[1] is None:
+			return 'UNKNOWN',x,y
+		elif ret[1] is not None:
+			# add more points
+			print( "Not Found Ranking Function\n")
+			p = [(x if x is not None else 0) for x in ret[1] ]#ret[1]
+			print(  "Counterexample is \n")
+			print(  str(p)+"\n")
+			# print('model = ', p)
+			p_ = get_statement(L, p)
+			# print(p, p_)
+			# tp = rf.get_example(p, p_)
+			# print(tp)
+			# print(*tp)
+			# new_x,new_y = zip(*rf.get_example(p, p_))
+			# print(x,y)
+			st = datetime.datetime.now()
+			for new_x,new_y  in rf.get_example(p, p_):
+			# for new_x,new_y  in sample_points(L, m, h, n, rf,p):
+			    x = x+(np.array(new_x),)
+			    y = y+(new_y,)
+			s_t = datetime.datetime.now()
+			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
+		count += 1
+		if count >= 20:
+		   break
+	print(  "Failed to prove it is terminating\n")
+	return "UNKNOWN",x,y
+
+
+def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
+	n=L[2]
+	m = max((100 ** (1/n))*h/2,h )
+	#m = 16
+	#h = 0.1
+	# TODO: find a sampling strategy that is much more robust and effective
+	rt = is_type_real(L)
+	# integer
+	if not rt:
+		h = 1
+		m = int(max((100 ** (1/n))/2,0))
+        
+	print("m:",m,"h:",h)
+	print("*****************************************************\n")
+	if rt:
+		Is_inf,inf_model = rf.check_infinite_loop (n, L[-1], L[-2])
+	else:
+		Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
+	if Is_inf:
+		print(  "it is not terminating, an inFINITE loop with initial condition:\n")
+		print(  inf_model+'\n')
+		return "INFINITE",None,None
+	st = datetime.datetime.now()
+	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
+	# print(*sample_points(no, m, h, n, rf))
+	result=[]
+	try:
+		#result,x, y = zip(*sample_points(L, m, h, n, rf,[0]*n)) 
+		sample_num = 0
+		while sample_num < 10:
+			print("HERE1")
+			for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
+				print("HERE2")
+				x = x+(np.array(new_x),)
+				y = y+(new_y,)
+				result.append(new_result)
+			sample_num = len(x)
+			print("SAMPLE NUM: ", sample_num)
+			m = 2*m
+			h = 1.5*h
 		# result,x, y = zip(*sample_points_bisection(L, n, rf))
 		#print(x,y)
 	except Exception as e:
@@ -435,7 +578,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y
 
-
+'''
 def train_ranking_function_heuristic_implication(L, rf, x, y, old_coef_array,m=4, h=0.5, n=2):
 	# old_coef_array is used to remember the coeficients of learned ranking part
 	# for each new learned ranking part f_i, we require that it is unique:
@@ -467,6 +610,7 @@ def train_ranking_function_heuristic_implication(L, rf, x, y, old_coef_array,m=4
 			x = x+(np.array(new_x),)
 			y = y+(new_y,)
 			result.append(new_result)
+			print(len(x))
 	except Exception as e:
 		print(e)
 		result = ['UNKNOWN']
@@ -555,3 +699,4 @@ def train_ranking_function_heuristic_implication(L, rf, x, y, old_coef_array,m=4
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y
+'''
