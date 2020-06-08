@@ -62,13 +62,34 @@ def make_dict_order(num_of_vars, dimension, mat_of_vars):
         #     mon_ = Exponential(coefs)
         mon_ = Monomial(coefs)
         order.append(mon_)
-        print("ORDER", mon_)
         # get the coefficient of the monomial
         polys[mon_] = mat_of_vars[i][-1]
     # print(polys)
     return polys,order
 
-def parse_template_multi(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
+def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
+	arrays = np.loadtxt(os.path.join(templatePath,"template"+str(indexOfTemplate)),delimiter=',')
+	arrays = arrays.reshape(-1,numOfVar+1)
+	print(len(arrays),ListOfDimension)
+	if(len(arrays) != np.sum(ListOfDimension)):
+		raise Exception('Wrong template format')
+	last_coef_array = arrays[:,numOfVar]
+	start = 0
+	# print(arrays)
+	polynomial_result = []
+	for d in ListOfDimension:
+		polys,order = make_dict_order(numOfVar, d,  arrays[start:start+d])
+		# print(polys,order)
+		polynomial_result.append(
+			Polynomial(
+				polys, order
+				)
+			)
+		start += d
+	return polynomial_result, last_coef_array
+
+
+def parse_template_multi(templatePath, numOfVar, ListOfDimension, indexOfTemplate):
 	arrays = np.loadtxt(os.path.join(templatePath,"template"+str(indexOfTemplate)),delimiter=',')
 	arrays = arrays.reshape(-1,numOfVar+1)
 	print(len(arrays),ListOfDimension)
@@ -78,10 +99,10 @@ def parse_template_multi(templatePath,numOfVar,ListOfDimension, indexOfTemplate)
 	# print(arrays)
 	# generate template lib arrays
 	if numOfVar > 10:
-		strategy = "FULL"
+		templates_strategy = "FULL"
 	else:
-		strategy = "SINGLEFULL"
-	templatesLib = generateTemplatesStrategy(strategy, numOfVar)
+		templates_strategy = "SINGLEFULL"
+	templatesLib = generateTemplatesStrategy(templates_strategy, numOfVar)
 	start = 0
 	for d in ListOfDimension:
 		item = arrays[start:start + numOfVar + 1]
@@ -220,7 +241,6 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
                     yield ('UNKNOWN',x, y)
         #print(rf.get_zero_vec())
         base_point_ = get_statement(L,base_point)
-        print("BASE, BASE_", base_point, base_point_)
         if base_point_ is None:
             
             return 
@@ -440,9 +460,7 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 		#result,x, y = zip(*sample_points(L, m, h, n, rf,[0]*n)) 
 		sample_num = 0
 		while sample_num < 10:
-			print("HERE1")
 			for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
-				print("HERE2")
 				x = x+(np.array(new_x),)
 				y = y+(new_y,)
 				result.append(new_result)
@@ -577,126 +595,3 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y
-
-'''
-def train_ranking_function_heuristic_implication(L, rf, x, y, old_coef_array,m=4, h=0.5, n=2):
-	# old_coef_array is used to remember the coeficients of learned ranking part
-	# for each new learned ranking part f_i, we require that it is unique:
-	# i.e. \forall j < i. /\_j \not(f_j > 0 --> f_i > 0)
-	# this constraint should be added to z3_verify_heuristic_implication
-	n=L[2]
-	m = max((100 ** (1/n))*h/2,h )
-	m = 10
-	rt = is_type_real(L)
-	# integer
-	if not rt:
-		h = 1
-		m = int(max((100 ** (1/n))/2,0))
-        
-	print("m:",m,"h:",h)
-	print("*****************************************************\n")
-	if rt:
-		Is_inf,inf_model = rf.check_infinite_loop (n, L[-1], L[-2])
-	else:
-		Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
-	if Is_inf:
-		print(  "it is not terminating, an inFINITE loop with initial condition:\n")
-		print(  inf_model+'\n')
-		return "INFINITE",None,None
-	st = datetime.datetime.now()
-	result=[]
-	try:
-		for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
-			x = x+(np.array(new_x),)
-			y = y+(new_y,)
-			result.append(new_result)
-			print(len(x))
-	except Exception as e:
-		print(e)
-		result = ['UNKNOWN']
-	s_t = datetime.datetime.now()
-	if result[0] != 'UNKNOWN':
-		return result[0],x,y
-	print( str(get_time(s_t))+"   >>>>   " + "End sampling point\n")
-	print( 'sampling time = %.3f ms,\n\n' % ( get_time_interval(st, s_t)))
-	count = 0
-	last_coef =[]
-	same_coef_count = 0
-	list_of_accu = [0,1,4]
-	acc = 4 if rt else 1
-	while True:
-		print( "       ########################################         \n")
-		print(  "iteration "+str(count)+ " with "+str(len(y)) + " examples"+"\n")
-		ct = datetime.datetime.now()
-		print(  str(get_time(ct))+ "   >>>>   " + "Start train ranking function\n")
-		try:
-			SVM=LinearSVC (fit_intercept=False)
-			#print(x,y)
-			SVM.fit(x, y)
-			# print(SVM.coef_[0])
-			coef = [round (j, acc) for j in SVM.coef_[0]]
-			if(np.all(coef == last_coef)):
-				same_coef_count+=1
-				if same_coef_count == 5 :
-					list_of_accu.remove(acc)
-					print(same_coef_count)
-					length = len(list_of_accu)
-					if length ==0:
-						print( "the coefficient is convergent\n")
-						break
-					acc = random.choice(list_of_accu)
-					same_coef_count = 0
-			else:
-				same_coef_count=0
-			last_coef = coef
-			print('training done')
-		except Exception as e:
-			coef = [round (random.random(), acc) for j in range(np.sum(rf.dimension))]
-			last_coef =coef
-			print(e)
-			raise e
-			print('problem in training, choose random value')
-        	
-		et = datetime.datetime.now()
-		print(  str(get_time(et))+"   >>>>   " + "End train ranking function\n")
-		print( 'train_ranking_functioning time = %.3f ms\n\n' % ( get_time_interval(ct, et)))
-		np.set_printoptions (suppress=True)
-		ht = datetime.datetime.now()
-		print(  str(get_time(ht))+"   >>>>   " + "Start verify ranking function\n")
-		rf.set_coefficients (coef)
-		ret = None
-		Is_inf = False
-		if rt:
-			ret = rf.z3_verify_heuristic_implication(n, coef, L[-1], L[-2], old_coef_array)
-		else:
-			ret = rf.z3_verify_heuristic_implication(n, coef, L[-2], L[-3], old_coef_array, False)
-		h_t = datetime.datetime.now()
-		print(  "ranking function : " + str(rf)+"\n")
-		print(  str(get_time(h_t))+"   >>>>   " + "End verify ranking function\n")
-		print( 'verifying time = %.3f ms\n\n' % (get_time_interval(ht, h_t)))
-		if ret[0]:
-			print(  "Found Ranking Function: "+str(rf)+"\n")
-			return "FINITE",None,None
-		elif ret[1] is None:
-			return 'UNKNOWN',x,y
-		elif ret[1] is not None:
-			# add more points
-			print( "Not Found Ranking Function\n")
-			p = [(x if x is not None else 0) for x in ret[1] ]#ret[1]
-			print(  "Counterexample is \n")
-			print(  str(p)+"\n")
-			# print('model = ', p)
-			p_ = get_statement(L, p)
-			st = datetime.datetime.now()
-			for new_x,new_y  in rf.get_example(p, p_):
-			# for new_x,new_y  in sample_points(L, m, h, n, rf,p):
-			    x = x+(np.array(new_x),)
-			    y = y+(new_y,)
-			s_t = datetime.datetime.now()
-			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
-		count += 1
-		if count >= 100:
-		   break
-	print(  "Failed to prove it is terminating\n")
-	return "UNKNOWN",x,y
-'''

@@ -10,6 +10,7 @@ import time
 import sys
 import os
 from util import *
+from util import parse_template
 
 def LearnRanker(templateFilePath, indexOfTemplate, x, y):
     #templateFilePath = sys.argv[1]

@@ -13,39 +13,30 @@ def coefDotExpr(x, coef, last_coef_list, NumOfVars):
     result += coef[-1]
     return result
 
-def coefDotExprZ3Constraint(x, coef, last_coef_list, NumOfVars, divideConstant, isReal):
-    if(isReal):
-        result = RealVal(0)
-        for i in range(NumOfVars):
-            CoefTemp = RealVal(coef[i])
-            lastCoefTemp = RealVal(last_coef_list[i])
-            result = Sum(result, Product(CoefTemp, x[i], lastCoefTemp))
-        result = Sum(result, Product(RealVal(coef[-1]), RealVal(last_coef_list[-1])))
-        print("-----DOT RESULT: ", result)
-        #print(type(result))
-        return result < divideConstant
+def coefDotExprZ3Constraint(x, coef, last_coef_list, NumOfVars, divideConstant):
+    result = RealVal(0)
+    for i in range(NumOfVars):
+        CoefTemp = RealVal(coef[i])
+        lastCoefTemp = RealVal(last_coef_list[i])
+        result = Sum(result, Product(CoefTemp, x[i], lastCoefTemp))
+    result = Sum(result, Product(RealVal(coef[-1]), RealVal(last_coef_list[-1])))
+    #print("-----DOT RESULT: ", result)
+    #print(type(result))
+    return result < divideConstant
 
-def coefDotExprZ3Arithmetic(x, coef, last_coef_list, NumOfVars, isReal):
-    if(isReal):
-        result = RealVal(0)
-        for i in range(NumOfVars):
-            CoefTemp = RealVal(coef[i])
-            lastCoefTemp = RealVal(last_coef_list[i])
-            result = Sum(result, Product(CoefTemp, x[i], lastCoefTemp))
-        result = Sum(result, Product(RealVal(coef[-1]), RealVal(last_coef_list[-1])))
-        #print(result)
-        #print(type(result))
-        return result
-'''
-def heuristicImplicationConstraint(list_of_old_expr, new_expr, isReal):
-    if(isReal):
-        result = True
-        for old_expr in list_of_old_expr:
-            result = And(True, Implies(old_expr > 0, new_expr > 0))
-        return result
-'''
+def coefDotExprZ3Arithmetic(x, coef, last_coef_list, NumOfVars):
+    result = RealVal(0)
+    for i in range(NumOfVars):
+        CoefTemp = RealVal(coef[i])
+        lastCoefTemp = RealVal(last_coef_list[i])
+        result = Sum(result, Product(CoefTemp, x[i], lastCoefTemp))
+    result = Sum(result, Product(RealVal(coef[-1]), RealVal(last_coef_list[-1])))
+    #print(result)
+    #print(type(result))
+    return result
 
-def ConjunctRankConstraintL(L_old, rf, strategy="MINUS", isReal=True):
+
+def ConjunctRankConstraintL(L_old, rf, strategy="MINUS"):
     # conjunct the ranking function constrain f <= 0 with the loop guard in L_old
     # to obtain a new loop L_new
 
@@ -58,18 +49,18 @@ def ConjunctRankConstraintL(L_old, rf, strategy="MINUS", isReal=True):
     if strategy == "ZERO":
         divideConstant = 0
     elif strategy == "MINUS":
-        divideConstant = -0.1
+        divideConstant = -1
     elif strategy == "POS":
-        divideConstant = 0.1
+        divideConstant = 1
     elif strategy == "MINI":
-        divideConstant = -0.1
+        divideConstant = -1
         minPoint = [0 for i in range(NumOfVars)]
         for point in rf.sample_points_list:
             if addedExp(point) < divideConstant:
                 divideConstant = addedExp(point)
                 minPoint = point
     else:
-        divideConstant = -0.1
+        divideConstant = -1
     print("---------DIVIDE CONSTANT:", divideConstant)
     # ATTENTION NOT ROBUST HERE TODO
     rf.coefficients[-1] += -divideConstant/rf.last_coef_array[-1]
@@ -100,12 +91,12 @@ def ConjunctRankConstraintL(L_old, rf, strategy="MINUS", isReal=True):
     
     #L_new[5]
     # z3 update
-    L_new.append(lambda x: [If(coefDotExprZ3Constraint(x, coef, rf.last_coef_array, NumOfVars, divideConstant, isReal), L_old[5](x)[i], x[i]) for i in range(NumOfVars)])
+    L_new.append(lambda x: [If(coefDotExprZ3Constraint(x, coef, rf.last_coef_array, NumOfVars, divideConstant), L_old[5](x)[i], x[i]) for i in range(NumOfVars)])
    
     #L_new.append(L_old[5])
     #L_new[6]
     # z3 loop guard
-    L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, rf.last_coef_array, NumOfVars, divideConstant, isReal), L_old[6](x)))
+    L_new.append(lambda x: And(coefDotExprZ3Constraint(x, coef, rf.last_coef_array, NumOfVars, divideConstant), L_old[6](x)))
     return L_new
 '''-------------------------functions for generating templates lib---------------------------'''
 def changeTemplate(L, template):
