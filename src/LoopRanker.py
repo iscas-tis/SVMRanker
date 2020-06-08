@@ -43,8 +43,8 @@ def main():
     #     os.makedirs(log_path)
     # log_file = os.path.join(log_path,"LogFile_"+str(get_time(time.time()))+"_nonLinear.log")
     new_num_solved = []
-    FINITE_num = 0
-    inFINITE_num = 0
+    finite_num = 0
+    infinite_num = 0
     unknow_num = 0
     # f = open(log_file,'w')
     # f.write("")
@@ -79,17 +79,17 @@ def main():
         # f.write(Log)
         # f.close()
         if ret== 'FINITE':
-            FINITE_num +=1
+            finite_num +=1
         #     print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
-        elif ret == 'INFINITE':
-            inFINITE_num +=1
+        elif ret == 'INF-INITE':
+            infinite_num +=1
         elif ret == 'UNKNOWN':
             unknow_num +=1
         #new_num_solved.append(ret != 'UNKNOWN')
         e_t = datetime.datetime.now()
         print('Time Total used --->: ',get_time_interval(s_t,e_t))
 
-    print(FINITE_num, inFINITE_num,unknow_num, FINITE_num+ inFINITE_num,FINITE_num+inFINITE_num+unknow_num )
+    print(finite_num, infinite_num,unknow_num, finite_num+ infinite_num,finite_num+infinite_num+unknow_num )
 
 #    for i in range(len(old_num_solved)):
 #        if old_num_solved[i] and not new_num_solved[i]:

@@ -215,7 +215,7 @@ def sample_points_bisection(L,n,rf):
 						u_p = m
 				# print(m)
 			else:
-				yield('INFINITE',None,None)
+				yield('INF-INITE',None,None)
 		else:
 			yield('FINITE',None,None)
 		m_ = get_statement(L,m)
@@ -289,9 +289,9 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	else:
 		Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
 	if Is_inf:
-		print(  "it is not terminating, an inFINITE loop with initial condition:\n")
+		print(  "it is not terminating, an  infinity loop with initial condition:\n")
 		print(  inf_model+'\n')
-		return "INFINITE",None,None
+		return "INF-INITE",None,None
 	st = datetime.datetime.now()
 	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
 	# print(*sample_points(no, m, h, n, rf))
@@ -386,9 +386,9 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 		# 	# 	Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
 		# signal.alarm(0)
 		# if Is_inf:
-		# 	print(  "it is not terminated, an inFINITE loop with initial condition:\n")
+		# 	print(  "it is not terminated, an infinite loop with initial condition:\n")
 		# 	print(  inf_model+'\n')
-		# 	return "INFINITE"
+		# 	return "INF-INITE"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
 		print(  "ranking function : " + str(rf)+"\n")
@@ -424,7 +424,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 			s_t = datetime.datetime.now()
 			print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
 		count += 1
-		if count >= 20:
+		if count >= 200:
 		   break
 	print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y
@@ -449,9 +449,9 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 	else:
 		Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
 	if Is_inf:
-		print(  "it is not terminating, an inFINITE loop with initial condition:\n")
+		print(  "it is not terminating, an infinite loop with initial condition:\n")
 		print(  inf_model+'\n')
-		return "INFINITE",None,None
+		return "INF-INITE",None,None
 	st = datetime.datetime.now()
 	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
 	# print(*sample_points(no, m, h, n, rf))
@@ -553,9 +553,9 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 		# 	# 	Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
 		# signal.alarm(0)
 		# if Is_inf:
-		# 	print(  "it is not terminated, an inFINITE loop with initial condition:\n")
+		# 	print(  "it is not terminated, an infinite loop with initial condition:\n")
 		# 	print(  inf_model+'\n')
-		# 	return "INFINITE"
+		# 	return "INF-INITE"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
 		print(  "ranking function : " + str(rf)+"\n")

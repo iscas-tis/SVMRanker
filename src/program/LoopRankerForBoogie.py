@@ -130,9 +130,9 @@ def train_ranking_function(rf, no, m=4, h=0.5, n=2):
             if not ret[0]:
                 Is_inf,inf_model =rf.check_infinite_loop (n, L[no][-2], L[no][-3])
         if Is_inf:
-            Log += "it is not terminated, an inFINITE loop with initial condition:\n"
+            Log += "it is not terminated, an infinite loop with initial condition:\n"
             Log += inf_model+'\n'
-            return "INFINITE"
+            return "INF-INITE"
         # check(n, coef)
         h_t = time.time()
         Log += "ranking function : " + str(rf)+"\n"
