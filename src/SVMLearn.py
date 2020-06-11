@@ -3,26 +3,29 @@ import sys
 import os
 import datetime
 import random
+from LearnRanker import *
+from LearnMultiRanker import *
 
-
-def generateTemplate(indexOfTemplate, numOfVar):
+def generateTemplate(templateFullPath, indexOfTemplate, numOfVar):
 	if indexOfTemplate == 0:
-		generateLinearTemplateFile(indexOfTemplate, 1,numOfVar)
+		generateLinearTemplateFile(templateFullPath, indexOfTemplate, 1,numOfVar)
 	elif indexOfTemplate == 1:
-		generateNonLinearTemplateFile(indexOfTemplate,1,numOfVar)
+		generateNonLinearTemplateFile(templateFullPath, indexOfTemplate,1,numOfVar)
 	elif indexOfTemplate == 2:
-		generateLinearTemplateFile(indexOfTemplate, 3,numOfVar)
+		generateLinearTemplateFile(templateFullPath, indexOfTemplate, 3,numOfVar)
 	elif indexOfTemplate == 3:
-		generateNonLinearTemplateFile(indexOfTemplate,3,numOfVar)
+		generateNonLinearTemplateFile(templateFullPath, indexOfTemplate,3,numOfVar)
 	elif indexOfTemplate == 4:
-		generateLinearTemplateFile(indexOfTemplate, 5,numOfVar)
+		generateLinearTemplateFile(templateFullPath, indexOfTemplate, 5,numOfVar)
 	elif indexOfTemplate == 5:
-		generateNonLinearTemplateFile(indexOfTemplate,5,numOfVar)
+		generateNonLinearTemplateFile(templateFullPath, indexOfTemplate,5,numOfVar)
 	elif indexOfTemplate == 6:
-		generateLinearTemplateFile(indexOfTemplate, 7,numOfVar)
+		generateLinearTemplateFile(templateFullPath, indexOfTemplate, 7,numOfVar)
 	elif indexOfTemplate == 7:
-		generateNonLinearTemplateFile(indexOfTemplate,7,numOfVar)
-def generateNonLinearTemplateFile(indexOfTemplate, numOfG, numOfVar):
+		generateNonLinearTemplateFile(templateFullPath, indexOfTemplate,7,numOfVar)
+
+
+def generateNonLinearTemplateFile(templateFullPath, indexOfTemplate, numOfG, numOfVar):
 	# if os.path.exists(os.path.join(templateFullPath,'template'+str(indexOfTemplate))):
 	# 	return
 	f_info = open(os.path.join(templateFullPath,'Info'+str(indexOfTemplate)),'w')
@@ -47,7 +50,9 @@ def generateNonLinearTemplateFile(indexOfTemplate, numOfG, numOfVar):
 	f_template = open(os.path.join(templateFullPath,'template'+str(indexOfTemplate)),'w')
 	f_template.write(result)
 	f_template.close()
-def generateLinearTemplateFile(indexOfTemplate, numOfG, numOfVar):
+
+
+def generateLinearTemplateFile(templateFullPath, indexOfTemplate, numOfG, numOfVar):
 	# if os.path.exists(os.path.join(templateFullPath,'template'+str(indexOfTemplate))):
 	# 	return
 	f = open(os.path.join(templateFullPath,'template'+str(indexOfTemplate)),'w')
@@ -69,21 +74,61 @@ def generateLinearTemplateFile(indexOfTemplate, numOfG, numOfVar):
 	for i in range(numOfG):
 		f.write(str(numOfVar+1)+'\n')
 	f.close()
-def getLoopInfo():
-	infoFullPath = os.path.join(path,javaOutputInfo)
-	if not os.path.exists(infoFullPath):
-		print('Please parsing Boogie first')
-		raise Exception('Please parsing Boogie first')
-	f = open(infoFullPath,'r')
-	information = ''
-	for line in f.readline():
-		information+=line
-	return information.strip().split()
+
 def array_2_nospace_str(array):
 	result = ""
 	for x in array:
 		result+=str(x)+','
 	return result[:-1]
+
+
+def SVMLearnNested(sourceFilePath, sourceFileName, templatePath, templateFileName, Info, logFolder, parse_oldtime, parse_newtime):
+	rank_oldtime=datetime.datetime.now()
+	rf_list = []
+	if int(Info[0]) == 0:
+		numOfTemplate = 1#8
+		templateFullPath = os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName)
+		if not os.path.exists(templateFullPath):
+			os.makedirs(templateFullPath)
+		x,y = (),()
+		i = 0
+		for i in range(numOfTemplate):
+			tempalate_start = datetime.datetime.now()
+			print('------Using Template %d -----------'% i)
+			generateTemplate(templateFullPath, i, int(Info[1]))
+			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, (), ())
+			template_end = datetime.datetime.now()
+			print(result)
+			print('Time For Template %d Is--->%f ms\n' % (i, float((tempalate_start-template_end).total_seconds())*1000))
+			rf_list.append(rf)
+			if result != 'UNKNOWN':
+				break
+			i = (i+1)%numOfTemplate
+	rank_newtime=datetime.datetime.now()
+	f = open(os.path.join(logFolder,'AnalysisTimeForALL.log'),'a')
+	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
+	print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
+	print('Program is terminating' if result=='FINITE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+	return result, rf_list
+
+
+def SVMLearnMulti(sourceFilePath, sourceFileName, logFolder, parse_oldtime, parse_newtime):
+	from OneLoop import L
+	rank_oldtime=datetime.datetime.now()
+	result, rf_list = LearnMultiRanker(L, 5, "MINI", 1, (), (), True)
+	if result == "FINITE":
+	    printSummary(len(rf_list), result, rf_list)
+	else:
+	    print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
+	    print("LEARNING RESULT: ", result)
+	rank_newtime=datetime.datetime.now()
+	f = open(os.path.join(logFolder,'AnalysisTimeForALL.log'),'a')
+	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
+	print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
+	print('Program is terminating' if result=='FINITE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+	
+	return result, rf_list
+
 
 # def parsing_boogie(jarFile,fileName,outputPythonFile,outputInfoFile):
 # 	jpype.startJVM(jpype.getDefaultJVMPath(), "-Djava.class.path=%s" %jarFile) 
@@ -91,6 +136,13 @@ def array_2_nospace_str(array):
 # 	para = jpype.JArray(jpype.JString)([fileName,'0',outputPythonFile,outputInfoFile])
 # 	javaClass.main(para)
 # 	jpype.shutdownJVM()
+
+
+
+
+
+
+'''
 sourceFile = sys.argv[1]
 
 logFile = sys.argv[2]
@@ -163,3 +215,4 @@ f = open(os.path.join(logFile,'AnalysisTimeForALL.log'),'a')
 f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 print('Program is terminating' if result=='FINITE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+'''

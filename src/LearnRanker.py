@@ -5,7 +5,6 @@ Created on 21st March.
 '''
 
 import numpy as np
-from OneLoop import L
 import time
 import sys
 import os
@@ -13,6 +12,7 @@ from util import *
 from util import parse_template
 
 def LearnRanker(templateFilePath, indexOfTemplate, x, y):
+    from OneLoop import L
     #templateFilePath = sys.argv[1]
     # listOfUxDimension = [int(x) for x in sys.argv[2].split(',')]
     #logPath = sys.argv[2]
@@ -63,7 +63,7 @@ def LearnRanker(templateFilePath, indexOfTemplate, x, y):
     if ret== 'FINITE':
         print(rf)
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
-    return ret,new_x,new_y
+    return ret,new_x,new_y, rf
 
 #if __name__ == '__main__':
   #  main()

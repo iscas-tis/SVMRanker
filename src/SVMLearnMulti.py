@@ -3,16 +3,12 @@ import sys
 import os
 import datetime
 import random
+from LearnMultiRanker import *
+from OneLoop import L
 
-sourceFile = sys.argv[1]
-logFile = sys.argv[2]
-
-def LearnMultiRanker(sourceFile, logFile):
+def LearnMultiRankerTest(sourceFile, logFile):
 	
 	(sourceFilePath, sourceFileName) = os.path.split(sourceFile)
-	
-
-
 	version = '.'.join(sys.version.strip().split(' ')[0].split('.')[0:2])
 	pythonCommand = "python"+version
 
@@ -37,8 +33,6 @@ def LearnMultiRanker(sourceFile, logFile):
 
 
 	parse_newtime = datetime.datetime.now()
-	from LearnMultiRanker import *
-	from OneLoop import L
 	rank_oldtime=datetime.datetime.now()
 
 	result, rf_list = LearnMultiRanker(L, 5, "MINI", 1, (), (), True)

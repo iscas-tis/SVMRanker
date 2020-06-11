@@ -185,10 +185,16 @@ TemplatesNondet = generateTemplateLibSingleFull(4)
 
 '''--------------------Print methods-------------------------'''
 def printSummary(multidepth, ret, listOfRFs):
+    if(ret != "FINITE"):
+        depth = 0
+    else:
+        depth = multidepth
     print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
-    print("MULTIPHASE DEPTH: ", multidepth)
+    print("MULTIPHASE DEPTH: ", depth)
     print("LEARNING RESULT: ", ret)
     print("-----------RANKING FUNCTIONS----------")
-    for rf in listOfRFs:
-        print(str(rf))
+    if depth != 0:
+        for rf in listOfRFs:
+            print(str(rf))
+    
     

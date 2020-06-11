@@ -215,7 +215,7 @@ def sample_points_bisection(L,n,rf):
 						u_p = m
 				# print(m)
 			else:
-				yield('INF-INITE',None,None)
+				yield('INF',None,None)
 		else:
 			yield('FINITE',None,None)
 		m_ = get_statement(L,m)
@@ -291,7 +291,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	if Is_inf:
 		print(  "it is not terminating, an  infinity loop with initial condition:\n")
 		print(  inf_model+'\n')
-		return "INF-INITE",None,None
+		return "INF",None,None
 	st = datetime.datetime.now()
 	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
 	# print(*sample_points(no, m, h, n, rf))
@@ -388,7 +388,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 		# if Is_inf:
 		# 	print(  "it is not terminated, an infinite loop with initial condition:\n")
 		# 	print(  inf_model+'\n')
-		# 	return "INF-INITE"
+		# 	return "INF"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
 		print(  "ranking function : " + str(rf)+"\n")
@@ -451,7 +451,7 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 	if Is_inf:
 		print(  "it is not terminating, an infinite loop with initial condition:\n")
 		print(  inf_model+'\n')
-		return "INF-INITE",None,None
+		return "INF",None,None
 	st = datetime.datetime.now()
 	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
 	# print(*sample_points(no, m, h, n, rf))
@@ -555,7 +555,7 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 		# if Is_inf:
 		# 	print(  "it is not terminated, an infinite loop with initial condition:\n")
 		# 	print(  inf_model+'\n')
-		# 	return "INF-INITE"
+		# 	return "INF"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
 		print(  "ranking function : " + str(rf)+"\n")

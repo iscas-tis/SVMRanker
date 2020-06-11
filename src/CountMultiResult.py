@@ -19,8 +19,8 @@ for name in fileList:
             print(dirName + name)
             for line in f:
                 if line.find("LEARNING RESULT") != -1:
-                    if (line.find("INF-INITE") != -1): 
-                        print("INF-INITE")
+                    if (line.find("INF") != -1): 
+                        print("INF")
                         wf = open(targetCSV, "a")
                         wf.write(name.split(".", 1)[0] + "," + "N\n")
                         wf.close()

@@ -132,7 +132,7 @@ def train_ranking_function(rf, no, m=4, h=0.5, n=2):
         if Is_inf:
             Log += "it is not terminated, an infinite loop with initial condition:\n"
             Log += inf_model+'\n'
-            return "INF-INITE"
+            return "INF"
         # check(n, coef)
         h_t = time.time()
         Log += "ranking function : " + str(rf)+"\n"

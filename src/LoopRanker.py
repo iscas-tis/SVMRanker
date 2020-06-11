@@ -81,7 +81,7 @@ def main():
         if ret== 'FINITE':
             finite_num +=1
         #     print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
-        elif ret == 'INF-INITE':
+        elif ret == 'INF':
             infinite_num +=1
         elif ret == 'UNKNOWN':
             unknow_num +=1

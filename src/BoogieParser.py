@@ -5,7 +5,8 @@ import datetime
 import random
 
 def fillOneLoop():
-    os.system(" echo \"L,T = [], []\" > OneLoop.py")
+    os.system(" echo \"from z3 import *\" > OneLoop.py")
+    os.system(" echo \"L,T = [], []\" >> OneLoop.py")
  
 
 def getLoopInfo():
@@ -43,8 +44,6 @@ def parseBoogieProgram(sourceFile, outFile):
     # 	)
     Info = getLoopInfo()
     parse_newtime = datetime.datetime.now()
-    return parse_oldtime, parse_newtime
-
     templatePath = 'template'
     templateFileName = '.'.join([sourceFileName.strip(),'template'])
-    templatePath, templateFileName
+    return sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime
