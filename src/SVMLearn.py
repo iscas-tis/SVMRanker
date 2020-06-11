@@ -4,18 +4,6 @@ import os
 import datetime
 import random
 
-sourceFile = sys.argv[1]
-(sourceFilePath, sourceFileName) = os.path.split(sourceFile)
-logFile = sys.argv[2]
-
-templatePath = 'template'
-templateFileName = '.'.join([sourceFileName.strip(),'template'])
-version = '.'.join(sys.version.strip().split(' ')[0].split('.')[0:2])
-pythonCommand = "python"+version
-
-path = os.path.split(os.path.realpath(__file__))[0]
-
-javaOutputInfo = 'info.tmp'
 
 def generateTemplate(indexOfTemplate, numOfVar):
 	if indexOfTemplate == 0:
@@ -103,6 +91,21 @@ def array_2_nospace_str(array):
 # 	para = jpype.JArray(jpype.JString)([fileName,'0',outputPythonFile,outputInfoFile])
 # 	javaClass.main(para)
 # 	jpype.shutdownJVM()
+sourceFile = sys.argv[1]
+
+logFile = sys.argv[2]
+
+(sourceFilePath, sourceFileName) = os.path.split(sourceFile)
+
+
+templatePath = 'template'
+templateFileName = '.'.join([sourceFileName.strip(),'template'])
+version = '.'.join(sys.version.strip().split(' ')[0].split('.')[0:2])
+pythonCommand = "python"+version
+
+path = os.path.split(os.path.realpath(__file__))[0]
+
+javaOutputInfo = 'info.tmp'
 
 parse_oldtime=datetime.datetime.now()
 generatePythonLoopCommand = [

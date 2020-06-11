@@ -17,7 +17,7 @@ function dealFile(){
 	
 	startTime=`date +'%s.%N'`
 
-	timeout 5m python3 SVMLearnMulti.py $1 $2 | tee $2"/"$3".log"
+	timeout 3m python3 SVMLearnMulti.py $1 $2 | tee $2"/"$3".log"
 
 	endTime=`date +'%s.%N'`
 	getTiming $startTime $endTime $1 $2"/summarize.log"	
