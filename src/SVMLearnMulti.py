@@ -35,7 +35,7 @@ def LearnMultiRankerTest(sourceFile, logFile):
 	parse_newtime = datetime.datetime.now()
 	rank_oldtime=datetime.datetime.now()
 
-	result, rf_list = LearnMultiRanker(L, 5, "MINI", 1, (), (), True)
+	result, rf_list = LearnMultiRanker(L, 5, "ENLARGE", "MINI", "SINGLEFULL", 1, (), (), True)
 	if result == "FINITE":
 	    printSummary(len(rf_list), result, rf_list)
 	else:

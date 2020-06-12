@@ -22,23 +22,29 @@ def parseBoogie(source, parseoutfile):
 @click.command()
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
+@click.argument("sample_strategy", default="ENLARGE")
+@click.argument("cutting_strategy", default="MINI")
+@click.argument("template_strategy", default="FULL")
 
-def learnMultiRanking(source, log):
+def learnMultiRanking(source, log, sample_strategy, cutting_strategy, template_strategy):
     os.system("mkdir " + log)
     sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime = parseBoogieProgram(source, "OneLoop.py")
     from OneLoop import L
-    result, rf_list = SVMLearnMulti(sourceFilePath, sourceFileName, log, parse_oldtime, parse_newtime)
+    result, rf_list = SVMLearnMulti(sourceFilePath, sourceFileName, 
+                                    log, 
+                                    parse_oldtime, parse_newtime, 
+                                    sample_strategy, cutting_strategy, template_strategy)
     printSummary(len(rf_list), result, rf_list)
     
 @click.command()
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
-
-def learnNestedRanking(source, log):
+@click.argument("sample_strategy", default="ENLARGE")
+def learnNestedRanking(source, log, sample_strategy):
     os.system("mkdir " + log)
     sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime = parseBoogieProgram(source, "OneLoop.py")
     from OneLoop import L
-    result, rf_list = SVMLearnNested(sourceFilePath, sourceFileName, templatePath, templateFileName, Info, log, parse_oldtime, parse_newtime)
+    result, rf_list = SVMLearnNested(sourceFilePath, sourceFileName, templatePath, templateFileName, Info, log, parse_oldtime, parse_newtime, sample_strategy)
     printSummary(len(rf_list), result, rf_list)
 
 cli.add_command(learnNestedRanking)

@@ -82,7 +82,11 @@ def array_2_nospace_str(array):
 	return result[:-1]
 
 
-def SVMLearnNested(sourceFilePath, sourceFileName, templatePath, templateFileName, Info, logFolder, parse_oldtime, parse_newtime):
+def SVMLearnNested(sourceFilePath, sourceFileName, 
+				   templatePath, templateFileName, 
+				   Info, logFolder, 
+				   parse_oldtime, parse_newtime,
+				   sample_strategy):
 	rank_oldtime=datetime.datetime.now()
 	rf_list = []
 	if int(Info[0]) == 0:
@@ -96,7 +100,7 @@ def SVMLearnNested(sourceFilePath, sourceFileName, templatePath, templateFileNam
 			tempalate_start = datetime.datetime.now()
 			print('------Using Template %d -----------'% i)
 			generateTemplate(templateFullPath, i, int(Info[1]))
-			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, (), ())
+			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, (), (), sample_strategy)
 			template_end = datetime.datetime.now()
 			print(result)
 			print('Time For Template %d Is--->%f ms\n' % (i, float((tempalate_start-template_end).total_seconds())*1000))
@@ -112,10 +116,13 @@ def SVMLearnNested(sourceFilePath, sourceFileName, templatePath, templateFileNam
 	return result, rf_list
 
 
-def SVMLearnMulti(sourceFilePath, sourceFileName, logFolder, parse_oldtime, parse_newtime):
+def SVMLearnMulti(sourceFilePath, sourceFileName, 
+				  logFolder, 
+				  parse_oldtime, parse_newtime, 
+				  sample_strategy, cutting_strategy, template_strategy):
 	from OneLoop import L
 	rank_oldtime=datetime.datetime.now()
-	result, rf_list = LearnMultiRanker(L, 5, "MINI", 1, (), (), True)
+	result, rf_list = LearnMultiRanker(L, 5, sample_strategy, cutting_strategy, template_strategy, 1, (), (), True)
 	if result == "FINITE":
 	    printSummary(len(rf_list), result, rf_list)
 	else:

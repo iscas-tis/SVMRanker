@@ -430,7 +430,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	return "UNKNOWN",x,y
 
 
-def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
+def train_ranking_function_strategic(L, rf, x, y, sample_strategy, m=5, h=0.5, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
 	#m = 16
@@ -458,18 +458,32 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 	result=[]
 	try:
 		#result,x, y = zip(*sample_points(L, m, h, n, rf,[0]*n)) 
-		sample_num = 0
-		while sample_num < 10:
-			for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
-				x = x+(np.array(new_x),)
-				y = y+(new_y,)
-				result.append(new_result)
-			sample_num = len(x)
-			print("SAMPLE NUM: ", sample_num)
-			m = 2*m
-			h = 1.5*h
-		# result,x, y = zip(*sample_points_bisection(L, n, rf))
-		#print(x,y)
+		if sample_strategy == "ENLARGE":
+			sample_num = 0
+			while sample_num < 10:
+				for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
+					x = x+(np.array(new_x),)
+					y = y+(new_y,)
+					result.append(new_result)
+				sample_num = len(x)
+				print("SAMPLE NUM: ", sample_num)
+				m = 2*m
+				h = 1.5*h
+			# result,x, y = zip(*sample_points_bisection(L, n, rf))
+			#print(x,y)
+		elif sample_strategy == "CONSTRAINT":
+			print("TODO")
+		else:
+			sample_num = 0
+			while sample_num < 10:
+				for new_result,new_x,new_y in sample_points(L, m, h, n, rf,[0]*n):
+					x = x+(np.array(new_x),)
+					y = y+(new_y,)
+					result.append(new_result)
+				sample_num = len(x)
+				print("SAMPLE NUM: ", sample_num)
+				m = 2*m
+				h = 1.5*h
 	except Exception as e:
 		print(e)
 		#x,y = (),()
@@ -495,7 +509,6 @@ def train_ranking_function_strategic(L, rf, x, y,  m=5, h=0.5, n=2):
 		try:
 			SVM=LinearSVC (fit_intercept=False)
 			SVM.fit(x, y)
-			print("HERE")
 			coef = [round (j, acc) for j in SVM.coef_[0]]
 			if(np.all(coef == last_coef)):
 				same_coef_count+=1

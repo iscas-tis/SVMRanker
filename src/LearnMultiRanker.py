@@ -9,7 +9,7 @@ from util import *
 from FindMultiphaseUtil import *
 from LearnRanker import *
 
-def LearnRankerNoBoundLoopBody(L_test, x, y):
+def LearnRankerNoBoundLoopBody(L_test, sample_strategy, x, y):
     ret = 'UNKNOWN'
     print("L:",L_test[2])
     print(L_test[3])
@@ -27,7 +27,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
         last_coef_array
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
-    ret, new_x, new_y = train_ranking_function_strategic(L_test, rf, x, y)
+    ret, new_x, new_y = train_ranking_function_strategic(L_test, rf, sample_strategy, x, y)
     if ret == 'FINITE':
         no_bound_return = 'CORRECT'
     elif ret == 'INF':
@@ -36,7 +36,7 @@ def LearnRankerNoBoundLoopBody(L_test, x, y):
         no_bound_return = 'FALSE'
     return no_bound_return, rf
 
-def LearnRankerBoundedLoopBody(L_test, x, y):
+def LearnRankerBoundedLoopBody(L_test, sample_strategy, x, y):
     ret = 'UNKNOWN'
     print("L[2]:",L_test[2])
     print("L[3]:",L_test[3])
@@ -52,10 +52,10 @@ def LearnRankerBoundedLoopBody(L_test, x, y):
         0,
         last_coef_array
     )
-    ret, new_x, new_y = train_ranking_function_strategic(L_test, rf, x, y)
+    ret, new_x, new_y = train_ranking_function_strategic(L_test, rf, sample_strategy, x, y)
     return ret, rf
 
-def train_multi_ranking_function_incremental(L, x, y, depthBound=2, strategic="MINUS"):
+def train_multi_ranking_function_incremental(L, x, y, depthBound, sample_strategy, cutting_strategy):
     
     print("-------------------START INCREMENTAL LEARNING--------------------")
     i = 0
@@ -65,7 +65,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=2, strategic="M
     while i < depthBound and ret == 'UNKNOWN':
         print("-------------INCREASE TIMES:", i)
         print("--------LEARN BOUNDED")
-        ret, rf = LearnRankerBoundedLoopBody(L_current, x, y)
+        ret, rf = LearnRankerBoundedLoopBody(L_current, sample_strategy, x, y)
         if(ret == 'FINITE' or ret == 'INF'):
             rf_list.append(rf)
             printSummary(i+1, ret, rf_list)
@@ -73,7 +73,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=2, strategic="M
         else:
             print("--------LEARN UNBOUNDED")
             # TODO: add loop here for the change of unbound template
-            ret, rf = LearnRankerNoBoundLoopBody(L_current, x, y)
+            ret, rf = LearnRankerNoBoundLoopBody(L_current, sample_strategy, x, y)
             if(isUselessRankingFunction(rf)):
                 ret = 'UNKNOWN'
                 printSummary(i+1, ret, rf_list)
@@ -81,13 +81,13 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound=2, strategic="M
             else:
                 rf_list.append(rf)
             ret = 'UNKNOWN'
-        L_current = ConjunctRankConstraintL(L_current, rf, strategic)
+        L_current = ConjunctRankConstraintL(L_current, rf, cutting_strategy)
         #changeTemplate(L_current, [[1,0,1],[0,1,1],[0,0,1]])
         i += 1
     printSummary(i+1, ret, rf_list)
     return rf_list
 
-def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound, strategic="MINUS"):
+def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templates, templateNum, currentDepth, depthBound, sample_strategy, cutting_strategy):
 
     print("-------------------START BACKTRACK LEARNING--------------------")
     result = 'UNKNOWN'
@@ -95,7 +95,7 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
         for num in range(len(templates)):
             print('--------------------- Depth: ', currentDepth, "templateNum:", num, " Learn bounded ---------------------" )
             changeTemplate(L, templates[num])
-            result, rf = LearnRankerBoundedLoopBody(L, (), ())
+            result, rf = LearnRankerBoundedLoopBody(L, sample_strategy, (), ())
             print("-----RESULT:", result, "-------")
             if(result != 'UNKNOWN'):
                 rf_list.append(rf)
@@ -104,11 +104,11 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
         while templateNum < len(templates):
             print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn unbound ---------------------" )
             changeTemplate(L, templates[templateNum])
-            ret, rf = LearnRankerNoBoundLoopBody(L, (), ())
+            ret, rf = LearnRankerNoBoundLoopBody(L, sample_strategy, (), ())
             if ret == 'CORRECT':
-                L_new = ConjunctRankConstraintL(L, rf, strategic)
+                L_new = ConjunctRankConstraintL(L, rf, cutting_strategy)
                 rf_list.append(rf)
-                result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound)
+                result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound, sample_strategy, cutting_strategy)
                 print("-----RESULT:", result, "-------")
                 if result == 'UNKNOWN':
                     rf_list.pop()
@@ -126,7 +126,7 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
         while templateNum < len(templates) and result == 'UNKNOWN':
             print('--------------------- Depth: ', currentDepth, "templateNum:", templateNum, " Learn bounded ---------------------" )
             changeTemplate(L, templates[templateNum])
-            result, rf = LearnRankerBoundedLoopBody(L, (), ())
+            result, rf = LearnRankerBoundedLoopBody(L, sample_strategy, (), ())
 
             print("-----RESULT:", result, "-------")
             if result != 'UNKNOWN':
@@ -139,20 +139,21 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
         # not reachable 
         return 'UNKNOWN', rf_list
 
-def train_multi_ranking_function_backtracking(L, x, y, templates, depthBound, strategic="MINUS"):
+def train_multi_ranking_function_backtracking(L, x, y, templates, depthBound, sample_strategy, cutting_strategy):
     i = 1
     result = 'UNKNOWN'
     
     while i <= depthBound and result == 'UNKNOWN':
         rf_list = []
-        ret, rf_list = train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templates, 0, 1, i, strategic)
+        ret, rf_list = train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templates, 0, 1, i, sample_strategy, cutting_strategy)
         i+=1
     return ret, rf_list
 
-def LearnMultiRanker(L, db, cuttingStrategy, nestedPhase, x, y, isReal):
+def LearnMultiRanker(L, db, sample_strategy, cuttingStrategy, template_strategy, nestedPhase, x, y, isReal):
     L_loop = L
     L_loop[3] = nestedPhase
     #TemplateVector = T
+    templateStrategy = template_strategy
     if L[2] < 10:
         templateStrategy = "SINGLEFULL"
     else:
@@ -161,5 +162,5 @@ def LearnMultiRanker(L, db, cuttingStrategy, nestedPhase, x, y, isReal):
     L_loop.insert(4, templatesLib[0])
     if not isReal:
         L_loop.append(False)
-    result, rf_list = train_multi_ranking_function_backtracking(L, x, y, templatesLib, db, cuttingStrategy)
+    result, rf_list = train_multi_ranking_function_backtracking(L, x, y, templatesLib, db, sample_strategy, cuttingStrategy)
     return result, rf_list
