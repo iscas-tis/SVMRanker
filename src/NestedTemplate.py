@@ -283,5 +283,9 @@ class NestedTemplate:
 			rkf = polys.set_coefficients(self.print_coef)
 			result += ('' if first else '; ') + rkf.__str__()
 			first = False
+		# replace the variable symbol
+		from VarStrMap import Map
+		for t in Map:
+			result = result.replace(t[0], t[1])
 		return result
 

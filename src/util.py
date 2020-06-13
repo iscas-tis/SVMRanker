@@ -430,7 +430,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	return "UNKNOWN",x,y
 
 
-def train_ranking_function_strategic(L, rf, x, y, sample_strategy, m=5, h=0.5, n=2):
+def train_ranking_function_strategic(L, rf, sample_strategy, x, y, m=5, h=0.5, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
 	#m = 16

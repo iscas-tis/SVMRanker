@@ -317,4 +317,7 @@ class NestedNoBoundTemplate:
 			rkf = polys.set_coefficients(print_coef)
 			result += ('' if first else '; ') + rkf.__str__()
 			first = False
+		from VarStrMap import Map
+		for t in Map:
+			result = result.replace(t[0], t[1])	
 		return result

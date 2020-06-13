@@ -14,6 +14,13 @@ def cli():
     pass
 
 
+
+@click.command()
+@click.argument("source")
+@click.argument("outfile", default = "temp.bpl")
+def parseCtoBoogie(source, outfile):
+    os.system()
+
 @click.command()
 @click.argument("source")
 def parseBoogie(source, parseoutfile):
@@ -24,7 +31,7 @@ def parseBoogie(source, parseoutfile):
 @click.argument('log', default=("./Log_temp"))
 @click.argument("sample_strategy", default="ENLARGE")
 @click.argument("cutting_strategy", default="MINI")
-@click.argument("template_strategy", default="FULL")
+@click.argument("template_strategy", default="SINGLEFULL")
 
 def learnMultiRanking(source, log, sample_strategy, cutting_strategy, template_strategy):
     os.system("mkdir " + log)

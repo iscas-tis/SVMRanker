@@ -155,7 +155,7 @@ def LearnMultiRanker(L, db, sample_strategy, cuttingStrategy, template_strategy,
     #TemplateVector = T
     templateStrategy = template_strategy
     if L[2] < 10:
-        templateStrategy = "SINGLEFULL"
+        templateStrategy = template_strategy
     else:
         templateStrategy = "FULL"
     templatesLib = generateTemplatesStrategy(templateStrategy, L[2])
