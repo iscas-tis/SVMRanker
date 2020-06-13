@@ -92,6 +92,7 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 	if int(Info[0]) == 0:
 		numOfTemplate = 1#8
 		templateFullPath = os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName)
+		print("template full path", templateFullPath, templateFileName)
 		if not os.path.exists(templateFullPath):
 			os.makedirs(templateFullPath)
 		x,y = (),()
@@ -100,7 +101,7 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 			tempalate_start = datetime.datetime.now()
 			print('------Using Template %d -----------'% i)
 			generateTemplate(templateFullPath, i, int(Info[1]))
-			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, (), (), sample_strategy)
+			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, sample_strategy, (), ())
 			template_end = datetime.datetime.now()
 			print(result)
 			print('Time For Template %d Is--->%f ms\n' % (i, float((tempalate_start-template_end).total_seconds())*1000))
