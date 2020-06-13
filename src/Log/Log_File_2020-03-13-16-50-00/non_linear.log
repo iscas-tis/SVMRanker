@@ -1,7 +1,0 @@
-Example >>>> 37
-[({ x[0]^-1 *  x[1]^1: 1}, [ x[0]^-1 *  x[1]^1])]
-ERROR:
-train_ranking_function() missing 2 required positional arguments: 'x' and 'y'
-
-Time Total used --->:  20.102999999999998
-0 0 0 0 0
