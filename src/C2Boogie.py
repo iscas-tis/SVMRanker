@@ -6,7 +6,7 @@ from pycparser.c_ast import Node, Decl, TypeDecl, FuncDecl, IdentifierType,\
         If, Compound, Label, Assignment, Return, For, While
 from argparse import ArgumentParser
 from copy import deepcopy, copy
-from cast_match import *
+from CastMatch import *
 import sys
 import re
 

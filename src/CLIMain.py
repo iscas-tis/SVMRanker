@@ -19,13 +19,13 @@ def cli():
 @click.argument("source")
 @click.argument("outfile", default = "temp.bpl")
 def parseCtoBoogie(source, outfile):
-    os.system("cpp " + source + " | grep -v '^#' | python3 ./c2boogie.py stdin " + outfile + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
+    os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + outfile + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
 
 @click.command()
 @click.argument("source")
 @click.argument("outfile", default="OneLoop.py")
 def parseCtoPy(source, outfile):
-    os.system("cpp " + source + " | grep -v '^#' | python3 ./c2boogie.py stdin temp.bpl --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
+    os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin temp.bpl --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
     parseBoogieProgramMulti("temp.bpl", outfile)
 
 @click.command()
@@ -37,11 +37,12 @@ def parseBoogie(source, parseoutfile):
 @click.command()
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
-@click.argument("sample_strategy", default="ENLARGE")
-@click.argument("cutting_strategy", default="MINI")
-@click.argument("template_strategy", default="SINGLEFULL")
+@click.option("--sample_strategy", type = click.Choice(["ENLARGE", "CONSTRAINT"], False), default="ENLARGE")
+@click.option("--cutting_strategy", type = click.Choice(["MINUS", "MINI", "POS"], False), default="MINI")
+@click.option("--template_strategy", type = click.Choice(["SINGLEFULL", "FULL"], False), default="SINGLEFULL")
 
 def lMultiB(source, log, sample_strategy, cutting_strategy, template_strategy):
+    print("Learn Multiphase Ranking Function: " + sample_strategy + " " + cutting_strategy + " " + template_strategy)
     os.system("mkdir " + log)
     sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime = parseBoogieProgramMulti(source, "OneLoop.py")
     from OneLoop import L
@@ -54,7 +55,7 @@ def lMultiB(source, log, sample_strategy, cutting_strategy, template_strategy):
 @click.command()
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
-@click.argument("sample_strategy", default="ENLARGE")
+@click.argument("sample_strategy", type = click.Choice(["ENLARGE", "CONSTRAINT"], False), default="ENLARGE")
 def lNestedB(source, log, sample_strategy):
     os.system("mkdir " + log)
     sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime = parseBoogieProgramNested(source, "OneLoop.py")

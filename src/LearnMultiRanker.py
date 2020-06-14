@@ -5,7 +5,7 @@ import numpy as np
 import time
 import sys
 import os
-from util import *
+from Util import *
 from FindMultiphaseUtil import *
 from LearnRanker import *
 

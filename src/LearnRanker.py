@@ -8,8 +8,8 @@ import numpy as np
 import time
 import sys
 import os
-from util import *
-from util import parse_template
+from Util import *
+from Util import parse_template
 
 def LearnRanker(templateFilePath, indexOfTemplate, sample_strategy, x, y):
     from OneLoop import L

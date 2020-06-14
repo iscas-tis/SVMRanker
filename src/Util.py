@@ -10,6 +10,7 @@ from sklearn.svm import LinearSVC
 from z3 import *
 import signal
 import time
+from constraint import *
 
 
 from polynomial.Polynomial import Polynomial
@@ -159,6 +160,7 @@ def get_statement(L, x):
 def is_type_real(L): 
     return len(L) <= 6 + L[3]
 
+
 def sample_points(L, m, h, n, rf,base_point):
 	for result, x, y in sample_points_same_interval(L, m, h, n, rf,base_point):
 		yield(result, x, y)
@@ -166,6 +168,42 @@ def sample_points(L, m, h, n, rf,base_point):
 	#for result, x, y in sample_points_bisection(L,n,rf):
 	#	print(x,y)
 	#	yield(result, x, y)
+
+def sample_base_point(L, m, h, n, rf, base_point):
+    result = []
+    for p in get_xpoints( m, h, n,base_point):  # Generate all candidate n-D points
+        #print(p)
+        condition = get_condition(L,p)
+        if condition:  # must satisfy the guard condition
+            result.append(p)
+            return result
+    return result
+def sample_points_same_interval(L, m, h, n, rf,base_point):
+        print('sample_points_interval ',  m, h, n,base_point)
+        for p in get_xpoints( m, h, n,base_point):  # Generate all candidate n-D points
+            #print(p)
+            
+            condition = get_condition(L,p)
+            
+            if condition:  # must satisfy the guard condition
+                p_ = get_statement(L,p)
+                if p_ is None:
+                    continue
+                print("point:", p)
+                rf.sample_points_list.append(p)
+                for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
+                    yield ('UNKNOWN',x, y)
+        #print(rf.get_zero_vec())
+        base_point_ = get_statement(L,base_point)
+        if base_point_ is None:
+            
+            return 
+        for x,y in rf.get_example(base_point,base_point_):
+            yield('UNKNOWN',x,y)
+    # yield (rf.get_zero_vec(), -1)
+    # print("sample example down!!")
+
+
 
 def sample_points_bisection(L,n,rf):
 	rt = is_type_real(L)
@@ -223,32 +261,6 @@ def sample_points_bisection(L,n,rf):
 			continue
 		for x,y in rf.get_example(m,m_):
 			yield('UNKNOWN', x,y)
-
-def sample_points_same_interval(L, m, h, n, rf,base_point):
-        print('sample_points ',  m, h, n,base_point)
-        for p in get_xpoints( m, h, n,base_point):  # Generate all candidate n-D points
-            #print(p)
-            
-            condition = get_condition(L,p)
-            
-            if condition:  # must satisfy the guard condition
-                p_ = get_statement(L,p)
-                if p_ is None:
-                    continue
-                print("point:", p)
-                rf.sample_points_list.append(p)
-                for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
-                    yield ('UNKNOWN',x, y)
-        #print(rf.get_zero_vec())
-        base_point_ = get_statement(L,base_point)
-        if base_point_ is None:
-            
-            return 
-        for x,y in rf.get_example(base_point,base_point_):
-            yield('UNKNOWN',x,y)
-    # yield (rf.get_zero_vec(), -1)
-    # print("sample example down!!")
-
 
 def get_xpoints( m, h, n,base_point):
     """
@@ -471,8 +483,6 @@ def train_ranking_function_strategic(L, rf, sample_strategy, x, y, m=5, h=0.5, n
 				h = 1.5*h
 			# result,x, y = zip(*sample_points_bisection(L, n, rf))
 			#print(x,y)
-		elif sample_strategy == "CONSTRAINT":
-			print("TODO")
 		else:
 			sample_num = 0
 			while sample_num < 10:

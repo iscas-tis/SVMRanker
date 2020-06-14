@@ -1,0 +1,16 @@
+
+
+int test_fun(int x, int y)
+{
+    int c = 0;
+    while (x > y) {
+        x = x + 1;
+        y = y + 2;
+        c = c + 1;
+    }
+    return c;
+}
+
+int main() {
+    return test_fun(0, 0);
+}

@@ -9,13 +9,22 @@ SVMRanker is a tool used for finding ranking function of loop program. Ranking f
 ### Linux 
 Python 3.7 and Java 
 ### Required Package
-z3, sklear and click package are required for this project.
-'''
+
+Python packages needed for this project.
+
+```
 pip3 install z3-prover
 pip3 install click
 pip3 install sklearn
-'''
+pip3 install python-constraint
+```
 
+## Start
+
+In src folder:
+```
+python3 ./CLIMain.py
+```
 
 ## Author
 
