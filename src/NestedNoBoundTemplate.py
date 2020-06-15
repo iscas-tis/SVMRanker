@@ -32,9 +32,9 @@ def set_timeout(num, callback):
 			try:
 				signal.signal(signal.SIGINT, handle)  
 				signal.alarm(num)  
-				print('start alarm signal.')
+				#print('start alarm signal.')
 				r = func(*args, **kwargs)
-				print('close alarm signal.')
+				#print('close alarm signal.')
 				signal.alarm(0)  
 				return r
 			except TimeOutException as e:
@@ -166,10 +166,10 @@ class NestedNoBoundTemplate:
 		#print("check infinite loop")
 		#x = [z3.Real('xr_%s' % i) for i in range(n)]
 		x = [z3.Real('xr_%s' % i) if tr else z3.Int('xi_%s' % i) for i in range(n)]
-		print(x)
+		#print(x)
 		# xp = [z3.Real('xrp_%s' % i) for i in range(n)]
 		x_ = prime(x)
-		print(x_)
+		#print(x_)
 		a = cond(x)
 		s = z3.Solver()
 		s.add(cond(x))  # condition
@@ -226,14 +226,14 @@ class NestedNoBoundTemplate:
 				sum_dot = sum(i[0] * i[1] for i in zip(ceilings, self.list_of_Gx[index](x, x_)))
 				right_up_bound = int(multiplied * self.list_of_C[index])
 			s.add(sum_dot < right_up_bound)
-			print('-----constraint system CS: ', s)
+			#print('-----constraint system CS: ', s)
 			result = s.check()
 			valid = result == z3.unsat
-			print(valid,result)
+			#print(valid,result)
 			if result == z3.sat:
 				model = s.model()
 				model = [eval(model[v].__str__()) for v in x]
-				print(s.model())		
+				#print(s.model())		
 			# elif result == z3.unsat:
 			# 	print('case %d OK ' % index)
 			# else:

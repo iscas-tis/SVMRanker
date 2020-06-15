@@ -32,9 +32,9 @@ def set_timeout(num, callback):
 			try:
 				signal.signal(signal.SIGINT, handle)  
 				signal.alarm(num)  
-				print('start alarm signal.')
+				#print('start alarm signal.')
 				r = func(*args, **kwargs)
-				print('close alarm signal.')
+				#print('close alarm signal.')
 				signal.alarm(0)  
 				return r
 			except TimeOutException as e:
@@ -61,7 +61,6 @@ class NestedTemplate:
 		self.sample_points_list = []
 		self.last_coef_array = l
 		self.print_coef = []
-		
 
 	def get_zero_vec(self):
 		return np.zeros(np.sum(self.dimension))
@@ -134,17 +133,16 @@ class NestedTemplate:
 		
 	def get_example(self, x, x_):  # Generate training set by Gx
 		num_of_Gx = len(self.list_of_Gx)
-		print("NUMGX ", num_of_Gx)
+		#print("NUMGX ", num_of_Gx)
 		for index in range(num_of_Gx):
-			print("INDEX: ", index, x, x_)
+			#print("INDEX: ", index, x, x_)
 			g_x = self.list_of_Gx[index](x, x_)
-			print("YIELD SVM POINT")
 			if index %2 == 0:
-				print('positive')
+				#print('positive')
 				self.num_of_pos_data += 1
 				yield (g_x, 1)
 			else:
-				print('negtive')
+				#print('negtive')
 				self.num_of_neg_data += 1
 				yield(-g_x,-1)
 
@@ -176,8 +174,8 @@ class NestedTemplate:
 			#print('found one infinite loop: ')
 			m = s.model()
 			model = [str(v)+"="+m[v].__str__() for v in x]
-			for var in x:
-				print(var, ' = ', m[var])
+			#for var in x:
+			#	print(var, ' = ', m[var])
 			return True, str(model)
 		else:
 			return False,''
@@ -197,7 +195,7 @@ class NestedTemplate:
 	
 	@set_timeout(4, z3_verify_fail)
 	def z3_verify(self, n, coef, cond, prime, tr=True):  # Check if every condition satisfied.
-		print("coefficient:", coef)
+		#print("coefficient:", coef)
 		x = [z3.Real('xr_%s' % i) if tr else z3.Int('xi_%s' % i) for i in range(n)]
 		x_ = prime(x)
 		s = z3.Solver()
@@ -226,7 +224,7 @@ class NestedTemplate:
 			if result == z3.sat:
 				model = s.model()
 				model = [eval(model[v].__str__()) for v in x]
-				print(s.model())		
+				#print(s.model())		
 			# elif result == z3.unsat:
 			# 	print('case %d OK ' % index)
 			# else:
@@ -258,7 +256,7 @@ class NestedTemplate:
 				# print(s.model())
 				return 	False,model
 			elif result == z3.unsat:
-				print('valid ranking function')
+				#print('valid ranking function')
 				return True, model
 			else:
 				# print('unknown')

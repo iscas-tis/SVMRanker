@@ -196,5 +196,3 @@ def printSummary(multidepth, ret, listOfRFs):
     if depth != 0:
         for rf in listOfRFs:
             print(str(rf))
-    
-    
