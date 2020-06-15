@@ -121,7 +121,7 @@ class NestedNoBoundTemplate:
 	def get_example(self, x, x_):  # Generate training set by Gx
 		num_of_Gx = len(self.list_of_Gx)
 		for index in range(num_of_Gx):
-			print("INDEX: ", index, num_of_Gx)
+			#print("INDEX: ", index, num_of_Gx)
 			g_x = self.list_of_Gx[index](x, x_)
 			# print('sample = ', g_x)
 			# self.num_of_neg_data += 1INDEX
