@@ -6,7 +6,6 @@ import click
 
 from BoogieParser import *
 from SVMLearn import *
-from CPreprocessor import preprocessCFile
 
 #from SVMLearnMulti import *
 
