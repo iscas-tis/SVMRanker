@@ -2,10 +2,10 @@
 
 ## Introduction 
 
-SVMRanker is a tool used for finding ranking function of loop program. Ranking funcion can be used to prove the termination of the program. Our tool utilized the SVM algorithm to find the nested and multiphase ranking function. 
+SVMRanker is a tool used for finding ranking function of loop program. Ranking funcion can be used to prove the termination of the program. Our tool utilized the SVM algorithm to find the nested and multiphase ranking functions. 
 
 
-## Enviroment
+## Environment
 ### Linux 
 Python 3.7 and Java 14.0.1
 ### Required Package
@@ -23,7 +23,7 @@ pip3 install python-constraint
 
 In src folder:
 ```
-python3 ./CLIMain.py
+python3 ./CLIMain.py --help
 ```
 
 ## Author
