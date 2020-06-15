@@ -69,6 +69,7 @@ def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy
         if not print_all:
             printSummary(len(rf_list), result, rf_list)
     elif filetype == "C":
+        os.system("python3 ./CPreprocess.py " + source)
         os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + "temp.bpl" + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
         os.system("mkdir " + log)
         sourceFilePath, sourceFileName,\
@@ -105,6 +106,7 @@ def lNested(source, log, filetype, sample_strategy, print_all):
         if not print_all:
             printSummary(len(rf_list), result, rf_list)
     elif filetype == "C":
+        os.system("python3 CPreprocess.py " + source)
         os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + "temp.bpl" + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
         os.system("mkdir " + log)
         sourceFilePath, sourceFileName,\
