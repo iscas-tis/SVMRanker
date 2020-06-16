@@ -36,7 +36,7 @@ def coefDotExprZ3Arithmetic(x, coef, last_coef_list, NumOfVars):
     return result
 
 
-def ConjunctRankConstraintL(L_old, rf, print_all, strategy="MINUS"):
+def ConjunctRankConstraintL(L_old, rf, print_level, strategy="MINUS"):
     # conjunct the ranking function constrain f <= 0 with the loop guard in L_old
     # to obtain a new loop L_new
 
@@ -61,7 +61,7 @@ def ConjunctRankConstraintL(L_old, rf, print_all, strategy="MINUS"):
                 minPoint = point
     else:
         divideConstant = -1
-    if print_all:
+    if print_level > 0:
         print("---------DIVIDING CONSTANT:", divideConstant)
     # ATTENTION NOT ROBUST HERE TODO
     rf.coefficients[-1] += -divideConstant/rf.last_coef_array[-1]

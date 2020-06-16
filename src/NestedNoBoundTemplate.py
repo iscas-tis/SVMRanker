@@ -243,7 +243,7 @@ class NestedNoBoundTemplate:
 			if not valid:
 				break
 		if valid:
-			print('valid no bound ranking function')
+			#print('valid no bound decreasing function')
 			return True, model
 		else:
 			return False, model

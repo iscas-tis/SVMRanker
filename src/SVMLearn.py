@@ -86,13 +86,13 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 				   templatePath, templateFileName, 
 				   Info, logFolder, 
 				   parse_oldtime, parse_newtime,
-				   sample_strategy, print_all):
+				   sample_strategy, print_level):
 	rank_oldtime=datetime.datetime.now()
 	rf_list = []
 	if int(Info[0]) == 0:
 		numOfTemplate = 1#8
 		templateFullPath = os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName)
-		if print_all:
+		if print_level > 1:
 			print("template full path", templateFullPath, templateFileName)
 		if not os.path.exists(templateFullPath):
 			os.makedirs(templateFullPath)
@@ -100,12 +100,12 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 		i = 0
 		for i in range(numOfTemplate):
 			tempalate_start = datetime.datetime.now()
-			if print_all:
+			if print_level > 0:
 				print('------Using Template %d -----------'% i)
 			generateTemplate(templateFullPath, i, int(Info[1]))
-			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, sample_strategy, print_all, (), ())
+			result, x, y, rf= LearnRanker(os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName), i, sample_strategy, print_level, (), ())
 			template_end = datetime.datetime.now()
-			if print_all:
+			if print_level > 0:
 				print(result)
 				print('Time For Template %d Is--->%f ms\n' % (i, float((tempalate_start-template_end).total_seconds())*1000))
 			rf_list.append(rf)
@@ -115,7 +115,7 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 	rank_newtime=datetime.datetime.now()
 	f = open(os.path.join(logFolder,'AnalysisTimeForALL.log'),'a')
 	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-	if print_all:
+	if print_level > 0:
 		print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 		print('Program is terminating' if result=='TERMINATE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
 	return result, rf_list
@@ -125,12 +125,12 @@ def SVMLearnMulti(sourceFilePath, sourceFileName,
 				  logFolder, depth_bound,
 				  parse_oldtime, parse_newtime, 
 				  sample_strategy, cutting_strategy, template_strategy,
-				  print_all):
+				  print_level):
 	from OneLoop import L
 	rank_oldtime=datetime.datetime.now()
-	result, rf_list = LearnMultiRanker(L, depth_bound, sample_strategy, cutting_strategy, template_strategy, print_all, 1, (), ())
+	result, rf_list = LearnMultiRanker(L, depth_bound, sample_strategy, cutting_strategy, template_strategy, print_level, 1, (), ())
 	rank_newtime=datetime.datetime.now()
-	if print_all:
+	if print_level > 0:
 		if result == "TERMINATE":
 			printSummary(len(rf_list), result, rf_list)
 		else:

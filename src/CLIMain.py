@@ -9,7 +9,7 @@ from SVMLearn import *
 
 #from SVMLearnMulti import *
 
-@click.group()
+@click.group(help="\"python3 CLIMain.py COMMAND --help\" for more details")
 def cli():
     pass
 
@@ -17,28 +17,26 @@ def cli():
 
 
 
-@click.command(help="SOURCE: path of source c file OUTFILE: path of output boogie file, default set to temp.bpl")
+@click.command()
 @click.argument("source")
 @click.argument("outfile", default = "temp.bpl")
 def parseCtoBoogie(source, outfile):
     os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + outfile + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
 
-@click.command(help="SOURCE: path of source c file OUTFILE: path of output python file, default set to OneLoop.py")
+@click.command()
 @click.argument("source")
 @click.argument("outfile", default="OneLoop.py")
 def parseCtoPy(source, outfile):
     os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin temp.bpl --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
     parseBoogieProgramMulti("temp.bpl", outfile)
 
-@click.command(help="SOURCE: path of source boogie file PARSEOUTFILE: ath of output python file, default set to OneLoop.py")
+@click.command()
 @click.argument("source")
 @click.argument("parseoutfile", default="OneLoop.py")
 def parseBoogie(source, parseoutfile):
     parseBoogieProgramMulti(source, parseoutfile)
 
-@click.command(help='SOURCE: path of source program file \n\
-                     LOG: path of log folder, default set to ./Log_temp\n\
-                     DEPTH_BOUND: depth bound of multiphase ranking function, default set to 2' )
+@click.command()
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
 @click.option("--depth_bound", default=2, help="depth bound default set to 2")
@@ -52,11 +50,11 @@ def parseBoogie(source, parseoutfile):
 @click.option("--template_strategy", type = click.Choice(["SINGLEFULL", "FULL"], False), default="SINGLEFULL", help="templates used for learning\n\
                                                                                                                      --template_strategy SINGLEFULL: templates are either single variable or combination of all variables\n")
 
-@click.option("--print_all", type = click.Choice(["T", "F"], False),  default="F", help="--print_all T: print all the information of the learning\n\
-                                                                                         --print_all F: only print the result information of the learning\n")
-def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy, template_strategy, print_all):
-    print("Learn Multiphase Ranking Function: " + sample_strategy + " " + cutting_strategy + " " + template_strategy)
-    print_all = (True if print_all == "T" else False)
+@click.option("--print_level", type = click.Choice(["DEBUG", "INFO", "NONE"], False),  default="NONE", help="--print_level DEBUG: print all the information of the learning and debugging\n\
+                                                                                           --print_level INFO: print the information of the learning\n\
+                                                                                           --print_level NONE: only print the result information of the learning\n")
+def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy, template_strategy, print_level):
+    print_level = 0 if print_level == "NONE" else 1 if print_level == "INFO" else 2 if print_level == "DEBUG" else "NONE"
     if filetype == "BOOGIE":
         os.system("mkdir " + log)
         sourceFilePath, sourceFileName,\
@@ -67,8 +65,8 @@ def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy
                                         log, depth_bound,
                                         parse_oldtime, parse_newtime, 
                                         sample_strategy, cutting_strategy, template_strategy,
-                                        print_all)
-        if not print_all:
+                                        print_level)
+        if print_level == 0:
             printSummary(len(rf_list), result, rf_list)
     elif filetype == "C":
         os.system("python3 ./CPreprocess.py " + source)
@@ -81,22 +79,23 @@ def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy
                                         log, depth_bound,
                                         parse_oldtime, parse_newtime, 
                                         sample_strategy, cutting_strategy, template_strategy,
-                                        print_all)
-        if not print_all:
+                                        print_level)
+        if print_level == 0:
             printSummary(len(rf_list), result, rf_list)
         
     
-@click.command(help='SOURCE: path of source program file LOG: path of log folder, default set to ./Log_temp')
+@click.command()
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
 @click.option('--filetype', type = click.Choice(["C", "BOOGIE"], False), default="BOOGIE", help="--file C: input is c file. --file BOOGIE: input is boogie file")
 @click.option("--sample_strategy", type = click.Choice(["ENLARGE", "CONSTRAINT"], False), default="ENLARGE", help="--sample_strategy ENLARGE: enlarge the sample zone when sample num not enough.\n\
                                                                                                                      --sample_strategy CONSTRAINT: find feasible points by constraint if sample num not enough\n")
-@click.option("--print_all", type = click.Choice(["T", "F"], False),  default="F", help="--print_all T: print all the information of the learning\n\
-                                                                                         --print_all F: only print the result information of the learning\n")
+@click.option("--print_level", type = click.Choice(["DEBUG", "INFO", "NONE"], False),  default="NONE", help="--print_level DEBUG: print all the information of the learning and debugging\n\
+                                                                                           --print_level INFO: print the information of the learning\n\
+                                                                                           --print_level NONE: only print the result information of the learning\n")
 
-def lNested(source, log, filetype, sample_strategy, print_all):
-    print_all = (True if print_all == "T" else False)
+def lNested(source, log, filetype, sample_strategy, print_level):
+    print_level = 0 if print_level == "NONE" else 1 if print_level == "INFO" else 2 if print_level == "DEBUG" else "NONE"
     if filetype == "BOOGIE":
         os.system("mkdir " + log)
         sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime = parseBoogieProgramNested(source, "OneLoop.py")
@@ -104,8 +103,8 @@ def lNested(source, log, filetype, sample_strategy, print_all):
         result, rf_list = SVMLearnNested(sourceFilePath, sourceFileName, 
                                          templatePath, templateFileName, Info, log, 
                                          parse_oldtime, parse_newtime, sample_strategy, 
-                                         print_all)
-        if not print_all:
+                                         print_level)
+        if print_level == 0:
             printSummary(len(rf_list), result, rf_list)
     elif filetype == "C":
         os.system("python3 CPreprocess.py " + source)
@@ -117,8 +116,8 @@ def lNested(source, log, filetype, sample_strategy, print_all):
         result, rf_list = SVMLearnNested(sourceFilePath, sourceFileName, 
                                          templatePath, templateFileName, Info, log, 
                                          parse_oldtime, parse_newtime, sample_strategy, 
-                                         print_all)
-        if not print_all:
+                                         print_level)
+        if print_level == 0:
             printSummary(len(rf_list), result, rf_list)
 
 cli.add_command(parseBoogie)

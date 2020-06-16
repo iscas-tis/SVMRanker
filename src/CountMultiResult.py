@@ -2,7 +2,6 @@ import os
 import numpy as np
 import random
 import datetime
-from sklearn.svm import LinearSVC
 from z3 import *
 import signal
 import time

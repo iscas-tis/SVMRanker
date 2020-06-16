@@ -6,6 +6,8 @@ import os
 import numpy as np
 import random
 import datetime
+import warnings
+from sklearn.exceptions import ConvergenceWarning
 from sklearn.svm import LinearSVC
 from z3 import *
 import signal
@@ -20,7 +22,7 @@ from NestedNoBoundTemplate import NestedNoBoundTemplate
 from NestedTemplate import NestedTemplate
 from FindMultiphaseUtil import *
 
-
+warnings.filterwarnings(action="ignore", category=ConvergenceWarning)
 
 def get_time_interval(s,e):
 	return float((e-s).total_seconds())*1000
@@ -545,7 +547,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	return "UNKNOWN",x,y
 
 
-def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=5, h=0.5, n=2):
+def train_ranking_function_strategic(L, rf, sample_strategy, print_level, x, y, m=5, h=0.5, n=2):
 	n=L[2]
 	m = max((100 ** (1/n))*h/2,h )
 	#m = 16
@@ -556,7 +558,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 	if not rt:
 		h = 1
 		m = int(max((100 ** (1/n))/2,0))
-	if print_all:
+	if print_level > 0:
 		print("m:",m,"h:",h)
 		print("*****************************************************\n")
 	if rt:
@@ -581,7 +583,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 					y = y+(new_y,)
 					result.append(new_result)
 				sample_num = len(x)
-				if print_all:
+				if print_level > 1:
 					print("SAMPLE NUM: ", sample_num)
 				m = 2*m
 				h = 1.5*h
@@ -601,7 +603,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 					y = y+(new_y,)
 					result.append(new_result)
 				sample_num = len(x)
-				if print_all:
+				if print_level > 1:
 					print("SAMPLE NUM: ", sample_num)
 				m = 2*m
 				h = 1.5*h
@@ -613,7 +615,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 	#print(result)
 	if result[0] != 'UNKNOWN':
 		return result[0],x,y
-	if print_all:
+	if print_level > 0:
 		print( str(get_time(s_t))+"   >>>>   " + "End sampling point\n")
 		print( 'sampling time = %.3f ms,\n\n' % ( get_time_interval(st, s_t)))
 	# print 'start train_ranking_function...'
@@ -624,7 +626,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 	# acc: accuracy 
 	acc = 4 if rt else 1
 	while True:
-		if print_all:
+		if print_level > 0:
 			print( "       ########################################         \n")
 			print(  "iteration "+str(count)+ " with "+str(len(y)) + " examples"+"\n")
 			ct = datetime.datetime.now()
@@ -637,11 +639,11 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 				same_coef_count+=1
 				if same_coef_count == 5 :
 					list_of_accu.remove(acc)
-					if print_all:
+					if print_level > 1:
 						print(same_coef_count)
 					length = len(list_of_accu)
 					if length ==0:
-						if print_all:
+						if print_level > 0:
 							print( "the coefficient is convergent\n")
 						break
 					acc = random.choice(list_of_accu)
@@ -650,7 +652,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 				same_coef_count=0
 			# train done
 			last_coef = coef
-			if print_all:
+			if print_level > 0:
 				print('training done')
 		except Exception as e:
 			coef = [round (random.random(), acc) for j in range(np.sum(rf.dimension))]
@@ -660,7 +662,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 			print('problem in training, choose random value')
         	
 		et = datetime.datetime.now()
-		if print_all:
+		if print_level > 0:
 			print(  str(get_time(et))+"   >>>>   " + "End train ranking function\n")
 			print( 'train_ranking_functioning time = %.3f ms\n\n' % ( get_time_interval(ct, et)))
 		np.set_printoptions (suppress=True)
@@ -669,7 +671,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 		#print( " "+str(coef) + "\n\n")
 		#print (coef, len (y))
 		ht = datetime.datetime.now()
-		if print_all:
+		if print_level  > 0:
 			print(  str(get_time(ht))+"   >>>>   " + "Start verify ranking function\n")
 		rf.set_coefficients (coef)
 		# print('ranking function: ', rf)
@@ -699,26 +701,26 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 		# 	return "NONTERM"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
-		if print_all:
+		if print_level > 0:
 			print(  "ranking function : " + str(rf)+"\n")
 			print(  str(get_time(h_t))+"   >>>>   " + "End verify ranking function\n")
 		#print( "\nTotal time used:\n")
-		if print_all:
+		if print_level > 0:
 			print( 'verifying time = %.3f ms\n\n' % (get_time_interval(ht, h_t)))
 		# print ('sampling = %.3fs, train_ranking_functioning = %.3fs, verifying = %.3fs' % (
 		# s_t - st, et - ct, h_t - ht))
 		if ret[0]:
-			if print_all:
+			if print_level > 0:
 				print(  "Found Ranking Function: "+str(rf)+"\n")
 			return "TERMINATE",None,None
 		elif ret[1] is None:
 			return 'UNKNOWN',x,y
 		elif ret[1] is not None:
 			# add more points
-			if print_all:
+			if print_level > 0:
 				print( "Not Found Ranking Function\n")
 			p = [(x if x is not None else 0) for x in ret[1] ]#ret[1]
-			if print_all:
+			if print_level > 1:
 				print(  "Counterexample is \n")
 				print(  str(p)+"\n")
 			# print('model = ', p)
@@ -735,12 +737,12 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 			    x = x+(np.array(new_x),)
 			    y = y+(new_y,)
 			s_t = datetime.datetime.now()
-			if print_all:
+			if print_level > 0:
 				print( 'sampling time = %.3f ms\n\n' % (get_time_interval(st, s_t)))
 		count += 1
 		if count >= 20:
 		   break
-	if print_all:
+	if print_level > 0:
 		print(  "Failed to prove it is terminating\n")
 	return "UNKNOWN",x,y
 

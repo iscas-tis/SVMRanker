@@ -11,7 +11,7 @@ import os
 from Util import *
 from Util import parse_template
 
-def LearnRanker(templateFilePath, indexOfTemplate, sample_strategy, print_all, x, y):
+def LearnRanker(templateFilePath, indexOfTemplate, sample_strategy, print_level, x, y):
     from OneLoop import L
     #templateFilePath = sys.argv[1]
     # listOfUxDimension = [int(x) for x in sys.argv[2].split(',')]
@@ -50,7 +50,7 @@ def LearnRanker(templateFilePath, indexOfTemplate, sample_strategy, print_all, x
     ret = 'UNKNOWN'
    # oldtime=datetime.datetime.now()
     try:
-        ret,new_x,new_y = train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y)
+        ret,new_x,new_y = train_ranking_function_strategic(L, rf, sample_strategy, print_level, x, y)
     except Exception as e:
         # print("ERROR:\n" + str(e)+"\n")
         print( "\n" + str(e)+"\n")
@@ -61,7 +61,7 @@ def LearnRanker(templateFilePath, indexOfTemplate, sample_strategy, print_all, x
 
     #f.close()
     if ret== 'TERMINATE':
-        if print_all:
+        if print_level > 0:
             print(rf)
         # print('#num_pos = ', rf.get_num_of_pos(), ' #num_neg = ', rf.get_num_of_neg())
     return ret,new_x,new_y, rf
