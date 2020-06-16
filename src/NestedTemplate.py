@@ -137,6 +137,7 @@ class NestedTemplate:
 		for index in range(num_of_Gx):
 			#print("INDEX: ", index, x, x_)
 			g_x = self.list_of_Gx[index](x, x_)
+			#print("g_x", g_x)
 			if index %2 == 0:
 				#print('positive')
 				self.num_of_pos_data += 1

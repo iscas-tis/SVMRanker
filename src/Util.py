@@ -161,9 +161,9 @@ def get_statement(L, x):
 def is_type_real(L): 
     return len(L) <= 6 + L[3]
 
-
-def get_x_i_lower_bound(s,xi,start):
-	lo = float('-inf')
+'''
+def get_x_i_lower_bound(s,xi,start, rt):
+	lo = float('-inf') if rt else int_inf
 	hi = start
 	last_sat = start
 	incr = 1
@@ -182,8 +182,8 @@ def get_x_i_lower_bound(s,xi,start):
 		s.pop()
 	return last_sat
 
-def get_x_i_upper_bound(s,xi,start):
-	hi = float('inf')
+def get_x_i_upper_bound(s,xi,start, rt):
+	hi = float('inf') if rt else int_inf
 	lo = start
 	last_sat = start
 	incr = 1
@@ -201,8 +201,8 @@ def get_x_i_upper_bound(s,xi,start):
 			break
 		s.pop()
 	return last_sat
-
-
+'''
+'''
 def sample_points_same_interval_different_step(L, lowerBounds,upperBounds, h, n, rf):
         #print('sample_points_interval ',  m, h, n,base_point)
         for p in get_xpoints_different_step( lowerBounds, upperBounds, h, n):  # Generate all candidate n-D points
@@ -244,8 +244,8 @@ def get_xpoints_different_step(lowerBounds, upperBounds, h, n):
         for p in get_xpoints_different_step(lowerBounds, upperBounds, h, n - 1):
             for x in np.arange(lowerBounds[n-1], upperBounds[n-1] + h, h):
                 yield p + [x]
-
-def sample_points_in_Omega(L,h, n, rf):
+'''
+def sample_points_in_Omega(L, m, h, n, rf):
 	rt = is_type_real(L)
 	if rt:
 		cond = L[-1]
@@ -254,14 +254,16 @@ def sample_points_in_Omega(L,h, n, rf):
 	x = [z3.Real('xr_%s' % i) if rt else z3.Int('xi_%s' % i) for i in range(n)]
 	s = z3.Solver()
 	s.add(simplify(cond(x)))  # condition
-	print(cond(x))
+	#print(cond(x))
 	result = s.check()
 	if result == z3.sat:
 		model = s.model()
 		model = [eval(model[v].__str__()) for v in x]
-		lowerBounds = [get_x_i_lower_bound(s,x[i],model[i]) for i in range(n)]
-		upperBounds = [get_x_i_upper_bound(s,x[i],model[i]) for i in range(n)]
-		for result, x, y in sample_points_same_interval_different_step(L, lowerBounds,upperBounds, h, n, rf):
+		for i in range(len(model)):
+			if model[i] == None:
+				model[i] = 0
+		#print(model)
+		for result, x, y in sample_points_same_interval(L, m, h, n, rf, model):
 			yield(result, x, y)
 
 
@@ -287,7 +289,6 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
         #print('sample_points_interval ',  m, h, n,base_point)
         for p in get_xpoints( m, h, n,base_point):  # Generate all candidate n-D points
             #print(p)
-            
             condition = get_condition(L,p)
             
             if condition:  # must satisfy the guard condition
@@ -295,6 +296,7 @@ def sample_points_same_interval(L, m, h, n, rf,base_point):
                 if p_ is None:
                     continue
                 #print("point:", p)
+                #print("point:", p_)
                 rf.sample_points_list.append(p)
                 for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
                     yield ('UNKNOWN',x, y)
@@ -591,10 +593,21 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_level, x, y, 
 			#print(x,y)
 		
 		elif sample_strategy == "CONSTRAINT":
-			for new_result, new_x, new_y in sample_points_in_Omega(L, h, n, rf):
-				x = x + (np.array(new_x))
-				y = y + (np.array(new_y))
-				result.append(new_result)
+			m = 5
+			h = 1
+			sample_num = 0
+			last_sample_num = 0
+			while sample_num < 10:
+				for new_result, new_x, new_y in sample_points_in_Omega(L, m, h, n, rf):
+					x = x + (np.array(new_x),)
+					y = y + (np.array(new_y),)
+					result.append(new_result)
+				last_sample_num = sample_num
+				sample_num = len(x)
+				if sample_num != last_sample_num:
+					h = 0.5*h
+				else:
+					m = 2*m
 		else:
 			sample_num = 0
 			while sample_num < 10:

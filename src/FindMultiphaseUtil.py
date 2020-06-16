@@ -185,13 +185,14 @@ TemplatesListExp = [
 TemplatesNondet = generateTemplateLibSingleFull(4)
 
 '''--------------------Print methods-------------------------'''
-def printSummary(multidepth, ret, listOfRFs):
+def printSummary(multidepth, ret, listOfRFs, isMulti):
+    typeStr = "MULTIPHASE" if isMulti else "NESTED"
     if(ret != "TERMINATE"):
         depth = 0
     else:
         depth = multidepth
-    print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
-    print("MULTIPHASE DEPTH: ", depth)
+    print("--------------------LEARNING " + typeStr + " SUMMARY-------------------")
+    print(typeStr + " DEPTH: ", depth)
     print("LEARNING RESULT: ", ret)
     print("-----------RANKING FUNCTIONS----------")
     if depth != 0:

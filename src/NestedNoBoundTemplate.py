@@ -120,6 +120,7 @@ class NestedNoBoundTemplate:
 		
 	def get_example(self, x, x_):  # Generate training set by Gx
 		num_of_Gx = len(self.list_of_Gx)
+		#print("num of Gx", num_of_Gx)
 		for index in range(num_of_Gx):
 			#print("INDEX: ", index, num_of_Gx)
 			g_x = self.list_of_Gx[index](x, x_)
@@ -248,57 +249,6 @@ class NestedNoBoundTemplate:
 		else:
 			return False, model
 
-	'''@set_timeout(4, z3_verify_fail)
-	def z3_verify_heuristic_implication(self, n, coef, cond, prime, old_coef_array, tr=True):
-		x = [z3.Real('xr_%s' % i) if tr else z3.Int('xi_%s' % i) for i in range(n)]
-		x_ = prime(x)
-		s = z3.Solver()
-		s.add(cond(x))  # condition
-		list_of_old_expr = []
-		new_expr = coefDotExprZ3Arithmetic(x, coef, n, tr)
-		for old_coef in old_coef_array:
-			list_of_old_expr.append(coefDotExprZ3Arithmetic(x, old_coef, n, tr))
-		heuristic_constraint = heuristicImplicationConstraint(list_of_old_expr, new_expr, tr)
-		s.add(heuristic_constraint)
-		s.push()
-		valid = None
-		model = None
-		sum_dot = None
-		#left_up_bound = None
-		right_up_bound = None
-		for index in range(self.K):
-			# check whether it will be less than C_{index}
-			if tr:
-				sum_dot = np.dot(coef, self.list_of_Gx[index](x, x_))
-				right_up_bound = self.list_of_C[index]
-			else:
-				multiplied = self.get_max_denominator(coef, self.list_of_C[index])
-				ceilings = [int(multiplied * v) for v in coef]
-				sum_dot = sum(i[0] * i[1] for i in zip(ceilings, self.list_of_Gx[index](x, x_)))
-				right_up_bound = int(multiplied * self.list_of_C[index])
-			s.add(sum_dot < right_up_bound)
-			#print('constraint system: ', s)
-			result = s.check()
-			valid = result == z3.unsat
-			#print(valid,result)
-			if result == z3.sat:
-				model = s.model()
-				model = [eval(model[v].__str__()) for v in x]
-				print(s.model())		
-			# elif result == z3.unsat:
-			# 	print('case %d OK ' % index)
-			# else:
-			# 	print('unknown')
-			s.pop()
-			s.push()
-			if not valid:
-				break
-		if valid:
-			print('valid no bound ranking function')
-			return True, model
-		else:
-			return False, model'''
-	
 	def __str__(self):
 		result = ''
 		first = True

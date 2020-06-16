@@ -24,6 +24,7 @@ def LearnRankerNoBoundLoopBody(L_test, sample_strategy, print_level, x, y):
     listOfUx, last_coef_array = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
     if print_level > 1:
         print("Last coef array:", last_coef_array)
+        print("len(listOfUx) = ", len(listOfUx))
     rf = NestedNoBoundTemplate(
         listOfUx,
         [0.001] *len(listOfUx),
@@ -51,6 +52,9 @@ def LearnRankerBoundedLoopBody(L_test, sample_strategy, print_level, x, y):
     if print_level > 1:
         print("listOfDimension",listOfUxDimension)
     listOfUx, last_coef_array = parse_template_handcraft(L_test[4], L_test[2], listOfUxDimension)
+    if print_level > 1:
+        print("Last coef array:", last_coef_array)
+        print("len(listOfUx) = ", len(listOfUx))
     rf = NestedTemplate(
         listOfUx,
         [0.001] *len(listOfUx),

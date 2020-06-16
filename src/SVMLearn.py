@@ -132,7 +132,7 @@ def SVMLearnMulti(sourceFilePath, sourceFileName,
 	rank_newtime=datetime.datetime.now()
 	if print_level > 0:
 		if result == "TERMINATE":
-			printSummary(len(rf_list), result, rf_list)
+			printSummary(len(rf_list), result, rf_list, True)
 		else:
 			print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
 			print("LEARNING RESULT: ", result)

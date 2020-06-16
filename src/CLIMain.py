@@ -67,7 +67,7 @@ def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy
                                         sample_strategy, cutting_strategy, template_strategy,
                                         print_level)
         if print_level == 0:
-            printSummary(len(rf_list), result, rf_list)
+            printSummary(len(rf_list), result, rf_list, True)
     elif filetype == "C":
         os.system("python3 ./CPreprocess.py " + source)
         os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + "temp.bpl" + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
@@ -81,7 +81,7 @@ def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy
                                         sample_strategy, cutting_strategy, template_strategy,
                                         print_level)
         if print_level == 0:
-            printSummary(len(rf_list), result, rf_list)
+            printSummary(len(rf_list), result, rf_list, True)
         
     
 @click.command()
@@ -105,7 +105,7 @@ def lNested(source, log, filetype, sample_strategy, print_level):
                                          parse_oldtime, parse_newtime, sample_strategy, 
                                          print_level)
         if print_level == 0:
-            printSummary(len(rf_list), result, rf_list)
+            printSummary(len(rf_list), result, rf_list, False)
     elif filetype == "C":
         os.system("python3 CPreprocess.py " + source)
         os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + "temp.bpl" + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
@@ -118,7 +118,7 @@ def lNested(source, log, filetype, sample_strategy, print_level):
                                          parse_oldtime, parse_newtime, sample_strategy, 
                                          print_level)
         if print_level == 0:
-            printSummary(len(rf_list), result, rf_list)
+            printSummary(len(rf_list), result, rf_list, False)
 
 cli.add_command(parseBoogie)
 cli.add_command(lNested)
