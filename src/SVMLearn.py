@@ -117,7 +117,7 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 	if print_all:
 		print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-		print('Program is terminating' if result=='FINITE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+		print('Program is terminating' if result=='TERMINATE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
 	return result, rf_list
 
 
@@ -131,13 +131,13 @@ def SVMLearnMulti(sourceFilePath, sourceFileName,
 	result, rf_list = LearnMultiRanker(L, depth_bound, sample_strategy, cutting_strategy, template_strategy, print_all, 1, (), ())
 	rank_newtime=datetime.datetime.now()
 	if print_all:
-		if result == "FINITE":
+		if result == "TERMINATE":
 			printSummary(len(rf_list), result, rf_list)
 		else:
 			print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
 			print("LEARNING RESULT: ", result)
 		print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-		print('Program is terminating' if result=='FINITE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+		print('Program is terminating' if result=='TERMINATE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
 	f = open(os.path.join(logFolder,'AnalysisTimeForALL.log'),'a')
 	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 	
@@ -228,5 +228,5 @@ rank_newtime=datetime.datetime.now()
 f = open(os.path.join(logFile,'AnalysisTimeForALL.log'),'a')
 f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-print('Program is terminating' if result=='FINITE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+print('Program is terminating' if result=='TERMINATE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
 '''

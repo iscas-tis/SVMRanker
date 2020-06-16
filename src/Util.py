@@ -356,9 +356,9 @@ def sample_points_bisection(L,n,rf):
 						u_p = m
 				# print(m)
 			else:
-				yield('INF',None,None)
+				yield('NONTERM',None,None)
 		else:
-			yield('FINITE',None,None)
+			yield('TERMINATE',None,None)
 		m_ = get_statement(L,m)
 		if m_ is None:
 			continue
@@ -406,7 +406,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 	if Is_inf:
 		print(  "it is not terminating, an  infinity loop with initial condition:\n")
 		print(  inf_model+'\n')
-		return "INF",None,None
+		return "NONTERM",None,None
 	st = datetime.datetime.now()
 	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
 	# print(*sample_points(no, m, h, n, rf))
@@ -503,7 +503,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 		# if Is_inf:
 		# 	print(  "it is not terminated, an infinite loop with initial condition:\n")
 		# 	print(  inf_model+'\n')
-		# 	return "INF"
+		# 	return "NONTERM"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
 		print(  "ranking function : " + str(rf)+"\n")
@@ -514,7 +514,7 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 		# s_t - st, et - ct, h_t - ht))
 		if ret[0]:
 			print(  "Found Ranking Function: "+str(rf)+"\n")
-			return "FINITE",None,None
+			return "TERMINATE",None,None
 		elif ret[1] is None:
 			return 'UNKNOWN',x,y
 		elif ret[1] is not None:
@@ -566,7 +566,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 	if Is_inf:
 		print(  "it is not terminating, an infinite loop with initial condition:\n")
 		print(  inf_model+'\n')
-		return "INF",None,None
+		return "NONTERM",None,None
 	st = datetime.datetime.now()
 	# print(str(get_time(st)) + "   >>>>   " + "Start sampling point\n")
 	# print(*sample_points(no, m, h, n, rf))
@@ -696,7 +696,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 		# if Is_inf:
 		# 	print(  "it is not terminated, an infinite loop with initial condition:\n")
 		# 	print(  inf_model+'\n')
-		# 	return "INF"
+		# 	return "NONTERM"
 		# check(n, coef)
 		h_t = datetime.datetime.now()
 		if print_all:
@@ -710,7 +710,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 		if ret[0]:
 			if print_all:
 				print(  "Found Ranking Function: "+str(rf)+"\n")
-			return "FINITE",None,None
+			return "TERMINATE",None,None
 		elif ret[1] is None:
 			return 'UNKNOWN',x,y
 		elif ret[1] is not None:

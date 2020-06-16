@@ -31,10 +31,10 @@ def LearnRankerNoBoundLoopBody(L_test, sample_strategy, print_all, x, y):
     )
     #ret, new_x, new_y = train_ranking_function(L_test, rf, x, y)
     ret, new_x, new_y = train_ranking_function_strategic(L_test, rf, sample_strategy, print_all, x, y)
-    if ret == 'FINITE':
+    if ret == 'TERMINATE':
         no_bound_return = 'CORRECT'
-    elif ret == 'INF':
-        no_bound_return = 'INF'
+    elif ret == 'NONTERM':
+        no_bound_return = 'NONTERM'
     else:
         no_bound_return = 'FALSE'
     return no_bound_return, rf
@@ -71,7 +71,7 @@ def train_multi_ranking_function_incremental(L, x, y, depthBound, sample_strateg
         print("-------------INCREASE TIMES:", i)
         print("--------LEARN BOUNDED")
         ret, rf = LearnRankerBoundedLoopBody(L_current, sample_strategy, print_all, x, y)
-        if(ret == 'FINITE' or ret == 'INF'):
+        if(ret == 'TERMINATE' or ret == 'NONTERM'):
             rf_list.append(rf)
             printSummary(i+1, ret, rf_list)
             return rf_list
@@ -115,7 +115,7 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
             changeTemplate(L, templates[templateNum])
             ret, rf = LearnRankerNoBoundLoopBody(L, sample_strategy, print_all, (), ())
             if ret == 'CORRECT':
-                L_new = ConjunctRankConstraintL(L, rf, cutting_strategy)
+                L_new = ConjunctRankConstraintL(L, rf, print_all, cutting_strategy)
                 rf_list.append(rf)
                 result, rf_list = train_multi_ranking_function_backtracking_loopbody(L_new, x, y, rf_list, templates, 0, currentDepth + 1, depthBound, sample_strategy, cutting_strategy, print_all)
                 if print_all:
@@ -125,10 +125,10 @@ def train_multi_ranking_function_backtracking_loopbody(L, x, y, rf_list, templat
                     templateNum += 1
                 else:
                     return result, rf_list
-            elif ret == 'INF':
+            elif ret == 'NONTERM':
                 rf_list.append(rf)
                 rf_list = []
-                return 'INF', rf_list
+                return 'NONTERM', rf_list
             elif ret == 'FALSE':
                 templateNum += 1
         return 'UNKNOWN', rf_list

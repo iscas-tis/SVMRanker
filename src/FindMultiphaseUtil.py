@@ -36,7 +36,7 @@ def coefDotExprZ3Arithmetic(x, coef, last_coef_list, NumOfVars):
     return result
 
 
-def ConjunctRankConstraintL(L_old, rf, strategy="MINUS"):
+def ConjunctRankConstraintL(L_old, rf, print_all, strategy="MINUS"):
     # conjunct the ranking function constrain f <= 0 with the loop guard in L_old
     # to obtain a new loop L_new
 
@@ -61,7 +61,8 @@ def ConjunctRankConstraintL(L_old, rf, strategy="MINUS"):
                 minPoint = point
     else:
         divideConstant = -1
-    print("---------DIVIDE CONSTANT:", divideConstant)
+    if print_all:
+        print("---------DIVIDING CONSTANT:", divideConstant)
     # ATTENTION NOT ROBUST HERE TODO
     rf.coefficients[-1] += -divideConstant/rf.last_coef_array[-1]
     appendConstraint = lambda x : addedExp(x) < divideConstant
@@ -185,7 +186,7 @@ TemplatesNondet = generateTemplateLibSingleFull(4)
 
 '''--------------------Print methods-------------------------'''
 def printSummary(multidepth, ret, listOfRFs):
-    if(ret != "FINITE"):
+    if(ret != "TERMINATE"):
         depth = 0
     else:
         depth = multidepth

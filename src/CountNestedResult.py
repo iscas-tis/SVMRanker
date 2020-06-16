@@ -18,15 +18,15 @@ for name in fileList:
             changed = False
             print(dirName + name)
             for line in f:
-                if line.find("INF") != -1:
-                    print("INF")
+                if line.find("NONTERM") != -1:
+                    print("NONTERM")
                     wf = open(targetCSV, "a")
                     wf.write(name.split(".", 1)[0] + "," + "N\n")
                     wf.close()
                     changed = True
                     break
-                elif line.find("FINITE") != -1:
-                    print("FINITE")
+                elif line.find("TERMINATE") != -1:
+                    print("TERMINATE")
                     wf = open(targetCSV, "a")
                     wf.write(name.split(".", 1)[0] + "," + "Y\n")
                     wf.close()
