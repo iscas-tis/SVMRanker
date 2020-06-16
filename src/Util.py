@@ -160,6 +160,110 @@ def is_type_real(L):
     return len(L) <= 6 + L[3]
 
 
+def get_x_i_lower_bound(s,xi,start):
+	lo = float('-inf')
+	hi = start
+	last_sat = start
+	incr = 1
+	while(lo <= hi):
+		s.push()
+		var = (lo + hi)/2
+		s.add(xi >= var)
+		result = s.check()
+		if result == z3.unsat:
+			lo = var+incr
+		elif result == z3.sat:
+			last_sat = var
+			hi = var-incr
+		else:
+			break
+		s.pop()
+	return last_sat
+
+def get_x_i_upper_bound(s,xi,start):
+	hi = float('inf')
+	lo = start
+	last_sat = start
+	incr = 1
+	while(lo <= hi):
+		s.push()
+		var = (lo + hi)/2
+		s.add(xi <= var)
+		result = s.check()
+		if result == z3.unsat:
+			hi = var-incr
+		elif result == z3.sat:
+			last_sat = var
+			lo = var+incr
+		else:
+			break
+		s.pop()
+	return last_sat
+
+
+def sample_points_same_interval_different_step(L, lowerBounds,upperBounds, h, n, rf):
+        #print('sample_points_interval ',  m, h, n,base_point)
+        for p in get_xpoints_different_step( lowerBounds, upperBounds, h, n):  # Generate all candidate n-D points
+            #print(p)
+            
+            condition = get_condition(L,p)
+            
+            if condition:  # must satisfy the guard condition
+                p_ = get_statement(L,p)
+                if p_ is None:
+                    continue
+                print("point:", p)
+                rf.sample_points_list.append(p)
+                for x, y in rf.get_example(p, p_):  # by ranking function to generate dataset for SVM
+                    yield ('UNKNOWN',x, y)
+        #print(rf.get_zero_vec())
+        # base_point_ = get_statement(L,base_point)
+        # if base_point_ is None:
+            
+        #     return 
+        # for x,y in rf.get_example(base_point,base_point_):
+        #     yield('UNKNOWN',x,y)
+    # yield (rf.get_zero_vec(), -1)
+    # print("sample example down!!")
+
+def get_xpoints_different_step(lowerBounds, upperBounds, h, n):
+    """
+    :param lowerBounds, upperBounds: width
+    :param h: distance
+    :param n: dimension
+    :return: points
+    """
+    if n == 1:
+        for p in np.arange(lowerBounds[n-1], upperBounds[n-1] + h, h):  # for 1 dimension iteration,just generate 2m/h 1-D points with only one value
+            yield [p]
+    elif n > 1:
+        # for every {n-1}-D point in n-1 dimension iteration,
+        #   append all possible value in [-m,m] by h step to generate 2m/h {n}-D points in n dimension iteration
+        for p in get_xpoints_different_step(lowerBounds, upperBounds, h, n - 1):
+            for x in np.arange(lowerBounds[n-1], upperBounds[n-1] + h, h):
+                yield p + [x]
+
+def sample_points_in_Omega(L,h, n, rf):
+	rt = is_type_real(L)
+	if rt:
+		cond = L[-1]
+	else:
+		cond = L[-2]
+	x = [z3.Real('xr_%s' % i) if rt else z3.Int('xi_%s' % i) for i in range(n)]
+	s = z3.Solver()
+	s.add(simplify(cond(x)))  # condition
+	print(cond(x))
+	result = s.check()
+	if result == z3.sat:
+		model = s.model()
+		model = [eval(model[v].__str__()) for v in x]
+		lowerBounds = [get_x_i_lower_bound(s,x[i],model[i]) for i in range(n)]
+		upperBounds = [get_x_i_upper_bound(s,x[i],model[i]) for i in range(n)]
+		for result, x, y in sample_points_same_interval_different_step(L, lowerBounds,upperBounds, h, n, rf):
+			yield(result, x, y)
+
+
+
 def sample_points(L, m, h, n, rf,base_point):
 	for result, x, y in sample_points_same_interval(L, m, h, n, rf,base_point):
 		yield(result, x, y)
@@ -483,6 +587,11 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 				h = 1.5*h
 			# result,x, y = zip(*sample_points_bisection(L, n, rf))
 			#print(x,y)
+		elif sample_strategy == "CONSTRAINT":
+			for new_result, new_x, new_y in sample_points_in_Omega(L, h, n, rf):
+				x = x + (np.array(new_x))
+				y = y + (np.array(new_y))
+				result.append(new_result)
 		else:
 			sample_num = 0
 			while sample_num < 10:
