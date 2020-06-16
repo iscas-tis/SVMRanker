@@ -1,18 +1,12 @@
-procedure test_fun(x: int, y: int)
+procedure main()
 {
-  var c: int;
-  c := 0;
+  var x: int;
+  var y: int;
+  var z: int;
   while ((x>0))
   {
-  y := 0;
-  while ((y<x))
-  {
-  y := (y+1);
-  c := (c+1);  }
-
-  x := (x-1);  }
-
-}procedure main()
-{
+  x := (x+y);
+  y := (y+z);
+  z := (z-1);  }
 
 }

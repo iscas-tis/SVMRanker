@@ -39,7 +39,7 @@ def parseBoogie(source, parseoutfile):
                      DEPTH_BOUND: depth bound of multiphase ranking function, default set to 2' )
 @click.argument("source")
 @click.argument('log', default=("./Log_temp"))
-@click.argument("depth_bound", default=2)
+@click.option("--depth_bound", default=2, help="depth bound default set to 2")
 @click.option("--filetype", type = click.Choice(["C", "BOOGIE"], False), default="BOOGIE", help="--file C: input is c file. --file BOOGIE: input is boogie file")
 @click.option("--sample_strategy", type = click.Choice(["ENLARGE", "CONSTRAINT"], False), default="ENLARGE", help="--sample_strategy ENLARGE: enlarge the sample zone when sample num not enough.\n\
                                                                                                                    --sample_strategy CONSTRAINT: find feasible points by constraint if sample num not enough\n")

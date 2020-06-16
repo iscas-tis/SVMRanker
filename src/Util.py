@@ -587,6 +587,7 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_all, x, y, m=
 				h = 1.5*h
 			# result,x, y = zip(*sample_points_bisection(L, n, rf))
 			#print(x,y)
+		
 		elif sample_strategy == "CONSTRAINT":
 			for new_result, new_x, new_y in sample_points_in_Omega(L, h, n, rf):
 				x = x + (np.array(new_x))
