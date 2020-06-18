@@ -7,7 +7,7 @@ SVMRanker is a tool used for finding ranking function of loop program. Ranking f
 
 ## Environment
 ### Linux 
-Python 3.7 and Java 14.0.1
+Python 3.7 and Java 1.8
 ### Required Package
 
 Python packages needed for this project.
@@ -25,7 +25,7 @@ In src folder:
 ```
 python3 ./CLIMain.py --help
 ```
-
+and follow the guidance and help info.
 ## Author
 
 - Xuechao Sun
