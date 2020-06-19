@@ -83,14 +83,15 @@ def array_2_nospace_str(array):
 
 
 def SVMLearnNested(sourceFilePath, sourceFileName, 
+				   depth_bound,
 				   templatePath, templateFileName, 
-				   Info, logFolder, 
+				   Info,
 				   parse_oldtime, parse_newtime,
 				   sample_strategy, print_level):
 	rank_oldtime=datetime.datetime.now()
 	rf_list = []
 	if int(Info[0]) == 0:
-		numOfTemplate = 1#8
+		numOfTemplate = depth_bound*2
 		templateFullPath = os.path.join(os.path.split(os.path.realpath(__file__))[0],templatePath,templateFileName)
 		if print_level > 1:
 			print("template full path", templateFullPath, templateFileName)
@@ -111,18 +112,16 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 			rf_list.append(rf)
 			if result != 'UNKNOWN':
 				break
-			i = (i+1)%numOfTemplate
+			#i = (i+1)%numOfTemplate
 	rank_newtime=datetime.datetime.now()
-	f = open(os.path.join(logFolder,'AnalysisTimeForALL.log'),'a')
-	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
 	if print_level > 0:
 		print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-		print('Program is terminating' if result=='TERMINATE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
+		print('Program is terminating' if result=='TERMINATE' else ("Information about terminating is unknown" if result =='UNKNOWN' else 'Program is non-terminating'))
 	return result, rf_list
 
 
 def SVMLearnMulti(sourceFilePath, sourceFileName, 
-				  logFolder, depth_bound,
+				  depth_bound,
 				  parse_oldtime, parse_newtime, 
 				  sample_strategy, cutting_strategy, template_strategy,
 				  print_level):
@@ -137,10 +136,7 @@ def SVMLearnMulti(sourceFilePath, sourceFileName,
 			print("--------------------LEARNING MULTIPHASE SUMMARY-------------------")
 			print("LEARNING RESULT: ", result)
 		print('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-		print('Program is terminating' if result=='TERMINATE' else (result if result =='UNKNOWN' else 'Program is non-terminating'))
-	f = open(os.path.join(logFolder,'AnalysisTimeForALL.log'),'a')
-	f.write('Time For %s Is ---> %f ms\n' %(os.path.join(sourceFilePath,sourceFileName),float((parse_newtime-parse_oldtime).total_seconds())*1000  + float((rank_newtime-rank_oldtime).total_seconds())*1000 ))
-	
+		print('Program is terminating' if result=='TERMINATE' else ("Information about terminating is unknown" if result =='UNKNOWN' else 'Program is non-terminating'))	
 	return result, rf_list
 
 
