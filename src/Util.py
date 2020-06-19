@@ -409,6 +409,9 @@ def train_ranking_function(L, rf, x, y,  m=5, h=0.5, n=2):
 		Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
 	if Is_inf:
 		print(  "it is not terminating, an  infinity loop with initial condition:\n")
+		from VarStrMap import Map
+		for t in Map:
+			inf_model = inf_model.replace(t[0], t[1])	
 		print(  inf_model+'\n')
 		return "NONTERM",None,None
 	st = datetime.datetime.now()
@@ -569,6 +572,9 @@ def train_ranking_function_strategic(L, rf, sample_strategy, print_level, x, y, 
 		Is_inf,inf_model =rf.check_infinite_loop (n, L[-2], L[-3],False)
 	if Is_inf:
 		print(  "it is not terminating, an infinite loop with initial condition:\n")
+		from VarStrMap import Map
+		for t in Map:
+			inf_model = inf_model.replace(t[0], t[1])
 		print(  inf_model+'\n')
 		return "NONTERM",None,None
 	st = datetime.datetime.now()

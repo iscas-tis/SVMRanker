@@ -56,7 +56,7 @@ def parseBoogie(source, parseoutfile):
 def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy, template_strategy, print_level):
     print_level = 0 if print_level == "NONE" else 1 if print_level == "INFO" else 2 if print_level == "DEBUG" else "NONE"
     if filetype == "BOOGIE":
-        os.system("mkdir " + log)
+        os.system(" if [ ! -d " + log + "]; then mkdir " + log)
         sourceFilePath, sourceFileName,\
         templatePath, templateFileName, Info, \
         parse_oldtime, parse_newtime = parseBoogieProgramMulti(source, "OneLoop.py")
@@ -97,7 +97,7 @@ def lMulti(source, log, depth_bound, filetype, sample_strategy, cutting_strategy
 def lNested(source, log, filetype, sample_strategy, print_level):
     print_level = 0 if print_level == "NONE" else 1 if print_level == "INFO" else 2 if print_level == "DEBUG" else "NONE"
     if filetype == "BOOGIE":
-        os.system("mkdir " + log)
+        os.system(" if [ ! -d " + log + "]; then mkdir " + log)
         sourceFilePath, sourceFileName, templatePath, templateFileName, Info, parse_oldtime, parse_newtime = parseBoogieProgramNested(source, "OneLoop.py")
         from OneLoop import L
         result, rf_list = SVMLearnNested(sourceFilePath, sourceFileName, 
