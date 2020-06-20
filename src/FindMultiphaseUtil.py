@@ -198,3 +198,17 @@ def printSummary(multidepth, ret, listOfRFs, isMulti):
     if depth != 0:
         for rf in listOfRFs:
             print(str(rf))
+
+def printSummaryNested(ret, listOfRFs):
+    if(ret == "TERMINATE"):
+        depth = str(listOfRFs[0]).count(";") + 1
+        print("--------------------LEARNING NESTED SUMMARY-------------------")
+        print("NESTED DEPTH: ", depth)
+        print("LEARNING RESULT: ", ret)
+        print("-----------RANKING FUNCTIONS----------")
+        print(str(listOfRFs[0]))
+    else:
+        depth = 0
+        print("--------------------LEARNING NESTED SUMMARY-------------------")
+        print("NESTED DEPTH: ", depth)
+        print("LEARNING RESULT: ", ret)

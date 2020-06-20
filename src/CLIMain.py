@@ -107,8 +107,8 @@ def lNested(source, depth_bound, filetype, sample_strategy, print_level):
                                          templatePath, templateFileName, Info, 
                                          parse_oldtime, parse_newtime, sample_strategy, 
                                          print_level)
-        if print_level == 0:
-            printSummary(len(rf_list), result, rf_list, False)
+        if print_level >= 0:
+            printSummaryNested(result, rf_list)
     elif filetype == "C":
         os.system("python3 CPreprocess.py " + source)
         os.system("cpp " + source + " | grep -v '^#' | python3 ./C2Boogie.py stdin " + "temp.bpl" + " --skip-methods __VERIFIER_error __VERIFIER_assert __VERIFIER_assume --assert-method __VERIFIER_assert --assume-method __VERIFIER_assume --add-trivial-invariants")
@@ -120,8 +120,8 @@ def lNested(source, depth_bound, filetype, sample_strategy, print_level):
                                          templatePath, templateFileName, Info, 
                                          parse_oldtime, parse_newtime, sample_strategy, 
                                          print_level)
-        if print_level == 0:
-            printSummary(len(rf_list), result, rf_list, False)
+        if print_level >= 0:
+            printSummaryNested(result, rf_list)
 
 cli.add_command(parseBoogie)
 cli.add_command(lNested)

@@ -109,8 +109,9 @@ def SVMLearnNested(sourceFilePath, sourceFileName,
 			if print_level > 0:
 				print(result)
 				print('Time For Template %d Is--->%f ms\n' % (i, float((tempalate_start-template_end).total_seconds())*1000))
-			rf_list.append(rf)
+			
 			if result != 'UNKNOWN':
+				rf_list.append(rf)
 				break
 			#i = (i+1)%numOfTemplate
 	rank_newtime=datetime.datetime.now()

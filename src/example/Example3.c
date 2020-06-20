@@ -1,11 +1,7 @@
-procedure main(){
-	var x : int;
-	while((x != 0)){
-		if(x > 0){
-			x := (1 - x);
-		} else {
-			x := (-1 - x);	
-		}
+int main(){
+	int x;
+	int y;
+	while(x > 0 && y!=0){
+		x = x - y*y;
 	}
 }
-
