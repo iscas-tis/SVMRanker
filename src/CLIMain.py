@@ -43,9 +43,9 @@ def parseBoogie(source, parseoutfile):
 @click.option("--sample_strategy", type = click.Choice(["ENLARGE", "CONSTRAINT"], False), default="ENLARGE", help="--sample_strategy ENLARGE: enlarge the sample zone when sample num not enough.\n\
                                                                                                                    --sample_strategy CONSTRAINT: find feasible points by constraint if sample num not enough\n\
                                                                                                                    default set to ENLARGE")
-@click.option("--cutting_strategy", type = click.Choice(["MINUS", "MINI", "POS"], False), default="MINI", help="use f(x) < b to cut\n\
+@click.option("--cutting_strategy", type = click.Choice(["NEG", "MINI", "POS"], False), default="MINI", help="use f(x) < b to cut\n\
                                                                                                                 --cutting_strategy POS:  b is a postive number\n\
-                                                                                                                --cutting_strategy MINUS: b is a negative number\n\
+                                                                                                                --cutting_strategy NEG: b is a negative number\n\
                                                                                                                 --cutting_strategy MINI: b is the minimum value of sampled points\n\
                                                                                                                 default set to MINI")
 @click.option("--template_strategy", type = click.Choice(["SINGLEFULL", "FULL"], False), default="SINGLEFULL", help="templates used for learning\n\
