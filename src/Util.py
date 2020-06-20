@@ -72,7 +72,7 @@ def make_dict_order(num_of_vars, dimension, mat_of_vars):
 def parse_template(templatePath,numOfVar,ListOfDimension, indexOfTemplate):
 	arrays = np.loadtxt(os.path.join(templatePath,"template"+str(indexOfTemplate)),delimiter=',')
 	arrays = arrays.reshape(-1,numOfVar+1)
-	print(len(arrays),ListOfDimension)
+	#print(len(arrays),ListOfDimension)
 	if(len(arrays) != np.sum(ListOfDimension)):
 		raise Exception('Wrong template format')
 	last_coef_array = arrays[:,numOfVar]
