@@ -38,7 +38,8 @@ def set_timeout(num, callback):
 				signal.alarm(0)  
 				return r
 			except TimeOutException as e:
-			 	callback()
+				print("Time out")
+				callback()
 
 		return toDo
 
