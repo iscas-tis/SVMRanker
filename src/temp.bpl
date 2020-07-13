@@ -2,11 +2,11 @@ procedure main()
 {
   var x: int;
   var y: int;
-  var z: int;
-  while ((x>0))
+  var oldx: int;
+  while ((((4*x)+y)>=1))
   {
-  x := (x+y);
-  y := (y+z);
-  z := (z-1);  }
+  oldx := x;
+  x := ((4*y)-(2*x));
+  y := (4*oldx);  }
 
 }
